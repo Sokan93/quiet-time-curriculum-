@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shepherd International School - Quiet Moment</title>
+    <title>Shepherd International School - Quiet Moment Full Curriculum</title>
     <link rel="icon" type="image/png" href="https://i.ibb.co/2Y0p8Nm5/sis.png">
     <style>
         :root {
             --school-green: #004d00;
             --school-yellow: #ffcc00;
             --text-main: #1a1a1a;
-            --bg-body: #f4f7f6;
+            --bg-body: #fdfdfd;
             --bg-card: #ffffff;
             --accent-bg: #fffdf2;
         }
@@ -18,7 +18,7 @@
         * { box-sizing: border-box; scroll-behavior: smooth; }
         
         body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            font-family: 'Segoe UI', Arial, sans-serif; 
             line-height: 1.8; 
             margin: 0; 
             padding: 20px; 
@@ -31,10 +31,10 @@
             max-width: 1000px; 
             margin: 0 auto; 
             background: var(--bg-card); 
-            padding: 40px 60px; 
-            border-radius: 10px; 
-            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
-            border-top: 12px solid var(--school-green);
+            padding: 50px 70px; 
+            border-radius: 12px; 
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+            border-top: 15px solid var(--school-green);
         }
 
         header {
@@ -44,15 +44,16 @@
             margin-bottom: 40px;
         }
 
-        header img { height: 100px; width: auto; margin-bottom: 15px; }
+        header img { height: 110px; width: auto; margin-bottom: 15px; }
+
         h1 { color: var(--school-green); margin: 0; font-size: 2.2rem; text-transform: uppercase; letter-spacing: 1px; }
         
         /* 4 per line Navigation */
         nav {
-            background: #ffffff;
-            padding: 25px;
+            background: #f9f9f9;
+            padding: 30px;
             border-radius: 8px;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
             border: 2px solid var(--school-green);
         }
 
@@ -70,68 +71,78 @@
             font-weight: bold;
             text-align: center;
             font-size: 0.9rem;
-            padding: 12px 5px;
-            border: 1px solid #ddd;
+            padding: 12px;
+            border: 1px solid #ccc;
             border-radius: 5px;
-            background: #fdfdfd;
+            background: #fff;
             transition: 0.3s;
         }
 
         nav a:hover {
             background: var(--school-green);
             color: var(--school-yellow);
+            border-color: var(--school-green);
         }
 
-        section { margin-bottom: 120px; border-bottom: 2px solid #eee; padding-bottom: 80px; }
-        h2 { background: var(--school-green); color: var(--school-yellow); padding: 15px 25px; border-radius: 4px; text-transform: uppercase; font-size: 1.6rem; margin-top: 0; }
-        h3 { color: var(--school-green); border-bottom: 3px solid var(--school-yellow); padding-bottom: 10px; margin-top: 60px; font-size: 1.4rem; }
-        h4 { color: #8b0000; margin-top: 35px; border-left: 5px solid var(--school-yellow); padding-left: 15px; }
+        section { margin-bottom: 150px; border-bottom: 2px solid #eee; padding-bottom: 80px; }
+
+        h2 { background: var(--school-green); color: var(--school-yellow); padding: 18px 30px; border-radius: 4px; text-transform: uppercase; font-size: 1.8rem; margin-top: 0; }
+        h3 { color: var(--school-green); border-bottom: 3px solid var(--school-yellow); padding-bottom: 12px; margin-top: 70px; font-size: 1.5rem; }
+        h4 { color: #8b0000; margin-top: 40px; border-left: 6px solid var(--school-yellow); padding-left: 15px; font-size: 1.25rem; font-weight: bold; }
 
         .memory-verse { 
             background: var(--accent-bg); 
             padding: 30px; 
-            border-left: 8px solid var(--school-yellow); 
+            border-left: 10px solid var(--school-yellow); 
             font-style: italic; 
-            margin: 35px 0; 
+            margin: 40px 0; 
             border-radius: 4px;
             color: #443300;
+            font-size: 1.15rem;
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.02);
         }
 
         .diagram-box { 
             background: #f8f9fa; 
             border: 2px dashed var(--school-green); 
-            padding: 20px; 
+            padding: 30px; 
             text-align: center; 
             color: var(--school-green); 
-            margin: 30px 0; 
+            margin: 40px 0; 
             border-radius: 8px;
             font-weight: bold;
         }
 
-        table { width: 100%; border-collapse: collapse; margin: 30px 0; }
-        th, td { border: 1px solid #e0e0e0; padding: 15px; text-align: left; vertical-align: top; }
+        table { width: 100%; border-collapse: collapse; margin: 40px 0; }
+        th, td { border: 1px solid #e0e0e0; padding: 18px; text-align: left; vertical-align: top; }
         th { background-color: var(--school-green); color: white; }
         tr:nth-child(even) { background-color: #f9fbf9; }
+
+        ul, ol { margin-bottom: 35px; padding-left: 45px; }
+        li { margin-bottom: 18px; }
 
         .reflection-box { 
             background: #f0fdf4; 
             padding: 30px; 
             border-radius: 8px; 
-            border-left: 8px solid var(--school-green); 
+            border-left: 10px solid var(--school-green); 
             margin: 40px 0; 
+            font-style: italic;
         }
 
         .footer { 
             text-align: center; 
-            margin-top: 50px; 
-            padding-top: 30px; 
+            margin-top: 60px; 
+            padding-top: 40px; 
             border-top: 1px solid #eee; 
             color: var(--school-green);
+            font-weight: bold;
         }
 
-        @media (max-width: 800px) {
+        @media (max-width: 850px) {
             .nav-grid { grid-template-columns: repeat(2, 1fr); }
-            .container { padding: 30px 20px; }
+            .container { padding: 30px 25px; }
+            header img { height: 80px; }
         }
     </style>
 </head>
@@ -141,15 +152,15 @@
     <header>
         <img src="https://i.ibb.co/2Y0p8Nm5/sis.png" alt="SIS Logo">
         <h1>Shepherd International School</h1>
-        <p style="color: var(--school-green); font-weight: bold; margin-top: 10px; font-size: 1.4rem;">Quiet Moment Full Curriculum</p>
+        <p style="color: var(--school-green); font-weight: bold; margin-top: 10px; font-size: 1.5rem;">Quiet Moment Full Curriculum</p>
     </header>
 
     <nav>
-        <span class="nav-title">Jump to Week</span>
+        <span class="nav-title">Quick Jump To Weekly Lessons</span>
         <div class="nav-grid">
             <a href="#week1">Week 1</a> <a href="#week2">Week 2</a> <a href="#week3">Week 3</a> <a href="#week4">Week 4</a>
             <a href="#week5">Week 5</a> <a href="#week7">Week 7</a> <a href="#week8">Week 8</a> <a href="#week9">Week 9</a>
-            <a href="#week10">Week 10</a> <a href="#week11">Week 11</a> <a href="#week13">Week 13</a> <a href="#week14">Week 14</a>
+            <a href="#week10">Week 10</a>
         </div>
     </nav>
 
@@ -158,7 +169,7 @@
         <h3>Day 1: Definition of Planning</h3>
         <p>Planning is the process of setting goals, identifying actions to achieve those goals, and allocating resources to accomplish them.</p>
         <div class="memory-verse">Proverbs 21:5 says, "The plans of the diligent lead to profit as surely as haste leads to poverty."</div>
-        <h4>Examples:</h4>
+        <h4>Examples of Planning:</h4>
         <ol>
             <li>Students planning their study schedule to achieve good grades.</li>
             <li>Athletes planning their training regimen to improve performance.</li>
@@ -177,43 +188,43 @@
         <h3>Day 2: Elements of Planning</h3>
         <ol>
             <li><strong>Goals and Objectives:</strong> Clearly defining what you want to achieve through your plan. Proverbs 29:18 says, "Where there is no vision, the people perish." Example: A student sets a goal to achieve a certain grade in their exams.</li>
-            <li><strong>Analysis:</strong> Gathering and analyzing information to understand the situation, resources, and potential obstacles. Luke 14:28-30 says, "For which of you, desiring to build a tower, does not first sit down and count the cost, whether he has enough to complete it?"</li>
-            <li><strong>Strategy:</strong> Determining the best approach or course of action to achieve your goals. Proverbs 21:5.</li>
+            <li><strong>Analysis:</strong> Gathering and analyzing information to understand the situation, resources, and potential obstacles. Luke 14:28-30 says, "For which of you, desiring to build a tower, does not first sit down and count the cost, whether he has enough to complete it?" Example: A business owner conducts market research to understand their target audience and competition.</li>
+            <li><strong>Strategy:</strong> Determining the best approach or course of action to achieve your goals. Proverbs 21:5 says, "The plans of the diligent lead to profit as surely as haste leads to poverty."</li>
             <li><strong>Action Plan:</strong> Outlining specific steps and tasks to be taken to implement your strategy. James 2:26 says, "For as the body apart from the spirit is dead, so also faith apart from works is dead."</li>
             <li><strong>Resource Allocation:</strong> Identifying and allocating the necessary resources (time, money, personnel, etc.) to execute your plan. Luke 14:31-32.</li>
-            <li><strong>Timeline:</strong> Establishing a schedule or timeline for completing tasks and achieving milestones. Ecclesiastes 3:1.</li>
-            <li><strong>Evaluation and Monitoring:</strong> Planning for how you will track progress, evaluate success, and make adjustments as needed. Proverbs 15:28.</li>
+            <li><strong>Timeline:</strong> Establishing a schedule or timeline for completing tasks and achieving milestones. Ecclesiastes 3:1 says, "For everything there is a season, and a time for every matter under heaven."</li>
+            <li><strong>Evaluation and Monitoring:</strong> Planning for how you will track progress, evaluate success, and make adjustments as needed. Proverbs 15:28 says, "The heart of the righteous weighs its answers, but the mouth of the wicked pours out evil."</li>
         </ol>
 
         <h3>Day 3: Consequences of Lack of Planning for Students</h3>
         <ol>
             <li><strong>Poor Time Management:</strong> Without planning, students may struggle to manage their time effectively, leading to missed deadlines and poor grades. Proverbs 21:5.</li>
-            <li><strong>Increased Stress:</strong> Lack of planning can lead to increased stress and anxiety, negatively impacting mental and physical health. Matthew 6:34.</li>
+            <li><strong>Increased Stress:</strong> Lack of planning can lead to increased stress and anxiety, negatively impacting mental and physical health. Matthew 6:34 says, "Therefore do not worry about tomorrow, for tomorrow will worry itself. Each day has enough trouble of its own."</li>
             <li><strong>Missed Opportunities:</strong> Without planning, students may miss opportunities for growth, learning, and development. Luke 12:48.</li>
-            <li><strong>Poor Goal Achievement:</strong> Lack of planning can hinder students' ability to achieve their goals, leading to disappointment and frustration. Proverbs 16:9.</li>
+            <li><strong>Poor Goal Achievement:</strong> Lack of planning can hinder students' ability to achieve their goals, leading to disappointment and frustration.</li>
             <li><strong>Inefficiency and Waste:</strong> Without planning, students may waste time and resources on non-essential activities. Proverbs 24:27.</li>
         </ol>
 
         <h3>Day 4: Effects and Benefits of Planning</h3>
-        <h4>Benefits:</h4>
+        <h4>Benefits of Planning:</h4>
         <ul>
-            <li>Increased Productivity (Proverbs 21:5).</li>
-            <li>Reduced Stress (Matthew 6:34).</li>
-            <li>Improved Goal Achievement (Proverbs 16:9).</li>
-            <li>Better Time Management (Ephesians 5:16).</li>
+            <li><strong>Increased Productivity:</strong> Planning helps individuals prioritize tasks, manage time effectively, and increase productivity. Proverbs 21:5.</li>
+            <li><strong>Reduced Stress:</strong> Planning helps individuals feel more in control, reducing stress and anxiety. Matthew 6:34.</li>
+            <li><strong>Improved Goal Achievement:</strong> Planning helps individuals set and achieve goals, leading to a sense of accomplishment. Proverbs 16:9.</li>
+            <li><strong>Better Time Management:</strong> Planning helps individuals prioritize tasks and make the most of their time. Ephesians 5:16.</li>
         </ul>
-        <h4>Effects:</h4>
+        <h4>Effects of Planning:</h4>
         <ul>
-            <li>Increased Confidence (Proverbs 24:27).</li>
-            <li>Improved Decision Making (James 1:5).</li>
-            <li>Greater Sense of Control (Jeremiah 29:11).</li>
+            <li><strong>Increased Confidence:</strong> Planning can increase confidence and self-esteem, leading to greater success. Proverbs 24:27.</li>
+            <li><strong>Improved Decision Making:</strong> Planning can improve decision making by considering options and outcomes. James 1:5.</li>
+            <li><strong>Greater Sense of Control:</strong> Planning can give individuals a greater sense of control over their lives. Jeremiah 29:11.</li>
         </ul>
 
         <h3>Day 5: Guided Practice</h3>
-        <p><strong>Step 1: Set Goals (SMART).</strong> Identify what you want to achieve. Specific, Measurable, Achievable, Relevant, and Time-bound.</p>
-        <p><strong>Step 2: Identify Tasks.</strong> Break down your goal into smaller tasks (e.g., Reviewing notes daily, practicing problems, seeking a tutor).</p>
-        <p><strong>Step 3: Create a Schedule.</strong> Plan when and how you will complete each task using a planner or app.</p>
-        <p><strong>Step 4: Track Progress.</strong> Regularly review your progress and make adjustments.</p>
+        <p><strong>Step 1: Set Goals.</strong> Identify what you want to achieve. Make sure your goals are specific, measurable, achievable, relevant, and time-bound (SMART). Example: Improve grades in math by scoring 85% or higher on the next test.</p>
+        <p><strong>Step 2: Identify Tasks.</strong> Break down your goal into smaller tasks. Identify what needs to be done. Example: Reviewing notes daily, practicing problems regularly, seeking help from a tutor.</p>
+        <p><strong>Step 3: Create a Schedule.</strong> Plan out when and how you will complete each task. Use a planner, calendar, or app to stay organized.</p>
+        <p><strong>Step 4: Track Progress.</strong> Regularly review your progress towards your goal. Make adjustments to your plan as needed.</p>
     </section>
 
     <section id="week2">
@@ -256,10 +267,10 @@
         <p><strong>4.4 Social and Moral Development:</strong> Sexual vices can damage a student’s reputation and moral standing. It may lead to loss of respect from peers, teachers, and the community.</p>
 
         <h3>Day 5: Prevention and Control of Sexual Vices</h3>
-        <p><strong>5.1 Role of Parents and Guardians:</strong> Parents should: Communicate openly with their children, Provide moral guidance, Monitor media use, Be positive role models. Strong family values help students make better choices.</p>
-        <p><strong>5.2 Role of Schools and Teachers:</strong> Schools should: Teach moral and civic education, Enforce clear rules and discipline, Provide counselling services, Create a safe learning environment. Teachers play a key role in guiding students.</p>
-        <p><strong>5.3 Student Self-Discipline and Responsibility:</strong> Students must learn to: Make wise decisions, Respect themselves and others, Avoid negative peer influence, Focus on personal growth and academics.</p>
-        <p><strong>6. Role of Society and Government:</strong> organize awareness programs and organize youth programs. enforce policies that promote safe environment.</p>
+        <p><strong>5.1 Role of Parents and Guardians:</strong> Parents should communicate openly with their children, provide moral guidance, monitor media use, and be positive role models. Strong family values help students make better choices.</p>
+        <p><strong>5.2 Role of Schools and Teachers:</strong> Schools should teach moral and civic education, enforce clear rules and discipline, provide counselling services, and create a safe learning environment.</p>
+        <p><strong>5.3 Student Self-Discipline and Responsibility:</strong> Students must learn to make wise decisions, respect themselves and others, avoid negative peer influence, and focus on personal growth and academics.</p>
+        <p><strong>6. Role of Society and Government:</strong> Organizing community awareness programs and enforcing policies that protect students from abuse.</p>
     </section>
 
     <section id="week3">
@@ -267,68 +278,69 @@
         <div class="memory-verse">Text: 1 CORINTHIANS 13:4-7<br>“Love is patient, love is kind. It does not envy, it does not boast, it is not proud... It always protects, always trusts, always hopes, always perseveres.”</div>
         
         <h3>Day 1: Introduction to Infatuation</h3>
-        <p>Infatuation is a strong but usually short-lived emotional attraction to someone. It often begins suddenly and feels very intense at the start. Most times, it is based on physical appearance or imagined qualities, not on truly knowing the person’s character. Because it is not deep, it can fade quickly.</p>
-        <p><strong>Characteristics:</strong> Develops suddenly, strong emotional excitement, excessive admiration, unrealistic expectations, short duration, focuses more on feelings than facts.</p>
+        <p><strong>1. Introduction</strong><br>
+        Infatuation is a strong but usually short-lived emotional attraction to someone. It often begins suddenly and feels very intense at the start. Most times, it is based on physical appearance or imagined qualities, not on truly knowing the person’s character. Because it is not deep, it can fade quickly.</p>
+        <p><strong>2. Characteristics of Infatuation</strong></p>
+        <ul>
+            <li><strong>Develops suddenly:</strong> The feelings appear very fast, sometimes after just a short interaction.</li>
+            <li><strong>Strong emotional excitement:</strong> The person feels overly happy, nervous, or thrilled.</li>
+            <li><strong>Excessive admiration:</strong> The person is seen as “perfect,” even without good reason.</li>
+            <li><strong>Unrealistic expectations:</strong> The individual expects too much without understanding reality.</li>
+            <li><strong>Short duration:</strong> The feelings may not last long.</li>
+            <li><strong>Focuses more on feelings than facts:</strong> Decisions are based on emotions, not careful thinking.</li>
+        </ul>
 
         <h3>Day 2: Causes of Infatuation</h3>
         <ol>
-            <li><strong>Physical Attraction:</strong> drawn to another person’s looks, voice, dressing style, or mannerisms.</li>
-            <li><strong>Loneliness or Emotional Need:</strong> desire for attention, love, or care when feeling emotionally empty.</li>
-            <li><strong>Peer Pressure:</strong> friends encouraging relationships so that one can “fit in.”</li>
-            <li><strong>Media Influence:</strong> Movies and social media portraying love as perfect and exciting fantasies.</li>
-            <li><strong>Lack of Emotional Maturity:</strong> confusing excitement or attention with genuine love.</li>
-            <li><strong>Curiosity or Excitement:</strong> desire to experience something new or thrilling.</li>
+            <li><strong>Physical Attraction:</strong> Happens when someone is drawn to another person’s looks, voice, dressing style, or mannerisms. This Focusing mainly on appearance can create strong feelings without deep understanding.</li>
+            <li><strong>Loneliness or Emotional Need:</strong> When a person feels emotionally empty, they may strongly desire attention, love, or care. This emotional gap can cause them to quickly attach feelings to anyone who shows interest.</li>
+            <li><strong>Peer Pressure:</strong> Sometimes friends encourage relationships so that one can “fit in” or not feel left out. Seeing others in relationships may create pressure to have one too.</li>
+            <li><strong>Media Influence:</strong> Movies, music, and social media often portray love as perfect, exciting, and effortless. These unrealistic images can shape expectations and make people believe infatuation is true love.</li>
+            <li><strong>Lack of Emotional Maturity:</strong> Emotional maturity helps a person understand and control their feelings. When someone lacks this maturity, they may confuse excitement, attraction, or attention with love.</li>
+            <li><strong>Curiosity or Excitement:</strong> The desire to experience something new or thrilling can also cause infatuation. The mystery of a new connection creates intense feelings that fade once the excitement wears off.</li>
         </ol>
 
         <h3>Day 3: Signs of Infatuation</h3>
         <ol>
-            <li><strong>Constantly Thinking About the Person:</strong> replaying conversations, re-imagining moments, and feeling distracted.</li>
-            <li><strong>Ignoring the Person’s Faults:</strong> focusing only on positive qualities while justifying weaknesses or mistakes.</li>
-            <li><strong>Mood Depends on Attention:</strong> happiness or sadness is determined entirely by the other person's behavior.</li>
-            <li><strong>Desire for Quick Closeness:</strong> wanting commitment and deep communication before truly knowing the person.</li>
-            <li><strong>Difficulty Concentrating:</strong> neglecting schoolwork and duties due to being preoccupied.</li>
+            <li><strong>Constantly Thinking About the Person:</strong> A major sign of infatuation is when someone thinks about a particular person almost all the time. The person may replay conversations, imagine future moments, or feel distracted.</li>
+            <li><strong>Ignoring the Person’s Faults:</strong> When someone is infatuated, they tend to focus only on positive qualities. Any weaknesses, bad habits, or mistakes are either ignored or justified.</li>
+            <li><strong>Mood Depends on Attention:</strong> emotions rise and fall based on how the other person behaves. A kind message brings happiness; silence or lack of attention causes sadness or worry.</li>
+            <li><strong>Desire for Quick Closeness:</strong> Infatuation often creates a strong desire to become emotionally close very quickly, wanting deep commitment before truly knowing the other person well.</li>
+            <li><strong>Difficulty Concentrating:</strong> Because thoughts are focused on the person, concentration on schoolwork, chores, or responsibilities may reduce.</li>
         </ol>
 
         <h3>Day 4: Infatuation vs. Love</h3>
-              <li><strong>Incest:</strong> Sexual activities between family members. (Leviticus 18:7-18)</li>
-            <li><strong>Paedophilia:</strong> Perverted sexual attraction towards children.</li>
-            <li><strong>Bestiality:</strong> Sexual affair with an animal. (Leviticus 18:23)</li>
-            <li><strong>Rape:</strong> Forceful sexual intercourse with an unwilling partner. (2 Samuel 13:10-14)</li>
-            <li><strong>Pornography:</strong> Explicit depiction of sexual subject matter with lustful intent. It is addictive and destructive.</li>
-            <li><strong>Masturbation and use of sex toys</strong></li>
-            <li><strong>Cyber-sex/Phone-sex:</strong> Sex-oriented conversations over the internet or phone.</li>
-        </ul>
+        <table>
+            <tr>
+                <th>Feature</th>
+                <th>Infatuation</th>
+                <th>Love</th>
+            </tr>
+            <tr>
+                <td><strong>Duration</strong></td>
+                <td>Short-term; fades quickly.</td>
+                <td>Long-term; grows over time.</td>
+            </tr>
+            <tr>
+                <td><strong>Driver</strong></td>
+                <td>Driven by Emotions (excitement).</td>
+                <td>Driven by Commitment (loyalty).</td>
+            </tr>
+            <tr>
+                <td><strong>Focus</strong></td>
+                <td>Self-centered; personal happiness.</td>
+                <td>Selfless; focuses on other's well-being.</td>
+            </tr>
+            <tr>
+                <td><strong>Perception</strong></td>
+                <td>Idealizes the person; ignores faults.</td>
+                <td>Accepts faults; willing to grow together.</td>
+            </tr>
+        </table>
 
-        <h3>Day 2: Forms of Sexual Vices Among Students</h3>
-        <ul>
-            <li><strong>2.1 Premature Sexual Activities:</strong> This refers to students engaging in sexual behaviours at an early age before they are emotionally, mentally, or physically mature. Such actions can lead to distraction from studies, emotional stress, and poor decision-making.</li>
-            <li><strong>2.2 Exposure to Inappropriate Media:</strong> Many students are exposed to inappropriate content through phones, the internet, movies, or social media. This exposure can influence their thinking, behaviour, and attitude toward relationships, leading to imitation of harmful actions.</li>
-            <li><strong>2.3 Sexual Harassment and Abuse:</strong> Sexual harassment involves unwanted sexual comments, gestures, or actions, while abuse includes forcing or manipulating someone into sexual acts. These behaviours violate personal rights and can cause long-term emotional and psychological harm to victims.</li>
-            <li><strong>2.4 Peer-Influenced Risky Behaviours:</strong> Some students engage in sexual vices due to pressure from friends who encourage them to act in certain ways to “fit in” or appear mature. Peer pressure often leads students to make choices they would not make independently.</li>
-        </ul>
-
-        <h3>Day 3: Causes of Sexual Vices Among Students</h3>
-        <ul>
-            <li><strong>3.1 Peer Pressure:</strong> Students often feel the need to belong. When peers promote immoral behaviours, some students follow along to gain acceptance, even when they know such actions are wrong.</li>
-            <li><strong>3.2 Lack of Proper Guidance and Supervision:</strong> When parents, teachers, or guardians fail to provide adequate guidance, students may lack moral direction. Poor supervision gives room for negative behaviours to grow unnoticed.</li>
-            <li><strong>3.3 Influence of Social Media and Technology:</strong> Easy access to smartphones and the internet exposes students to inappropriate ideas and behaviours. Without proper monitoring, technology can negatively shape students’ values and actions.</li>
-            <li><strong>3.4 Poor Moral and Value Education:</strong> A weak foundation in moral, religious, or value-based education can make students vulnerable to sexual vices. When students are not taught self-control and respect, they may engage in irresponsible behaviours.</li>
-        </ul>
-
-        <h3>Day 4: Effects of Sexual Vices on Students</h3>
-        <ul>
-            <li><strong>4.1 Academic Performance:</strong> Sexual vices often distract students from their studies. Loss of concentration, absenteeism, and lack of interest in schoolwork can result in poor academic achievement.</li>
-            <li><strong>4.2 Emotional and Psychological Well-being:</strong> Students involved in sexual vices may experience guilt, fear, anxiety, or emotional confusion. Victims of abuse may suffer low self-esteem and trauma.</li>
-            <li><strong>4.3 Health and Safety Concerns:</strong> Engaging in unsafe behaviours can expose students to serious health risks and emotional harm, which can affect their overall development.</li>
-            <li><strong>4.4 Social and Moral Development:</strong> Sexual vices can damage a student’s reputation and moral standing. It may lead to loss of respect from peers, teachers, and the community.</li>
-        </ul>
-
-        <h3>Day 5: Prevention and Control of Sexual Vices</h3>
-        <p><strong>5.1 Role of Parents and Guardians:</strong> Parents should communicate openly with their children, provide moral guidance, and monitor media use. Strong family values help students make better choices.</p>
-        <p><strong>5.2 Role of Schools and Teachers:</strong> Schools should teach moral and civic education, enforce clear rules and discipline, and provide counselling services.</p>
-        <p><strong>5.3 Student Self-Discipline and Responsibility:</strong> Students must learn to make wise decisions, respect themselves and others, avoid negative peer influence, and focus on personal growth and academics.</p>
-        <p><strong>6. Role of Society and Government:</strong> Organizing community awareness programs and enforcing school policies that protect students from abuse.</p>
-        <p><strong>Conclusion:</strong> Sexual vices among students pose serious challenges to education, morality, and personal development. Addressing this issue requires collective effort from parents, schools, society, and the students themselves.</p>
+        <h3>Day 5: Effects and Management</h3>
+        <p><strong>1. Effects of Infatuation:</strong> Positive effects include temporary happiness or motivation. Negative effects include poor academic performance, emotional instability, disappointment, and poor decision-making.</p>
+        <p><strong>2. Management:</strong> Practicing self-control, focusing on academics and goals, seeking guidance from trusted adults, and building healthy friendships.</p>
     </section>
 
     <section id="week4">
@@ -336,265 +348,251 @@
         <div class="memory-verse">Memory verse: “Cast all your anxiety on him because he cares for you.” – 1 Peter 5:7</div>
         
         <h3>Day 1: Introduction and Definition</h3>
-        <div class="diagram-placeholder">[Image of a diagram showing common physical and emotional symptoms of stress in students]</div>
-        <p><strong>1.1 Introduction</strong><br>
-        Stress is a common experience among students due to academic demands, family expectations, and social challenges. Balancing schoolwork, relationships, and personal responsibilities can affect health and performance.</p>
-        <p><strong>1.2 Definition of Stress</strong><br>
-        Stress is the physical, emotional, or mental pressure a person feels when faced with demanding or challenging situations.</p>
-        <p><strong>1.3 Types of Stress:</strong></p>
+        <p><strong>1.1 Introduction:</strong> Stress is a common experience among students due to academic demands, family expectations, and social challenges. Balancing schoolwork, relationships, and personal responsibilities can affect health and performance.</p>
+        <p><strong>1.2 Definition:</strong> Stress is the physical, emotional, or mental pressure a person feels when faced with demanding or challenging situations.</p>
+        <p><strong>1.3 Types of Stress Among Students:</strong></p>
         <ul>
-            <li><strong>1. Academic Stress:</strong> Related to schoolwork. Causes: Exams, heavy homework, fear of failure, competition. Effects: Anxiety, lack of concentration.</li>
-            <li><strong>2. Emotional Stress:</strong> Strong feelings affecting mental state. Causes: Fear of disappointment, low self-esteem, feeling misunderstood. Effects: Mood changes, irritability.</li>
-            <li><strong>3. Social Stress:</strong> Related to interactions with peers. Causes: Peer pressure, bullying, desire to fit in. Effects: Loneliness, struggling with confidence.</li>
-            <li><strong>4. Family-Related Stress:</strong> Comes from issues at home. Causes: Conflicts, financial difficulties, lack of parental attention. Effects: Distraction from studies.</li>
-            <li><strong>5. Physical Stress:</strong> Affects the body. Causes: Lack of sleep, poor diet, illness or fatigue. Effects: Tiredness, headaches.</li>
+            <li><strong>1. Academic Stress:</strong> Related to exams, heavy homework, and fear of failing.</li>
+            <li><strong>2. Emotional Stress:</strong> Fear of disappointment, low self-esteem, or feeling unloved.</li>
+            <li><strong>3. Social Stress:</strong> Peer pressure, bullying, difficulty making friends.</li>
+            <li><strong>4. Family-Related Stress:</strong> conflicts or misunderstanding, financial difficulties.</li>
+            <li><strong>5. Physical Stress:</strong> Lack of sleep, poor diet, or illness.</li>
         </ul>
 
         <h3>Day 2: Sources of Stress Among Students</h3>
-        <p>Students experience stress from many areas of their daily lives. These sources can be academic, personal, social, or environmental.</p>
         <ul>
-            <li><strong>2.1 Academic Pressure:</strong> Pressure to perform well in tests, exams, and assignments. Competition and high expectations cause anxiety.</li>
-            <li><strong>2.2 Family and Home-Related Factors:</strong> Family conflicts, financial difficulties, or lack of support carry worries into school.</li>
-            <li><strong>2.3 Peer Pressure and Social Relationships:</strong> The desire to avoid rejection or meeting social expectations causes low self-esteem.</li>
-            <li><strong>2.4 Financial Challenges:</strong> Worry about school fees, textbooks, or comparing themselves with others.</li>
-            <li><strong>2.5 Time Management Issues:</strong> Procrastination causes tasks to pile up, leading to rushing, panic, and exhaustion.</li>
-            <li><strong>2.6 Personal Expectations and Self-Pressure:</strong> Placing too much pressure on oneself to be perfect.</li>
+            <li><strong>2.1 Academic Pressure:</strong> expected to perform well in tests, fear of failure, tight deadlines.</li>
+            <li><strong>2.2 Family Factors:</strong> Problems at home distracting from studies; financial difficulties.</li>
+            <li><strong>2.3 Peer Pressure:</strong> The desire to fit in or avoid rejection; fear of bullying.</li>
+            <li><strong>2.4 Financial Challenges:</strong> Worry about fees, textbooks, or comparing with classmates.</li>
+            <li><strong>2.5 Time Management Issues:</strong> Procrastination leading to panic and exhaustion.</li>
+            <li><strong>2.6 Personal Expectations:</strong> internal self-pressure to be perfect.</li>
         </ul>
 
         <h3>Day 3: Signs and Effects of Stress on Students</h3>
         <ul>
-            <li><strong>3.1 Physical Signs:</strong> Headaches, tiredness, body pains, poor sleep, or frequent illness.</li>
-            <li><strong>3.2 Emotional Effects:</strong> Feeling anxious, sad, angry, or overwhelmed. Prolonged stress affects confidence.</li>
-            <li><strong>3.3 Behavioural Effects:</strong> Irritability, withdrawal from friends, or poor study habits.</li>
-            <li><strong>3.4 Effects on Academic Performance:</strong> Reduced focus, memory, and motivation, leading to poor grades.</li>
+            <li><strong>3.1 Physical Signs:</strong> Headaches, tiredness, body pains, poor sleep.</li>
+            <li><strong>3.2 Emotional Effects:</strong> Feeling anxious, sad, angry, or overwhelmed.</li>
+            <li><strong>3.3 Behavioural Effects:</strong> Irritability, withdrawal from friends, poor study habits.</li>
+            <li><strong>3.4 Academic Performance:</strong> Reduced focus, memory, and lower grades.</li>
         </ul>
 
         <h3>Day 4: Common Stress Management Techniques</h3>
-        <div class="diagram-placeholder">[Image of a diagram showing the box breathing technique steps for stress relief]</div>
         <ul>
-            <li><strong>4.1 Time Management and Planning:</strong> Creating a timetable improves productivity and reduces last-minute pressure.</li>
-            <li><strong>4.2 Healthy Study Habits:</strong> Studying regularly and taking short breaks to avoid cramming.</li>
-            <li><strong>4.3 Relaxation and Breathing Techniques:</strong> Deep breathing or listening to calm music helps the mind relax.</li>
-            <li><strong>4.4 Physical Exercise and Recreation:</strong> Helps release tension and improve mood.</li>
-            <li><strong>4.5 Proper Rest and Sleep:</strong> Adequate sleep helps students stay alert and emotionally balanced.</li>
+            <li><strong>4.1 Time Management:</strong> Creating a timetable to set priorities.</li>
+            <li><strong>4.2 Healthy Study Habits:</strong> Studying regularly to avoid last-minute cramming.</li>
+            <li><strong>4.3 Relaxation:</strong> Deep breathing, quiet reflection, or calm music.</li>
+            <li><strong>4.4 Physical Exercise:</strong> Sports release tension and improve mood.</li>
+            <li><strong>4.5 Proper Rest:</strong> Adequate sleep (7-9 hours) helps emotional balance.</li>
         </ul>
 
-        <h3>Day 5: Role of Stakeholders</h3>
-        <p><strong>5. Role of Students:</strong> Practice self-awareness, recognize triggers, and set realistic goals.</p>
-        <p><strong>6. Role of Parents:</strong> Provide emotional support, encouragement, and a conducive home environment.</p>
-        <p><strong>7. Role of Schools:</strong> Provide guidance and counselling services and create a supportive learning atmosphere.</p>
-        <p><strong>Conclusion:</strong> Stress is a normal part of student life, but management is key to health and academic success.</p>
+        <h3>Day 5: Role of Students and Stakeholders</h3>
+        <p>Students must learn self-awareness. Parents should provide emotional encouragement and a conducive home environment. Schools provide guidance and counselling services. Stress management is key to health and success.</p>
     </section>
 
     <section id="week5">
         <h2>WEEK 5: EXAMINATION</h2>
         <h3>Day 1: Meaning and Ethics</h3>
-        <p><strong>Meaning:</strong> Examination is a formal test of a person’s knowledge or proficiency in a subject or skill. It is an opportunity for you to know how well you understand what you have been taught. (1 Thessalonians 5:21)</p>
-        <p><strong>Maintaining Ethical Standards:</strong> Students are expected to be honest and ethical in their academic work. Academic dishonesty is defined as an intentional act of deception.</p>
-        <p><strong>Examples of academic dishonesty:</strong></p>
-        <ul>
-            <li>Cheating: use of unauthorized materials.</li>
-            <li>Fabrication: falsification or invention of information.</li>
-            <li>Assisting: helping another commit academic dishonesty.</li>
-            <li>Tampering: altering evaluation instruments.</li>
-            <li>Plagiarism: representing another's ideas as your own.</li>
-        </ul>
-        <p><strong>Action point:</strong> Decide to maintain ethical standards throughout the examination.</p>
-
+        <p>Examination is a formal test of a person’s knowledge or proficiency. It is an opportunity to know how well you understand. 1 Thessalonians 5:21 says "examine everything carefully". Maintain ethical standards. Academic dishonesty includes cheating, fabrication, assisting others in deception, tampering, and plagiarism.</p>
+        
         <h3>Day 2: In the Exam Room</h3>
-        <p>1 Thessalonians 5:21 — “But examine everything carefully; hold fast to that which is good”.</p>
-        <ul>
-            <li><strong>Read Instructions Carefully:</strong> Check the rubric before looking at questions.</li>
-            <li><strong>Work Out Timing:</strong> Divide time based on marks. Allow time for planning and checking.</li>
-            <li><strong>Read Questions Carefully:</strong> Read the paper once before choosing questions.</li>
-            <li><strong>Choose Best Questions:</strong> select those for which you have relevant knowledge.</li>
-            <li><strong>Decide Question Order:</strong> Start with topics you know best to build confidence.</li>
-        </ul>
+        <ol>
+            <li>Read instructions carefully. Check rubric for compulsory questions.</li>
+            <li>Work out the timing. Divide time by questions. Allow for planning and checking.</li>
+            <li>Read the questions carefully. Read through the paper once before choosing.</li>
+            <li>Choose your best questions first to build confident momentum.</li>
+            <li>Decide on question order wisely.</li>
+        </ol>
 
         <h3>Day 3: How to Answer Multiple Choice Questions</h3>
         <ol>
-            <li>Read the entire question before looking at answer options.</li>
+            <li>Read the entire question before glancing at answer options.</li>
             <li>Answer it in your mind first to prevent being swayed by distractors.</li>
-            <li>Use the process of elimination to cross out incorrect answers.</li>
+            <li>Use the process of elimination to cross out known incorrect answers.</li>
             <li>Select the BEST answer requested, not just one that seems correct.</li>
-            <li>Keep an eye on the clock to manage your test time.</li>
+            <li>Watch for absolute words like "always", "never", "must".</li>
+            <li>Manage your time and keep an eye on the clock.</li>
         </ol>
 
         <h3>Day 4: Attempt Each Question Correctly</h3>
-        <p>Colossians 3:23 — “Whatever you do, work at it with all your heart, as working for the Lord...”</p>
+        <p>Colossians 3:23 — “Whatever you do, work at it with all your heart...”</p>
         <ul>
-            <li><strong>Explain:</strong> Give definition, examples, and drawings.</li>
-            <li><strong>State:</strong> Write in a complete sentence.</li>
+            <li><strong>Explain:</strong> Give definition, examples, and talk more on what you know.</li>
+            <li><strong>State:</strong> Write in a complete sentence, not just a word.</li>
             <li><strong>Mention or List:</strong> Just list without need for explanation.</li>
         </ul>
+        <p>Cross-check every answer before submitting. Ensure you have done your best.</p>
 
         <h3>Day 5: Preparing for Examination</h3>
-        <p>Ezekiel 38:7 — “Be prepared, and prepare yourself...” Preparation is readiness.</p>
-        <ol>
-            <li><strong>Practice:</strong> Practice past questions to achieve perfection.</li>
-            <li><strong>Materials:</strong> Get pens, rulers, calculators ready; don't depend on others.</li>
-            <li><strong>Personal Revision:</strong> Cover all that you have been taught.</li>
-            <li><strong>Rest:</strong> Don't stay awake all night; this causes blanking out.</li>
-            <li><strong>Pray:</strong> Prayer helps the Holy Spirit remind you of what you read.</li>
-        </ol>
+        <p>Preparation means readiness. Practice makes perfect (past questions). Get all materials (pens, rulers, math sets, calculators) ready beforehand. Cover all taught topics in personal revision. Do not stay awake all through the night reading; rest prevents blanking out. Prayer can help as the Holy Spirit reminds you of what you have read.</p>
     </section>
 
     <section id="week7">
-        <h2>WEEK 7: ACTIONS AND EFFECTS</h2>
-        <h3>Day 1: Seed and Harvest</h3>
-        <div class="memory-verse">Memory verse: Galatians 6:7 "Be not deceived; God is not mocked: for whatsoever a man soweth, that shall he also reap."</div>
-        <p>All our actions have consequences. They have results though, sometimes, they may not be evident immediately. The consequences will manifest at the appropriate time. Positive or negative, the principle is clear: whatsoever a man sows, that he will reap (Genesis 8:22).</p>
+        <h2>WEEK 7: BULLYING</h2>
+        <div class="memory-verse">Memory verse: "Be kind and compassionate to one another, forgiving each other, just as in Christ God forgave you." – Ephesians 4:32</div>
+        
+        <h3>Day 1: Understanding Bullying</h3>
+        <p>Bullying is unwanted, aggressive behavior that involves a real or perceived power imbalance. The behavior is repeated over time.</p>
+        <h4>The Four Types of Bullying:</h4>
         <ul>
-            <li><strong>Joab:</strong> Murdered commanders in peacetime. Though it seemed he got away with it, Solomon visited the consequences on him and he was killed (1 Kings 2:5-34).</li>
-            <li><strong>Barzillai:</strong> Showed kindness to David during rebellion. His children reaped positive rewards and ate at the King’s table (1 Kings 2:7).</li>
-            <li><strong>Shimei:</strong> Cursed David. Though initially forgiven, Solomon eventually brought his gray hair to the grave with blood after he violated specific conditions (1 Kings 2:8-9).</li>
+            <li><strong>Verbal:</strong> Name-calling, teasing, and threatening.</li>
+            <li><strong>Social (Relational):</strong> Spreading rumors, purposeful exclusion, or public embarrassment.</li>
+            <li><strong>Physical:</strong> Hitting, kicking, tripping, or damaging property.</li>
+            <li><strong>Cyberbullying:</strong> Harassment via the internet, social media, or texts.</li>
+        </ul>
+        <p>Bullying is an intentional choice to hurt someone. It is never the victim's fault.</p>
+
+        <h3>Day 2: The Effects of Bullying</h3>
+        <p>Bullying leaves "invisible wounds" that can hurt for years. It affects the target, the bully, and the bystander.</p>
+        <ul>
+            <li><strong>For the Target:</strong> leads to low self-esteem, anxiety, depression, and physical symptoms like headaches.</li>
+            <li><strong>For the Bully:</strong> higher risk for substance abuse and legal trouble as adults.</li>
+            <li><strong>For the Bystander:</strong> often feel guilty or afraid that they might be the next target.</li>
         </ul>
 
-        <h3>Day 2: Avoid Unwholesome Actions</h3>
-        <p>Unwholesome actions stem from greed, hatred, and delusion. Such actions include taking life, stealing, lying, sowing discord, and idle gossip. Once you take an action, you set in motion a process that will be incomplete without the consequences.</p>
+        <h3>Day 3: Why Do People Bully?</h3>
+        <p>Understanding the bully doesn't excuse them, but helps us see that hurt people often hurt others.</p>
         <ul>
-            <li><strong>Adam & Eve:</strong> Disobeyed God. Result: Spiritual death and fall of man.</li>
-            <li><strong>Cain:</strong> Killed Abel. Result: Cursed and became a vagabond.</li>
-            <li><strong>Achan:</strong> Stole set-apart things secretly. Result: Stoned to death publicly.</li>
-            <li><strong>Ananias & Sapphira:</strong> Lied to the Holy Spirit. Result: Died the same day.</li>
-        </ul>
-        <p>The wages of sin is death (Romans 6:23). Repent and ask for mercy to deliver you from past negative consequences.</p>
-
-        <h3>Day 3: The Consequences of Disrespect</h3>
-        <p>Disrespect is a failure to honor God, authority, and fellow human beings. Disrupting the divine order invites judgment and spiritual consequences.</p>
-        <ul>
-            <li><strong>Towards God:</strong> Korah's rebellion resulted in being swallowed by the earth (Numbers 16).</li>
-            <li><strong>Towards Parents:</strong> Exodus 20:12 commands honor; Deuteronomy 21:18-21 shows severe community consequences for rebellious sons.</li>
-            <li><strong>Towards Authority:</strong> Romans 13 states resisting authority is opposing what God has set in place.</li>
-            <li><strong>Among Peers:</strong> Proverbs 11:12 shows that contempt for a neighbor lacks judgment and leads to social discord.</li>
+            <li><strong>Mask of Power:</strong> Acting out due to feeling powerless at home or having low confidence.</li>
+            <li><strong>Peer Pressure:</strong> Bullying to maintain a high social status or "fit in."</li>
+            <li><strong>Lack of Empathy:</strong> Failing to recognize or care about the feelings of others.</li>
         </ul>
 
-        <h3>Day 4: The Power in Your Action</h3>
-        <p>Acts 3:1-7. Power is the ability to act; Action is doing something to achieve goals. <strong>Action speaks louder than voice.</strong></p>
-        <p>The only way to create change is to take the first step. Action changes behavior, not the other way around. Nehemiah rebuilt the broken walls by leading and equpping others, not by mere wishful thinking. Graveyards are full of unutilized potential; rising beyond inaction is required to be what God wants you to be (Genesis 1:28).</p>
+        <h3>Day 4: How to Handle Being Bullied</h3>
+        <ul>
+            <li><strong>Don't React:</strong> Bullies want to see you upset. Keep a calm, neutral face.</li>
+            <li><strong>The Power of "Stop":</strong> firm, clear voice, then walk away.</li>
+            <li><strong>Don't Retaliate:</strong> Fighting back often escalates violence.</li>
+            <li><strong>Reporting vs. Snitching:</strong> reporting is done to keep people safe; snitching is done to get people in trouble.</li>
+        </ul>
 
-        <h3>Day 5: Reflection</h3>
-        <div class="reflection-box"><strong>Reflection:</strong> Decide to take positive actions today. Your future achievement depends on the seeds you sow now.</div>
+        <h3>Day 5: Being an "Upstander"</h3>
+        <p>A bystander watches; an <strong>upstander</strong> takes action to help. Speak up if safe, distract the bully, and support the victim later. A community is only as safe as its members make it. Sign a "Peace Pledge" to look out for one another.</p>
+        <div class="reflection-box"><strong>The Upstander Pledge:</strong> I will choose to stand up for others, report incidents to adults, and treat every classmate with dignity.</div>
     </section>
 
     <section id="week8">
         <h2>WEEK 8: HANDLING CHALLENGES</h2>
         <h3>Day 1: Introduction to Challenges</h3>
-        <p>A challenge is a difficulty that prevents reaching a goal. Jesus confirms that with Him, we can overcome (John 16:33). Challenges are allowed by God to develop patience (James 1:2-4). <strong>Fanny J. Crosby</strong> became blind at six weeks old but through faith became a renowned poet and hymn writer.</p>
+        <p>A challenge is a difficulty preventing reaching a goal. Jesus confirms that with Him we overcome (John 16:33). Trials develop patience (James 1:2-4). Fanny J. Crosby became blind at six weeks old but became a renowned poet through faith.</p>
         <h4>Common Causes of Behavioural Challenges:</h4>
-        <ul>
-            <li>Communication Difficulties (Developmental or language barriers).</li>
-            <li>Unmet Needs (Hunger, Fatigue, Sensory overload).</li>
-            <li>Lack of Social Skills (Difficulty understanding social cues).</li>
-            <li>Emotional Regulation (Anxiety, Depression).</li>
-            <li>Environmental Factors (Chaotic or unstimulating settings).</li>
-        </ul>
+        <ol>
+            <li>Communication Difficulties</li>
+            <li>Unmet Needs (Hunger, Fatigue)</li>
+            <li>Lack of Social Skills</li>
+            <li>Emotional Regulation (Anxiety, Depression)</li>
+            <li>Environmental Factors (Chaotic, loud settings)</li>
+            <li>Learning Challenges (Brain injury)</li>
+            <li>Health Related Issues</li>
+            <li>Attention Seeking</li>
+            <li>Modelling Behaviour (Imitating others)</li>
+            <li>Reinforcement (Behaviors repeated if rewarded)</li>
+            <li>Lifestyle Factors (Sleep, Diet)</li>
+            <li>Social Environment (Bullying, trouble at school)</li>
+        </ol>
 
         <h3>Day 2: Challenges Faced by Teenagers</h3>
-        <p>Teens face overwhelming physical, emotional, and hormonal changes. 10 common problems include:</p>
         <ol>
-            <li>Peer Pressure (fitting in).</li>
-            <li>Anxiety and Depression (societal and parental pressure).</li>
-            <li>Teen Pregnancy (short-term joy leading to long-term complication).</li>
-            <li>Teen Suicide (impulsive solving of problems).</li>
-            <li>Bullying (including cyberbullying).</li>
-            <li>Drug and Substance Abuse.</li>
-            <li>Identity Crisis (search for identity vs imitation).</li>
-            <li>Body Image Issues (unrealistic social media standards).</li>
-            <li>Social Media Addiction (withdrawal and isolated feelings).</li>
-            <li>No Adult Supervision (lack of role models).</li>
+            <li>Peer Pressure</li>
+            <li>Anxiety and Depression</li>
+            <li>Teen Pregnancy</li>
+            <li>Teen Suicide</li>
+            <li>Bullying (and cyberbullying)</li>
+            <li>Drug and Substance Abuse</li>
+            <li>Identity Crisis</li>
+            <li>Body Image Issues</li>
+            <li>Social Media Addiction</li>
+            <li>No Adult Supervision</li>
         </ol>
 
         <h3>Day 3: Balancing Academics and Social Life</h3>
-        <p>Striking a balance is essential. Imbalance leads to academic decline, burnout, or social isolation. <strong>Tips for Balance:</strong> Create a schedule, prioritize tasks, set clear goals, and learn to say "No." Use social time as a reward for completing academic tasks. Practice effective communication with family about your needs.</p>
+        <p>Imbalance leads to academic decline, burnout, or social isolation. <strong>Practical Tips:</strong> Create a schedule, prioritize tasks, set clear goals, and learn to say "No" to overcommitment. Use social time as a reward for completing study tasks.</p>
 
         <h3>Day 4: Spirituality and Academics</h3>
-        <p>Spirituality provides a grounding force amidst the school hustle. Aligning academic ambitions with spiritual values adds a deeper sense of purpose to studies. Surrounding yourself with a supportive community and regular reflection ensures efforts align with spiritual aspirations.</p>
+        <p>Spirituality provides a grounding force. Aligning ambitions with spiritual values adds a deeper sense of purpose to studies. Surround yourself with a supportive community and use regular reflection to ensure educational efforts align with spiritual aspirations.</p>
 
         <h3>Day 5: Biblical View on Overcoming</h3>
         <ul>
-            <li><strong>Anger:</strong> Control it (Ephesians 4:26-27). Love is the mightiest weapon.</li>
-            <li><strong>Anxiety:</strong> Cast burdens on the Lord (Psalm 55:22). Take breaks (Mark 6:31).</li>
-            <li><strong>Fear:</strong> God is our refuge (Psalm 46:1-2). Fear must not stop you from doing right.</li>
-            <li><strong>Grief:</strong> Don't deny loss (Jesus wept). Recognizing pain is healthy.</li>
-            <li><strong>Overcoming:</strong> Look unto Jesus (Hebrews 12:1-4), focus on your goal, and seek help when needed.</li>
+            <li><strong>Anger:</strong> Control it (Ephesians 4:26-27).</li>
+            <li><strong>Anxiety:</strong> Cast burdens on God (Psalm 55:22). Take time to rest (Mark 6:31).</li>
+            <li><strong>Fear:</strong> God is our refuge (Psalm 46:1-2). Fear presents an opportunity to develop faith.</li>
+            <li><strong>Grief:</strong> Even Jesus wept (John 11:35). find healing through service.</li>
         </ul>
+        <p><strong>Overcoming challenges:</strong> Look unto Jesus, Focus on goal, Seek help, Endure pain, and Depend on God's grace.</p>
     </section>
 
     <section id="week9">
         <h2>WEEK 9: SOCIAL ETIQUETTE</h2>
         <h3>Day 1: Introduction to Social Etiquette</h3>
-        <p><strong>Definition:</strong> Social etiquette refers to the rules and guidelines governing human behavior in social interactions, ensuring respect, consideration, and kindness.</p>
-        <ul>
-            <li>Greetings: Greet with a smile and interest (Matthew 22:37-40).</li>
-            <li>Active Listening: Listen with empathy (James 1:19).</li>
-            <li>Respectful Communication: Avoid hurtful language (Ephesians 4:32).</li>
-            <li>Gratitude: Express appreciation (1 Thessalonians 5:18).</li>
-        </ul>
+        <p><strong>Definition:</strong> Social etiquette refers to the rules governing behavior to ensure respect and kindness. Examples: Greetings with a smile (Matthew 22:39), Active Listening (James 1:19), Respectful Communication, and Gratitude (1 Thess 5:18).</p>
 
         <h3>Day 2: Types of Social Etiquette</h3>
         <ol>
-            <li><strong>Table Manners:</strong> Respect during meals (Proverbs 15:17).</li>
-            <li><strong>Digital Etiquette:</strong> Mindfulness of tone in online interactions (Matthew 12:36-37).</li>
-            <li><strong>Workplace Etiquette:</strong> Professionalism and punctuality (Colossians 3:23-24).</li>
-            <li><strong>Greeting Etiquette:</strong> Using appropriate titles and last names.</li>
-            <li><strong>Dress Code:</strong> Modesty and propriety (1 Timothy 2:9-10).</li>
+            <li>Table Manners: utensils correctly (Proverbs 15:17).</li>
+            <li>Communication: active listening and thoughtful responding.</li>
+            <li>Digital Etiquette: being accountable for online words (Matthew 12:36).</li>
+            <li>Workplace: punctuality and professionalism.</li>
+            <li>Social Media: avoiding online drama.</li>
+            <li>Greeting Etiquette: eye contact and using titles.</li>
+            <li>Dress Code: modesty and propriety.</li>
         </ol>
 
         <h3>Day 3: Application in School</h3>
-        <ul>
-            <li>Greeting teachers and staff with respect.</li>
-            <li>Classroom behavior: Arriving on time and staying focused.</li>
-            <li>Interactions with peers: Being inclusive and avoiding teasing.</li>
-            <li>Respect for school property: Keeping the environment clean.</li>
-            <li>Digital Citizenship: Avoiding cyberbullying.</li>
-        </ul>
+        <p>Greet teachers respectfully. Use "Please" and "Thank you". Listen attentively in class discussions. Behave responsibly. Treat peers with empathy. Respect school property and keep the environment clean. Practice good digital citizenship by reporting cyberbullying.</p>
 
         <h3>Day 4: Benefits of Social Etiquette</h3>
         <ol>
             <li>Respect and Admiration (1 Peter 2:12).</li>
             <li>Improved Relationships (Proverbs 17:17).</li>
-            <li>Increased Confidence (1 Corinthians 16:13).</li>
-            <li>Better Communication (Ephesians 4:29).</li>
+            <li>Increased Confidence.</li>
+            <li>Better Communication and avoidance of conflicts.</li>
             <li>Professional Advancement.</li>
         </ol>
 
         <h3>Day 5: Practical Etiquette</h3>
         <ul>
-            <li>Returning Borrowed Money: promptly and in good condition (Psalm 37:21).</li>
-            <li>Sitting Well: Ladies sitting with dignity and modesty.</li>
-            <li>Not Jumping Queue: Respecting the order of others (Proverbs 14:29).</li>
-            <li>Avoid Shouting: Speak clearly and respectfully during calls (Proverbs 15:4).</li>
+            <li>Returning Borrowed Money promptly (Psalm 37:21).</li>
+            <li>Sitting Well: Ladies sit with dignity and modesty.</li>
+            <li>Not Jumping Queue: respecting the order of others (Proverbs 14:29).</li>
+            <li>Avoid Shouting: speak clearly during phone calls (Proverbs 15:4).</li>
+            <li>Good Table Manners: wait for everyone to receive food before eating.</li>
         </ul>
     </section>
 
     <section id="week10">
-        <h2>WEEK 10: EXAMINATION PART 2 / CRITICAL THINKING</h2>
+        <h2>WEEK 10: EXAMINATION PART 2</h2>
         <h3>Day 1: Examination Culture</h3>
-        <p>Bible Text: 1 Corinthians 14:40 — “Let all things be done decently and in order.”</p>
-        <ul>
-            <li>Obey invigilators.</li>
+        <p>1 Corinthians 14:40 — “Let all things be done decently and in order.” Listed Conduct:</p>
+        <ol>
+            <li>Conduct yourself in an orderly manner.</li>
+            <li>No examination malpractice or attempts.</li>
             <li>Stick strictly to sitting arrangements.</li>
-            <li>No GSM phones or irregular assistance (sign language).</li>
-            <li>Observe silence. Raising hands is the only way to attract attention.</li>
-            <li>No eating or sleeping in the hall.</li>
-        </ul>
+            <li>No GSM phones in the hall.</li>
+            <li>No communication between candidates.</li>
+            <li>Raising hands is the only way to attract attention.</li>
+            <li>Scrap paper is not permitted; rough work in booklets.</li>
+            <li>Only approved materials (pens, math sets) inside.</li>
+            <li>No sign language or gestures.</li>
+            <li>No eating in the hall.</li>
+            <li>No sleeping or looking around.</li>
+        </ol>
 
         <h3>Day 2: Don’t Relent, Remain Focused</h3>
-        <p>1 Corinthians 9:24 — “Know ye not that they which run in a race run all, but one receiveth the prize? So run, that ye may obtain.” Give each paper your best effort without cheating to get the highest mark attainable. Press on toward the goal (Philippians 3:14).</p>
+        <p>1 Corinthians 9:24 — “So run, that ye may obtain.” Always give each paper your best effort. Press on toward the end of the race like Paul (Philippians 3:14).</p>
 
         <h3>Day 3: Critical Thinking Part 1</h3>
-        <p>Proverbs 23:7 — “As a man thinketh in his heart, so is he”.</p>
-        <p>Critical thinking is the ability to think clearly and rationally. It is about being an active learner rather than a passive recipient. Critical thinkers question assumptions rather than accepting them at face value. It involves observation, analysis, reflection, and decision making.</p>
+        <p>Proverbs 23:7 — “As a man thinketh in his heart, so is he”. Answers reflect your understanding. Critical thinking is the ability to think clearly and rationally. skills: understand links, identify errors, approach problems systematically.</p>
 
         <h3>Day 4: Critical Thinking Part 2</h3>
-        <p>Philippians 4:8 — “Think about such things”. Process: Ask yourself Who said it? What did they say? Where did they say it? When did they say it? Why did they say it? Use foresight to consider the impact of your decisions on others before you act.</p>
+        <p>The process requires persistence and practice. activity: Who said it? What? Where? When? Why? How? Use <strong>Foresight</strong> to consider impact on others before you act. gathering information from multiple sources is vital for best outcomes.</p>
 
         <h3>Day 5: Excellent Spirit</h3>
-        <p>Excellence is the state of being exceptionally good. It is a gift from God (James 1:17). Daniel was preferred above presidents because an "Excellent Spirit" was in him (Daniel 6:3). To be excellent is to go the extra mile. An excellent student gives more than what is required.</p>
+        <p>Excellence is being exceptionally good. A gift from God (James 1:17). Daniel 6:3 — Daniel was preferred because an "Excellent Spirit" was in him. To be excellent is to go the extra mile. An excellent student gives the examiner more than what is required.</p>
     </section>
+
     <div class="footer">
-        &copy; 2026 Shepherd International School Quiet Moment Program. All Around Excellence.
+        &copy; 2026 Shepherd International School Quiet Moment Program<br>
+        <em>"All Around Excellence"</em>
     </div>
 </div>
 
