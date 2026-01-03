@@ -4,107 +4,134 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shepherd International School - Quiet Moment</title>
-    <link rel="icon" type="image/png" href="https://ibb.co/2Y0p8Nm5">
+    <link rel="icon" type="image/png" href="https://i.ibb.co/2Y0p8Nm5/sis.png">
     <style>
         :root {
             --school-green: #004d00;
             --school-yellow: #ffcc00;
-            --body-bg: #fcfcfc;
-            --card-bg: #ffffff;
             --text-main: #1a1a1a;
-            --text-muted: #4a4a4a;
-            --accent-light: #fffbea;
+            --bg-body: #f4f7f6;
+            --bg-card: #ffffff;
+            --accent-bg: #fffdf2;
         }
 
-        * { box-sizing: border-box; }
-
+        * { box-sizing: border-box; scroll-behavior: smooth; }
+        
         body { 
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
             line-height: 1.8; 
             margin: 0; 
             padding: 20px; 
-            background-color: var(--body-bg); 
+            background-color: var(--bg-body); 
             color: var(--text-main);
             font-size: 18px; 
         }
 
         .container { 
-            max-width: 950px; 
-            margin: 40px auto; 
-            background: var(--card-bg); 
-            padding: 50px; 
-            border-radius: 12px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
-            border-top: 10px solid var(--school-green);
+            max-width: 1000px; 
+            margin: 0 auto; 
+            background: var(--bg-card); 
+            padding: 40px 60px; 
+            border-radius: 10px; 
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            border-top: 12px solid var(--school-green);
         }
 
         header {
             text-align: center;
             border-bottom: 2px solid #eee;
             padding-bottom: 30px;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
-        header img { height: 90px; margin-bottom: 15px; }
+        header img { height: 100px; width: auto; margin-bottom: 15px; }
+        h1 { color: var(--school-green); margin: 0; font-size: 2.2rem; text-transform: uppercase; letter-spacing: 1px; }
+        
+        /* 4 per line Navigation */
+        nav {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 50px;
+            border: 2px solid var(--school-green);
+        }
 
-        h1 { color: var(--school-green); margin: 0; font-size: 2rem; text-transform: uppercase; letter-spacing: 1px; }
-        h2 { background-color: var(--school-green); color: var(--school-yellow); padding: 15px 25px; border-radius: 6px; margin-top: 80px; text-transform: uppercase; font-size: 1.5rem; }
-        h3 { color: var(--school-green); border-bottom: 3px solid var(--school-yellow); padding-bottom: 10px; margin-top: 45px; font-size: 1.3rem; }
-        h4 { color: #8b0000; margin-top: 30px; border-left: 5px solid var(--school-yellow); padding-left: 15px; }
+        .nav-title { display: block; text-align: center; margin-bottom: 20px; color: var(--school-green); text-transform: uppercase; font-size: 1rem; font-weight: bold; }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 12px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--school-green);
+            font-weight: bold;
+            text-align: center;
+            font-size: 0.9rem;
+            padding: 12px 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #fdfdfd;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: var(--school-green);
+            color: var(--school-yellow);
+        }
+
+        section { margin-bottom: 120px; border-bottom: 2px solid #eee; padding-bottom: 80px; }
+        h2 { background: var(--school-green); color: var(--school-yellow); padding: 15px 25px; border-radius: 4px; text-transform: uppercase; font-size: 1.6rem; margin-top: 0; }
+        h3 { color: var(--school-green); border-bottom: 3px solid var(--school-yellow); padding-bottom: 10px; margin-top: 60px; font-size: 1.4rem; }
+        h4 { color: #8b0000; margin-top: 35px; border-left: 5px solid var(--school-yellow); padding-left: 15px; }
 
         .memory-verse { 
-            background: var(--accent-light); 
-            padding: 25px; 
-            border-radius: 8px;
-            border: 1px solid #ffeeba;
+            background: var(--accent-bg); 
+            padding: 30px; 
             border-left: 8px solid var(--school-yellow); 
             font-style: italic; 
             margin: 35px 0; 
-            color: #554100;
-            font-weight: 500;
+            border-radius: 4px;
+            color: #443300;
         }
 
-        .diagram-placeholder { 
+        .diagram-box { 
             background: #f8f9fa; 
             border: 2px dashed var(--school-green); 
             padding: 20px; 
             text-align: center; 
-            font-weight: bold; 
             color: var(--school-green); 
             margin: 30px 0; 
             border-radius: 8px;
+            font-weight: bold;
         }
 
-        table { width: 100%; border-collapse: collapse; margin: 35px 0; }
+        table { width: 100%; border-collapse: collapse; margin: 30px 0; }
         th, td { border: 1px solid #e0e0e0; padding: 15px; text-align: left; vertical-align: top; }
         th { background-color: var(--school-green); color: white; }
         tr:nth-child(even) { background-color: #f9fbf9; }
 
-        ul, ol { margin-bottom: 30px; padding-left: 30px; }
-        li { margin-bottom: 15px; }
-
         .reflection-box { 
-            background: #e9f5ec; 
-            padding: 25px; 
+            background: #f0fdf4; 
+            padding: 30px; 
             border-radius: 8px; 
             border-left: 8px solid var(--school-green); 
-            margin: 35px 0; 
+            margin: 40px 0; 
         }
 
         .footer { 
             text-align: center; 
-            margin-top: 80px; 
+            margin-top: 50px; 
             padding-top: 30px; 
             border-top: 1px solid #eee; 
-            font-size: 1rem; 
-            color: var(--text-muted); 
+            color: var(--school-green);
         }
 
-        @media (max-width: 600px) {
-            .container { padding: 25px; margin: 10px; }
-            h1 { font-size: 1.5rem; }
-            header img { height: 70px; }
-            body { font-size: 16px; }
+        @media (max-width: 800px) {
+            .nav-grid { grid-template-columns: repeat(2, 1fr); }
+            .container { padding: 30px 20px; }
         }
     </style>
 </head>
@@ -112,11 +139,21 @@
 
 <div class="container">
     <header>
-        <img src="https://ibb.co/2Y0p8Nm5" alt="SIS Logo">
-        <h1>Shepherd International School<br>Quiet Moment</h1>
+        <img src="https://i.ibb.co/2Y0p8Nm5/sis.png" alt="SIS Logo">
+        <h1>Shepherd International School</h1>
+        <p style="color: var(--school-green); font-weight: bold; margin-top: 10px; font-size: 1.4rem;">Quiet Moment Full Curriculum</p>
     </header>
 
-    <section>
+    <nav>
+        <span class="nav-title">Jump to Week</span>
+        <div class="nav-grid">
+            <a href="#week1">Week 1</a> <a href="#week2">Week 2</a> <a href="#week3">Week 3</a> <a href="#week4">Week 4</a>
+            <a href="#week5">Week 5</a> <a href="#week7">Week 7</a> <a href="#week8">Week 8</a> <a href="#week9">Week 9</a>
+            <a href="#week10">Week 10</a> <a href="#week11">Week 11</a> <a href="#week13">Week 13</a> <a href="#week14">Week 14</a>
+        </div>
+    </nav>
+
+    <section id="week1">
         <h2>WEEK 1: PLANNING</h2>
         <h3>Day 1: Definition of Planning</h3>
         <p>Planning is the process of setting goals, identifying actions to achieve those goals, and allocating resources to accomplish them.</p>
@@ -139,66 +176,47 @@
 
         <h3>Day 2: Elements of Planning</h3>
         <ol>
-            <li><strong>Goals and Objectives:</strong> Clearly defining what you want to achieve through your plan. <em>Proverbs 29:18 says, "Where there is no vision, the people perish."</em> Example: A student sets a goal to achieve a certain grade in their exams.</li>
-            <li><strong>Analysis:</strong> Gathering and analyzing information to understand the situation, resources, and potential obstacles. <em>Luke 14:28-30 says, "For which of you, desiring to build a tower, does not first sit down and count the cost, whether he has enough to complete it?"</em> Example: A business owner conducts market research to understand their target audience and competition.</li>
-            <li><strong>Strategy:</strong> Determining the best approach or course of action to achieve your goals. <em>Proverbs 21:5 says, "The plans of the diligent lead to profit as surely as haste leads to poverty."</em> Example: A marketing team develops a strategy to launch a new product, including social media campaigns and advertising.</li>
-            <li><strong>Action Plan:</strong> Outlining specific steps and tasks to be taken to implement your strategy. <em>James 2:26 says, "For as the body apart from the spirit is dead, so also faith apart from works is dead."</em> Example: A project manager creates a detailed action plan, including tasks, timelines, and responsibilities for each team member.</li>
-            <li><strong>Resource Allocation:</strong> Identifying and allocating the necessary resources (time, money, personnel, etc.) to execute your plan. <em>Luke 14:31-32 says, "Or what king, going out to encounter another king in war, will not sit down first and deliberate whether he is able with ten thousand to meet him who comes against him with twenty thousand?"</em> Example: A non-profit organization allocates funds to different programs and activities to achieve their mission.</li>
-            <li><strong>Timeline:</strong> Establishing a schedule or timeline for completing tasks and achieving milestones. <em>Ecclesiastes 3:1 says, "For everything there is a season, and a time for every matter under heaven."</em> Example: A construction team creates a project timeline, including deadlines for each phase of the project.</li>
-            <li><strong>Evaluation and Monitoring:</strong> Planning for how you will track progress, evaluate success, and make adjustments as needed. <em>Proverbs 15:28 says, "The heart of the righteous weighs its answers, but the mouth of the wicked pours out evil."</em> Example: A business owner regularly reviews sales data and customer feedback to evaluate the effectiveness of their marketing strategy and make adjustments.</li>
+            <li><strong>Goals and Objectives:</strong> Clearly defining what you want to achieve through your plan. Proverbs 29:18 says, "Where there is no vision, the people perish." Example: A student sets a goal to achieve a certain grade in their exams.</li>
+            <li><strong>Analysis:</strong> Gathering and analyzing information to understand the situation, resources, and potential obstacles. Luke 14:28-30 says, "For which of you, desiring to build a tower, does not first sit down and count the cost, whether he has enough to complete it?"</li>
+            <li><strong>Strategy:</strong> Determining the best approach or course of action to achieve your goals. Proverbs 21:5.</li>
+            <li><strong>Action Plan:</strong> Outlining specific steps and tasks to be taken to implement your strategy. James 2:26 says, "For as the body apart from the spirit is dead, so also faith apart from works is dead."</li>
+            <li><strong>Resource Allocation:</strong> Identifying and allocating the necessary resources (time, money, personnel, etc.) to execute your plan. Luke 14:31-32.</li>
+            <li><strong>Timeline:</strong> Establishing a schedule or timeline for completing tasks and achieving milestones. Ecclesiastes 3:1.</li>
+            <li><strong>Evaluation and Monitoring:</strong> Planning for how you will track progress, evaluate success, and make adjustments as needed. Proverbs 15:28.</li>
         </ol>
 
         <h3>Day 3: Consequences of Lack of Planning for Students</h3>
         <ol>
-            <li><strong>Poor Time Management:</strong> Without planning, students may struggle to manage their time effectively, leading to missed deadlines and poor grades. <em>Proverbs 21:5 says, "The plans of the diligent lead to profit as surely as haste leads to poverty."</em> Example: A student procrastinates on a project, leading to a rushed and poorly done submission.</li>
-            <li><strong>Increased Stress:</strong> Lack of planning can lead to increased stress and anxiety, negatively impacting mental and physical health. <em>Matthew 6:34 says, "Therefore do not worry about tomorrow, for tomorrow will worry itself. Each day has enough trouble of its own."</em> Example: A student forgets about an upcoming exam and crams all studying into one night, leading to stress and poor performance.</li>
-            <li><strong>Missed Opportunities:</strong> Without planning, students may miss opportunities for growth, learning, and development. <em>Luke 12:48 says, "But the one who does not know, and does things deserving punishment, will be beaten with few blows."</em> Example: A student fails to plan for extracurricular activities, missing out on valuable experiences and skills.</li>
-            <li><strong>Poor Goal Achievement:</strong> Lack of planning can hinder students' ability to achieve their goals, leading to disappointment and frustration. <em>Proverbs 16:9 says, "In their hearts humans plan their course, but the Lord establishes their steps."</em> Example: A student sets a goal to improve their grades but fails to create a plan, leading to stagnation and disappointment.</li>
-            <li><strong>Inefficiency and Waste:</strong> Without planning, students may waste time and resources on non-essential activities. <em>Proverbs 24:27 says, "Prepare your work outside, get everything ready for you in the field; and after that build your house."</em> Example: A student spends too much time on social media, distracting them from studies and leading to poor grades.</li>
+            <li><strong>Poor Time Management:</strong> Without planning, students may struggle to manage their time effectively, leading to missed deadlines and poor grades. Proverbs 21:5.</li>
+            <li><strong>Increased Stress:</strong> Lack of planning can lead to increased stress and anxiety, negatively impacting mental and physical health. Matthew 6:34.</li>
+            <li><strong>Missed Opportunities:</strong> Without planning, students may miss opportunities for growth, learning, and development. Luke 12:48.</li>
+            <li><strong>Poor Goal Achievement:</strong> Lack of planning can hinder students' ability to achieve their goals, leading to disappointment and frustration. Proverbs 16:9.</li>
+            <li><strong>Inefficiency and Waste:</strong> Without planning, students may waste time and resources on non-essential activities. Proverbs 24:27.</li>
         </ol>
 
         <h3>Day 4: Effects and Benefits of Planning</h3>
-        <h4>Benefits of Planning</h4>
+        <h4>Benefits:</h4>
         <ul>
-            <li><strong>Increased Productivity:</strong> Planning helps individuals prioritize tasks, manage time effectively, and increase productivity. <em>Proverbs 21:5.</em> Example: A student creates a study schedule and achieves better grades.</li>
-            <li><strong>Reduced Stress:</strong> Planning helps individuals feel more in control, reducing stress and anxiety. <em>Matthew 6:34.</em> Example: A person plans their daily tasks and feels more organized and calm.</li>
-            <li><strong>Improved Goal Achievement:</strong> Planning helps individuals set and achieve goals, leading to a sense of accomplishment and fulfillment. <em>Proverbs 16:9.</em> Example: A business owner creates a business plan and achieves their goals.</li>
-            <li><strong>Better Time Management:</strong> Planning helps individuals prioritize tasks, manage time effectively, and make the most of their time. <em>Ephesians 5:16 says, "making the most of every opportunity, because the days are evil."</em> Example: A working professional plans their day and completes tasks efficiently.</li>
+            <li>Increased Productivity (Proverbs 21:5).</li>
+            <li>Reduced Stress (Matthew 6:34).</li>
+            <li>Improved Goal Achievement (Proverbs 16:9).</li>
+            <li>Better Time Management (Ephesians 5:16).</li>
         </ul>
-        <h4>Effects of Planning</h4>
+        <h4>Effects:</h4>
         <ul>
-            <li><strong>Increased Confidence:</strong> Planning can increase confidence and self-esteem, leading to greater success. <em>Proverbs 24:27.</em> Example: A person plans a trip and feels more confident and prepared.</li>
-            <li><strong>Improved Decision Making:</strong> Planning can improve decision making by considering options and outcomes. <em>James 1:5 says, "If any of you lacks wisdom, let them ask God, who gives generously to all without finding fault, and it will be given to them."</em> Example: A person plans their finances and makes informed investment decisions.</li>
-            <li><strong>Greater Sense of Control:</strong> Planning can give individuals a greater sense of control over their lives, leading to greater peace and stability. <em>Jeremiah 29:11 says, "For I know the plans I have for you,” declares the Lord, “plans to prosper you and not to harm you, plans to give you hope and a future."</em> Example: A person plans their career and feels more in control of their future.</li>
+            <li>Increased Confidence (Proverbs 24:27).</li>
+            <li>Improved Decision Making (James 1:5).</li>
+            <li>Greater Sense of Control (Jeremiah 29:11).</li>
         </ul>
 
         <h3>Day 5: Guided Practice</h3>
-        <h4>Planning for Students</h4>
-        <p><strong>Step 1: Set Goals</strong></p>
-        <ul>
-            <li>Identify what you want to achieve</li>
-            <li>Make sure your goals are specific, measurable, achievable, relevant, and time-bound (SMART)</li>
-            <li><em>Example: Improve grades in math by scoring 85% or higher on the next test.</em></li>
-        </ul>
-        <p><strong>Step 2: Identify Tasks</strong></p>
-        <ul>
-            <li>Break down your goal into smaller tasks</li>
-            <li>Identify what needs to be done to achieve your goal</li>
-            <li><em>Example: To improve grades in math, tasks might include: Reviewing notes daily, practicing problems regularly, seeking help from a tutor.</em></li>
-        </ul>
-        <p><strong>Step 3: Create a Schedule</strong></p>
-        <ul>
-            <li>Plan out when and how you will complete each task</li>
-            <li>Use a planner, calendar, or app to stay organized</li>
-        </ul>
-        <p><strong>Step 4: Track Progress</strong></p>
-        <ul>
-            <li>Regularly review your progress towards your goal</li>
-            <li>Make adjustments to your plan as needed</li>
-        </ul>
+        <p><strong>Step 1: Set Goals (SMART).</strong> Identify what you want to achieve. Specific, Measurable, Achievable, Relevant, and Time-bound.</p>
+        <p><strong>Step 2: Identify Tasks.</strong> Break down your goal into smaller tasks (e.g., Reviewing notes daily, practicing problems, seeking a tutor).</p>
+        <p><strong>Step 3: Create a Schedule.</strong> Plan when and how you will complete each task using a planner or app.</p>
+        <p><strong>Step 4: Track Progress.</strong> Regularly review your progress and make adjustments.</p>
     </section>
 
-    <section>
+    <section id="week2">
         <h2>WEEK 2: SEXUAL VICES</h2>
         <div class="memory-verse">MEMORY VERSE: “What? know ye not that your body is the temple of the Holy Ghost which is in you, which ye have of God, and ye are not your own?” – 1 Corinthians 6:19</div>
         
@@ -211,6 +229,68 @@
         <ul>
             <li><strong>Homosexuality:</strong> Sexual acts between people of the same gender. (Leviticus 18:22)</li>
             <li><strong>Incest:</strong> Sexual activities between family members. (Leviticus 18:7-18)</li>
+            <li><strong>Paedophilia:</strong> Sexual attraction towards children.</li>
+            <li><strong>Bestiality:</strong> Sexual affair with an animal. (Leviticus 18:23)</li>
+            <li><strong>Rape:</strong> Forceful sexual intercourse with an unwilling partner. (2 Samuel 13:10-14)</li>
+            <li><strong>Pornography:</strong> Explicit depiction of sexual subject matter with lustful intent. It is addictive and destructive.</li>
+            <li><strong>Masturbation and use of sex toys</strong></li>
+            <li><strong>Cyber-sex/Phone-sex:</strong> Sex-oriented conversations over the internet or phone.</li>
+        </ul>
+
+        <h3>Day 2: Forms of Sexual Vices Among Students</h3>
+        <p><strong>2.1 Premature Sexual Activities:</strong> This refers to students engaging in sexual behaviours at an early age before they are emotionally, mentally, or physically mature. Such actions can lead to distraction from studies, emotional stress, and poor decision-making.</p>
+        <p><strong>2.2 Exposure to Inappropriate Media:</strong> Many students are exposed to inappropriate content through phones, the internet, movies, or social media. This exposure can influence their thinking, behaviour, and attitude toward relationships, leading to imitation of harmful actions.</p>
+        <p><strong>2.3 Sexual Harassment and Abuse:</strong> Sexual harassment involves unwanted sexual comments, gestures, or actions, while abuse includes forcing or manipulating someone into sexual acts. These behaviours violate personal rights and can cause long-term emotional and psychological harm to victims.</p>
+        <p><strong>2.4 Peer-Influenced Risky Behaviours:</strong> Some students engage in sexual vices due to pressure from friends who encourage them to act in certain ways to “fit in” or appear mature. Peer pressure often leads students to make choices they would not make independently.</p>
+
+        <h3>Day 3: Causes of Sexual Vices Among Students</h3>
+        <p><strong>3.1 Peer Pressure:</strong> Students often feel the need to belong. When peers promote immoral behaviours, some students follow along to gain acceptance, even when they know such actions are wrong.</p>
+        <p><strong>3.2 Lack of Proper Guidance and Supervision:</strong> When parents, teachers, or guardians fail to provide adequate guidance, students may lack moral direction. Poor supervision gives room for negative behaviours to grow unnoticed.</p>
+        <p><strong>3.3 Influence of Social Media and Technology:</strong> Easy access to smartphones and the internet exposes students to inappropriate ideas and behaviours. Without proper monitoring, technology can negatively shape students’ values and actions.</p>
+        <p><strong>3.4 Poor Moral and Value Education:</strong> A weak foundation in moral, religious, or value-based education can make students vulnerable to sexual vices. When students are not taught self-control and respect, they may engage in irresponsible behaviours.</p>
+
+        <h3>Day 4: Effects of Sexual Vices on Students</h3>
+        <p><strong>4.1 Academic Performance:</strong> Sexual vices often distract students from their studies. Loss of concentration, absenteeism, and lack of interest in schoolwork can result in poor academic achievement.</p>
+        <p><strong>4.2 Emotional and Psychological Well-being:</strong> Students involved in sexual vices may experience guilt, fear, anxiety, or emotional confusion. Victims of abuse may suffer low self-esteem and trauma.</p>
+        <p><strong>4.3 Health and Safety Concerns:</strong> Engaging in unsafe behaviours can expose students to serious health risks and emotional harm, which can affect their overall development.</p>
+        <p><strong>4.4 Social and Moral Development:</strong> Sexual vices can damage a student’s reputation and moral standing. It may lead to loss of respect from peers, teachers, and the community.</p>
+
+        <h3>Day 5: Prevention and Control of Sexual Vices</h3>
+        <p><strong>5.1 Role of Parents and Guardians:</strong> Parents should: Communicate openly with their children, Provide moral guidance, Monitor media use, Be positive role models. Strong family values help students make better choices.</p>
+        <p><strong>5.2 Role of Schools and Teachers:</strong> Schools should: Teach moral and civic education, Enforce clear rules and discipline, Provide counselling services, Create a safe learning environment. Teachers play a key role in guiding students.</p>
+        <p><strong>5.3 Student Self-Discipline and Responsibility:</strong> Students must learn to: Make wise decisions, Respect themselves and others, Avoid negative peer influence, Focus on personal growth and academics.</p>
+        <p><strong>6. Role of Society and Government:</strong> organize awareness programs and organize youth programs. enforce policies that promote safe environment.</p>
+    </section>
+
+    <section id="week3">
+        <h2>WEEK 3: INFATUATION</h2>
+        <div class="memory-verse">Text: 1 CORINTHIANS 13:4-7<br>“Love is patient, love is kind. It does not envy, it does not boast, it is not proud... It always protects, always trusts, always hopes, always perseveres.”</div>
+        
+        <h3>Day 1: Introduction to Infatuation</h3>
+        <p>Infatuation is a strong but usually short-lived emotional attraction to someone. It often begins suddenly and feels very intense at the start. Most times, it is based on physical appearance or imagined qualities, not on truly knowing the person’s character. Because it is not deep, it can fade quickly.</p>
+        <p><strong>Characteristics:</strong> Develops suddenly, strong emotional excitement, excessive admiration, unrealistic expectations, short duration, focuses more on feelings than facts.</p>
+
+        <h3>Day 2: Causes of Infatuation</h3>
+        <ol>
+            <li><strong>Physical Attraction:</strong> drawn to another person’s looks, voice, dressing style, or mannerisms.</li>
+            <li><strong>Loneliness or Emotional Need:</strong> desire for attention, love, or care when feeling emotionally empty.</li>
+            <li><strong>Peer Pressure:</strong> friends encouraging relationships so that one can “fit in.”</li>
+            <li><strong>Media Influence:</strong> Movies and social media portraying love as perfect and exciting fantasies.</li>
+            <li><strong>Lack of Emotional Maturity:</strong> confusing excitement or attention with genuine love.</li>
+            <li><strong>Curiosity or Excitement:</strong> desire to experience something new or thrilling.</li>
+        </ol>
+
+        <h3>Day 3: Signs of Infatuation</h3>
+        <ol>
+            <li><strong>Constantly Thinking About the Person:</strong> replaying conversations, re-imagining moments, and feeling distracted.</li>
+            <li><strong>Ignoring the Person’s Faults:</strong> focusing only on positive qualities while justifying weaknesses or mistakes.</li>
+            <li><strong>Mood Depends on Attention:</strong> happiness or sadness is determined entirely by the other person's behavior.</li>
+            <li><strong>Desire for Quick Closeness:</strong> wanting commitment and deep communication before truly knowing the person.</li>
+            <li><strong>Difficulty Concentrating:</strong> neglecting schoolwork and duties due to being preoccupied.</li>
+        </ol>
+
+        <h3>Day 4: Infatuation vs. Love</h3>
+              <li><strong>Incest:</strong> Sexual activities between family members. (Leviticus 18:7-18)</li>
             <li><strong>Paedophilia:</strong> Perverted sexual attraction towards children.</li>
             <li><strong>Bestiality:</strong> Sexual affair with an animal. (Leviticus 18:23)</li>
             <li><strong>Rape:</strong> Forceful sexual intercourse with an unwilling partner. (2 Samuel 13:10-14)</li>
