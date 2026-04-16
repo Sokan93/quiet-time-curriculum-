@@ -5,596 +5,1068 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shepherd International School - Quiet Moment Full Curriculum</title>
     <link rel="icon" type="image/png" href="https://i.ibb.co/2Y0p8Nm5/sis.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --school-green: #004d00;
-            --school-yellow: #ffcc00;
-            --text-main: #1a1a1a;
-            --bg-body: #fdfdfd;
-            --bg-card: #ffffff;
-            --accent-bg: #fffdf2;
+            --black: #0a0a0a;
+            --white: #f5f5f0;
+            --mid-gray: #888;
+            --light-gray: #ddd;
+            --off-white: #efefea;
+            --accent: #1a1a1a;
         }
 
-        * { box-sizing: border-box; scroll-behavior: smooth; }
-        
-        body { 
-            font-family: 'Segoe UI', Arial, sans-serif; 
-            line-height: 1.8; 
-            margin: 0; 
-            padding: 20px; 
-            background-color: var(--bg-body); 
-            color: var(--text-main);
-            font-size: 18px; 
+        * { box-sizing: border-box; scroll-behavior: smooth; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Source Serif 4', Georgia, serif;
+            line-height: 1.85;
+            background: var(--white);
+            color: var(--black);
+            font-size: 17px;
         }
 
-        .container { 
-            max-width: 1000px; 
-            margin: 0 auto; 
-            background: var(--bg-card); 
-            padding: 50px 70px; 
-            border-radius: 12px; 
-            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
-            border-top: 15px solid var(--school-green);
-        }
-
+        /* ── HEADER ── */
         header {
+            background: var(--black);
+            color: var(--white);
             text-align: center;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 30px;
-            margin-bottom: 40px;
+            padding: 60px 30px 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 39px,
+                rgba(255,255,255,0.04) 39px,
+                rgba(255,255,255,0.04) 40px
+            );
+            pointer-events: none;
+        }
+        header img {
+            height: 90px;
+            width: auto;
+            margin-bottom: 20px;
+            filter: brightness(0) invert(1);
+            position: relative;
+            z-index: 1;
+        }
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.6rem;
+            font-weight: 900;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 8px;
+        }
+        header p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.6);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 300;
+            position: relative;
+            z-index: 1;
+        }
+        .header-rule {
+            width: 60px;
+            height: 2px;
+            background: var(--white);
+            margin: 20px auto;
+            position: relative;
+            z-index: 1;
         }
 
-        header img { height: 110px; width: auto; margin-bottom: 15px; }
+        /* ── CONTAINER ── */
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 40px 80px;
+        }
 
-        h1 { color: var(--school-green); margin: 0; font-size: 2.2rem; text-transform: uppercase; letter-spacing: 1px; }
-        
-        /* 4 per line Navigation */
+        /* ── NAV ── */
         nav {
-            background: #f9f9f9;
-            padding: 30px;
-            border-radius: 8px;
-            margin-bottom: 60px;
-            border: 2px solid var(--school-green);
+            border: 2px solid var(--black);
+            margin: 50px 0 60px;
         }
-
-        .nav-title { display: block; text-align: center; margin-bottom: 20px; color: var(--school-green); text-transform: uppercase; font-size: 1rem; font-weight: bold; }
-
+        .nav-title {
+            display: block;
+            background: var(--black);
+            color: var(--white);
+            text-align: center;
+            padding: 14px 20px;
+            font-size: 0.75rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            font-family: 'Source Serif 4', serif;
+            font-weight: 600;
+        }
         .nav-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr); 
-            gap: 12px;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0;
         }
-
         nav a {
+            display: block;
             text-decoration: none;
-            color: var(--school-green);
-            font-weight: bold;
+            color: var(--black);
             text-align: center;
-            font-size: 0.9rem;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background: #fff;
-            transition: 0.3s;
+            font-size: 0.82rem;
+            padding: 16px 10px;
+            border-right: 1px solid var(--light-gray);
+            border-bottom: 1px solid var(--light-gray);
+            font-family: 'Source Serif 4', serif;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            transition: background 0.2s, color 0.2s;
+        }
+        nav a:last-child { border-right: none; }
+        nav a:nth-last-child(-n+5) { border-bottom: none; }
+        nav a:hover { background: var(--black); color: var(--white); }
+
+        /* ── SECTIONS ── */
+        section {
+            margin-bottom: 100px;
+            padding-bottom: 80px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        section:last-of-type { border-bottom: none; }
+
+        /* ── HEADINGS ── */
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            background: var(--black);
+            color: var(--white);
+            padding: 22px 36px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: var(--white);
+            margin-top: 14px;
+        }
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: var(--black);
+            margin: 60px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--black);
+        }
+        h4 {
+            font-family: 'Source Serif 4', serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--black);
+            margin: 36px 0 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            border-left: 4px solid var(--black);
+            padding-left: 14px;
         }
 
-        nav a:hover {
-            background: var(--school-green);
-            color: var(--school-yellow);
-            border-color: var(--school-green);
+        /* ── SECTION HEADER SPACER ── */
+        .section-body { padding-top: 10px; }
+
+        /* ── MEMORY VERSE ── */
+        .memory-verse {
+            background: var(--off-white);
+            border: 1px solid var(--black);
+            border-left: 6px solid var(--black);
+            padding: 28px 32px;
+            margin: 36px 0;
+            font-style: italic;
+            font-size: 1.08rem;
+            color: #222;
+            line-height: 1.9;
+        }
+        .memory-verse strong {
+            display: block;
+            font-style: normal;
+            font-size: 0.72rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--mid-gray);
+            margin-bottom: 8px;
         }
 
-        section { margin-bottom: 150px; border-bottom: 2px solid #eee; padding-bottom: 80px; }
-
-        h2 { background: var(--school-green); color: var(--school-yellow); padding: 18px 30px; border-radius: 4px; text-transform: uppercase; font-size: 1.8rem; margin-top: 0; }
-        h3 { color: var(--school-green); border-bottom: 3px solid var(--school-yellow); padding-bottom: 12px; margin-top: 70px; font-size: 1.5rem; }
-        h4 { color: #8b0000; margin-top: 40px; border-left: 6px solid var(--school-yellow); padding-left: 15px; font-size: 1.25rem; font-weight: bold; }
-
-        .memory-verse { 
-            background: var(--accent-bg); 
-            padding: 30px; 
-            border-left: 10px solid var(--school-yellow); 
-            font-style: italic; 
-            margin: 40px 0; 
-            border-radius: 4px;
-            color: #443300;
-            font-size: 1.15rem;
-            box-shadow: inset 0 0 15px rgba(0,0,0,0.02);
-        }
-
-        .diagram-box { 
-            background: #f8f9fa; 
-            border: 2px dashed var(--school-green); 
-            padding: 30px; 
-            text-align: center; 
-            color: var(--school-green); 
-            margin: 40px 0; 
-            border-radius: 8px;
-            font-weight: bold;
-        }
-
-        table { width: 100%; border-collapse: collapse; margin: 40px 0; }
-        th, td { border: 1px solid #e0e0e0; padding: 18px; text-align: left; vertical-align: top; }
-        th { background-color: var(--school-green); color: white; }
-        tr:nth-child(even) { background-color: #f9fbf9; }
-
-        ul, ol { margin-bottom: 35px; padding-left: 45px; }
-        li { margin-bottom: 18px; }
-
-        .reflection-box { 
-            background: #f0fdf4; 
-            padding: 30px; 
-            border-radius: 8px; 
-            border-left: 10px solid var(--school-green); 
-            margin: 40px 0; 
+        /* ── REFLECTION BOX ── */
+        .reflection-box {
+            background: var(--black);
+            color: var(--white);
+            padding: 28px 32px;
+            margin: 36px 0;
             font-style: italic;
         }
-
-        .footer { 
-            text-align: center; 
-            margin-top: 60px; 
-            padding-top: 40px; 
-            border-top: 1px solid #eee; 
-            color: var(--school-green);
-            font-weight: bold;
+        .reflection-box strong {
+            font-style: normal;
+            display: block;
+            font-size: 0.72rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 8px;
         }
 
-        @media (max-width: 850px) {
-            .nav-grid { grid-template-columns: repeat(2, 1fr); }
-            .container { padding: 30px 25px; }
-            header img { height: 80px; }
+        /* ── DAY LABEL ── */
+        .day-label {
+            display: inline-block;
+            background: var(--black);
+            color: var(--white);
+            font-size: 0.68rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            margin: 50px 0 16px;
+            font-family: 'Source Serif 4', serif;
+            font-weight: 600;
+        }
+
+        /* ── PARAGRAPHS ── */
+        p { margin-bottom: 18px; }
+        p:last-child { margin-bottom: 0; }
+
+        /* ── LISTS ── */
+        ul, ol { padding-left: 28px; margin-bottom: 24px; }
+        li { margin-bottom: 12px; }
+        li strong { font-weight: 600; }
+
+        /* ── TABLE ── */
+        table { width: 100%; border-collapse: collapse; margin: 36px 0; }
+        th {
+            background: var(--black);
+            color: var(--white);
+            padding: 14px 18px;
+            text-align: left;
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-family: 'Source Serif 4', serif;
+        }
+        td { border: 1px solid var(--light-gray); padding: 14px 18px; vertical-align: top; }
+        tr:nth-child(even) td { background: var(--off-white); }
+
+        /* ── DIVIDER ── */
+        .week-divider {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin: 50px 0 20px;
+        }
+        .week-divider span {
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--mid-gray);
+            white-space: nowrap;
+        }
+        .week-divider::before, .week-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--light-gray);
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--black);
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            padding: 40px 30px;
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+        }
+        footer em { color: rgba(255,255,255,0.4); display: block; margin-top: 6px; }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 750px) {
+            .nav-grid { grid-template-columns: repeat(3, 1fr); }
+            nav a:nth-last-child(-n+5) { border-bottom: 1px solid var(--light-gray); }
+            nav a:nth-last-child(-n+3) { border-bottom: none; }
+            nav a:nth-child(3n) { border-right: none; }
+            .container { padding: 0 20px 60px; }
+            header h1 { font-size: 1.9rem; }
+            h2 { font-size: 1.5rem; padding: 18px 22px; }
         }
     </style>
 </head>
 <body>
 
+<header>
+    <img src="https://i.ibb.co/2Y0p8Nm5/sis.png" alt="SIS Logo">
+    <h1>Shepherd International School</h1>
+    <div class="header-rule"></div>
+    <p>Quiet Moment &mdash; Full Curriculum</p>
+</header>
+
 <div class="container">
-    <header>
-        <img src="https://i.ibb.co/2Y0p8Nm5/sis.png" alt="SIS Logo">
-        <h1>Shepherd International School</h1>
-        <p style="color: var(--school-green); font-weight: bold; margin-top: 10px; font-size: 1.5rem;">Quiet Moment Full Curriculum</p>
-    </header>
 
     <nav>
-        <span class="nav-title">Quick Jump To Weekly Lessons</span>
+        <span class="nav-title">Quick Jump to Weekly Lessons</span>
         <div class="nav-grid">
-            <a href="#week1">Week 1</a> <a href="#week2">Week 2</a> <a href="#week3">Week 3</a> <a href="#week4">Week 4</a>
-            <a href="#week5">Week 5</a> <a href="#week7">Week 7</a> <a href="#week8">Week 8</a> <a href="#week9">Week 9</a>
-            <a href="#week10">Week 10</a>
+            <a href="#week1">Week 1<br><small>Bullying</small></a>
+            <a href="#week2">Week 2<br><small>Bullying Pt. 2</small></a>
+            <a href="#week3">Week 3<br><small>Infatuation</small></a>
+            <a href="#week4">Week 4<br><small>Examination</small></a>
+            <a href="#week6">Week 6<br><small>Challenges</small></a>
+            <a href="#week7">Week 7<br><small>Social Etiquette</small></a>
+            <a href="#week8">Week 8<br><small>Ergonomics</small></a>
+            <a href="#week9">Week 9<br><small>Examination Pt. 2</small></a>
         </div>
     </nav>
 
+    <!-- ════════════════ WEEK 1 ════════════════ -->
     <section id="week1">
-        <h2>WEEK 1: PLANNING</h2>
-        <h3>Day 1: Definition of Planning</h3>
-        <p>Planning is the process of setting goals, identifying actions to achieve those goals, and allocating resources to accomplish them.</p>
-        <div class="memory-verse">Proverbs 21:5 says, "The plans of the diligent lead to profit as surely as haste leads to poverty."</div>
-        <h4>Examples of Planning:</h4>
-        <ol>
-            <li>Students planning their study schedule to achieve good grades.</li>
-            <li>Athletes planning their training regimen to improve performance.</li>
-            <li>Individuals planning their finances to achieve financial stability.</li>
-        </ol>
-        <h4>Types of Planning for Students:</h4>
-        <ul>
-            <li><strong>Short-term planning:</strong> Planning for immediate tasks, such as completing homework or preparing for a test.</li>
-            <li><strong>Long-term planning:</strong> Planning for future goals, such as graduating from school or achieving a specific career.</li>
-            <li><strong>Daily planning:</strong> Planning daily tasks and activities to stay organized and focused.</li>
-        </ul>
-        <p><strong>Evaluation:</strong> Effective planning helps students achieve their goals, manage time efficiently, and reduce stress. By planning, students can prioritize tasks, stay focused, and make progress towards their objectives.</p>
-        <p><strong>Conclusion:</strong> Planning is an essential skill for students to develop. By setting goals, identifying actions, and allocating resources, students can achieve success and reach their full potential. Proverbs 16:9 says, "In their hearts humans plan their course, but the Lord establishes their steps." May God guide and direct us as we plan our lives.</p>
-        <div class="reflection-box"><strong>Reflection:</strong> Take a moment to reflect on your own planning habits. What goals do you want to achieve? What steps can you take to plan and achieve those goals?</div>
+        <h2>Week 1: Bullying</h2>
+        <div class="section-body">
+            <div class="memory-verse">
+                <strong>Memory Verse</strong>
+                "Be kind and compassionate to one another, forgiving each other, just as in Christ God forgave you." – Ephesians 4:32
+            </div>
 
-        <h3>Day 2: Elements of Planning</h3>
-        <ol>
-            <li><strong>Goals and Objectives:</strong> Clearly defining what you want to achieve through your plan. Proverbs 29:18 says, "Where there is no vision, the people perish." Example: A student sets a goal to achieve a certain grade in their exams.</li>
-            <li><strong>Analysis:</strong> Gathering and analyzing information to understand the situation, resources, and potential obstacles. Luke 14:28-30 says, "For which of you, desiring to build a tower, does not first sit down and count the cost, whether he has enough to complete it?" Example: A business owner conducts market research to understand their target audience and competition.</li>
-            <li><strong>Strategy:</strong> Determining the best approach or course of action to achieve your goals. Proverbs 21:5 says, "The plans of the diligent lead to profit as surely as haste leads to poverty."</li>
-            <li><strong>Action Plan:</strong> Outlining specific steps and tasks to be taken to implement your strategy. James 2:26 says, "For as the body apart from the spirit is dead, so also faith apart from works is dead."</li>
-            <li><strong>Resource Allocation:</strong> Identifying and allocating the necessary resources (time, money, personnel, etc.) to execute your plan. Luke 14:31-32.</li>
-            <li><strong>Timeline:</strong> Establishing a schedule or timeline for completing tasks and achieving milestones. Ecclesiastes 3:1 says, "For everything there is a season, and a time for every matter under heaven."</li>
-            <li><strong>Evaluation and Monitoring:</strong> Planning for how you will track progress, evaluate success, and make adjustments as needed. Proverbs 15:28 says, "The heart of the righteous weighs its answers, but the mouth of the wicked pours out evil."</li>
-        </ol>
+            <span class="day-label">Day 1</span>
+            <h3>1. Introduction to Bullying</h3>
+            <p>Bullying is a widespread social problem that affects people in schools, workplaces, and communities. It involves harmful behavior that is intentional and repeated over time, creating fear, discomfort, or distress for the person being targeted. Bullying is not just a one-time disagreement or misunderstanding—it is a pattern of behavior meant to dominate, control, or hurt another individual.</p>
+            <p>This issue is especially common among children and adolescents in school settings, where differences in strength, popularity, age, or confidence can make some individuals more vulnerable than others. However, bullying can occur at any stage of life.</p>
+            <p>The importance of studying bullying lies in its serious impact. It can affect a person's emotional well-being, academic performance, social relationships, and even their future development. Victims often suffer in silence, which makes awareness and education very important. By understanding bullying, individuals and communities can recognize it early, prevent it, and respond effectively.</p>
 
-        <h3>Day 3: Consequences of Lack of Planning for Students</h3>
-        <ol>
-            <li><strong>Poor Time Management:</strong> Without planning, students may struggle to manage their time effectively, leading to missed deadlines and poor grades. Proverbs 21:5.</li>
-            <li><strong>Increased Stress:</strong> Lack of planning can lead to increased stress and anxiety, negatively impacting mental and physical health. Matthew 6:34 says, "Therefore do not worry about tomorrow, for tomorrow will worry itself. Each day has enough trouble of its own."</li>
-            <li><strong>Missed Opportunities:</strong> Without planning, students may miss opportunities for growth, learning, and development. Luke 12:48.</li>
-            <li><strong>Poor Goal Achievement:</strong> Lack of planning can hinder students' ability to achieve their goals, leading to disappointment and frustration.</li>
-            <li><strong>Inefficiency and Waste:</strong> Without planning, students may waste time and resources on non-essential activities. Proverbs 24:27.</li>
-        </ol>
+            <h4>1.1 Definition of Bullying</h4>
+            <p>Bullying can be defined as the repeated and intentional act of causing harm to another person who is usually less powerful or unable to defend themselves effectively.</p>
+            <p>There are three key elements that clearly distinguish bullying from other forms of conflict:</p>
+            <ol>
+                <li><strong>Intentional Harm:</strong> Bullying is done on purpose. The bully intends to hurt, embarrass, or upset the victim, either physically or emotionally.</li>
+                <li><strong>Repetition:</strong> Bullying behavior occurs repeatedly over time. It is not a single act but a pattern of behavior that continues, making the situation more serious and harmful.</li>
+                <li><strong>Imbalance of Power:</strong> There is an unequal balance of power between the bully and the victim. This power may be physical strength, age, popularity, intelligence, or social status. Because of this imbalance, the victim often feels helpless and unable to defend themselves.</li>
+            </ol>
+            <p>Bullying can take many forms, including physical attacks, verbal abuse, social exclusion, or online harassment. It is important to note that not all conflicts are bullying. Bullying specifically involves repeated actions and a power imbalance. Understanding this definition helps teachers, parents, and students correctly identify bullying and take appropriate action to stop it.</p>
 
-        <h3>Day 4: Effects and Benefits of Planning</h3>
-        <h4>Benefits of Planning:</h4>
-        <ul>
-            <li><strong>Increased Productivity:</strong> Planning helps individuals prioritize tasks, manage time effectively, and increase productivity. Proverbs 21:5.</li>
-            <li><strong>Reduced Stress:</strong> Planning helps individuals feel more in control, reducing stress and anxiety. Matthew 6:34.</li>
-            <li><strong>Improved Goal Achievement:</strong> Planning helps individuals set and achieve goals, leading to a sense of accomplishment. Proverbs 16:9.</li>
-            <li><strong>Better Time Management:</strong> Planning helps individuals prioritize tasks and make the most of their time. Ephesians 5:16.</li>
-        </ul>
-        <h4>Effects of Planning:</h4>
-        <ul>
-            <li><strong>Increased Confidence:</strong> Planning can increase confidence and self-esteem, leading to greater success. Proverbs 24:27.</li>
-            <li><strong>Improved Decision Making:</strong> Planning can improve decision making by considering options and outcomes. James 1:5.</li>
-            <li><strong>Greater Sense of Control:</strong> Planning can give individuals a greater sense of control over their lives. Jeremiah 29:11.</li>
-        </ul>
+            <span class="day-label">Day 2</span>
+            <h3>2. Types of Bullying</h3>
+            <p>Bullying can occur in different forms, depending on how the harm is carried out. Understanding these types helps people recognize bullying easily and respond appropriately.</p>
 
-        <h3>Day 5: Guided Practice</h3>
-        <p><strong>Step 1: Set Goals.</strong> Identify what you want to achieve. Make sure your goals are specific, measurable, achievable, relevant, and time-bound (SMART). Example: Improve grades in math by scoring 85% or higher on the next test.</p>
-        <p><strong>Step 2: Identify Tasks.</strong> Break down your goal into smaller tasks. Identify what needs to be done. Example: Reviewing notes daily, practicing problems regularly, seeking help from a tutor.</p>
-        <p><strong>Step 3: Create a Schedule.</strong> Plan out when and how you will complete each task. Use a planner, calendar, or app to stay organized.</p>
-        <p><strong>Step 4: Track Progress.</strong> Regularly review your progress towards your goal. Make adjustments to your plan as needed.</p>
+            <h4>2.1 Physical Bullying</h4>
+            <p>Physical bullying involves the use of bodily force or physical actions to hurt someone or damage their belongings. It is the most visible and easily recognized form of bullying. This type includes hitting, kicking, pushing, slapping, tripping, or pulling someone's hair, as well as taking or destroying another person's property.</p>
+            <p>Physical bullying often happens in places like playgrounds or areas where supervision is limited. Because it is obvious, it is usually easier for teachers and adults to notice. However, victims may still remain silent out of fear of retaliation.</p>
+
+            <h4>2.2 Verbal Bullying</h4>
+            <p>Verbal bullying involves the use of words to hurt, insult, or humiliate another person. Although it does not involve physical contact, it can be very damaging emotionally and psychologically. Examples include name-calling, mocking, teasing, making threats, and using abusive or offensive language.</p>
+            <p>Unlike physical bullying, verbal bullying may not leave visible signs, but its effects can last longer. Victims may begin to believe the negative things said about them, which can affect their confidence and mental health.</p>
+
+            <h4>2.3 Social / Relational Bullying</h4>
+            <p>Social or relational bullying focuses on harming a person's relationships, social status, or reputation. It is often more subtle and difficult to detect because it happens behind the scenes. This type includes spreading rumors or lies, excluding someone from group activities, or publicly embarrassing them.</p>
+            <p>Social bullying can be very painful because it affects a person's sense of belonging and acceptance, leading to loneliness, depression, and low self-worth.</p>
+
+            <h4>2.4 Cyberbullying</h4>
+            <p>Cyberbullying is bullying that takes place through digital devices and online platforms such as social media, text messages, emails, and chat applications. It includes sending threatening or insulting messages, posting embarrassing photos or videos, spreading false information online, or impersonating someone.</p>
+            <p>One major danger of cyberbullying is that it can happen anytime and reach a wide audience quickly. It does not stop when the victim leaves school. Cyberbullying can also be anonymous, making victims feel trapped, helpless, and constantly exposed.</p>
+
+            <span class="day-label">Day 3</span>
+            <h3>3. Causes of Bullying</h3>
+            <p>Bullying does not happen without reason. It is often the result of a combination of personal, social, and environmental factors.</p>
+
+            <h4>3.1 Individual Factors</h4>
+            <p>Some individuals bully because they have low self-esteem. Anger and frustration, a desire for power and control, and a lack of empathy are also key individual factors. In some cases, bullies may not even fully understand the impact of their actions, especially if they have not been properly guided.</p>
+
+            <h4>3.2 Family Influence</h4>
+            <p>Children who grow up in violent or abusive homes may see aggression as normal behavior. Neglect or lack of attention can also contribute, as can inconsistent or harsh discipline. On the other hand, children who are overly spoiled and not corrected when they behave badly may feel entitled. Both lack of discipline and excessive harshness can contribute to bullying behavior.</p>
+
+            <h4>3.3 Peer Pressure</h4>
+            <p>Individuals may bully others to fit in or gain acceptance from a group. Sometimes a group may directly encourage bullying by laughing, supporting, or joining in. There are also situations where individuals may not want to bully but feel pressured to do so in order to avoid being rejected or becoming victims themselves.</p>
+
+            <h4>3.4 Media and Environmental Factors</h4>
+            <p>Exposure to violent movies, television shows, video games, or online content can make aggression seem normal or acceptable. Living in communities where violence, crime, or conflict is common can increase the likelihood of bullying behavior. Additionally, lack of proper supervision in schools or communities can allow bullying to grow unchecked.</p>
+
+            <span class="day-label">Day 4</span>
+            <h3>4. Effects of Bullying</h3>
+            <p>Bullying has serious and far-reaching effects on victims that can last for many years.</p>
+
+            <h4>4.1 Emotional and Psychological Effects</h4>
+            <p>Victims often feel unsafe, sad, and lonely. Over time this can develop into anxiety and, in more serious cases, depression. Another major impact is low self-esteem—victims may begin to believe the negative things said about them. If not addressed, these effects can become severe and may lead to harmful thoughts or behaviors.</p>
+
+            <h4>4.2 Physical Effects</h4>
+            <p>Victims may suffer visible injuries in cases of physical bullying. Even when there is no physical attack, stress caused by bullying can lead to headaches, stomach aches, fatigue, or difficulty sleeping. Some victims may also lose their appetite or develop unhealthy eating habits.</p>
+
+            <h4>4.3 Academic Impact</h4>
+            <p>Victims may begin to lose interest in school because they associate it with fear and discomfort. Concentration in class may reduce due to anxiety or constant worry, leading to poor grades and reduced participation. In some cases victims may start avoiding school altogether, leading to absenteeism.</p>
+
+            <h4>4.4 Long-term Consequences</h4>
+            <p>The effects of bullying do not always end when the bullying stops. Victims may develop long-term mental health issues such as chronic anxiety or depression. They may also struggle with forming and maintaining relationships, and may carry emotional scars that affect their decision-making, self-image, and overall happiness.</p>
+
+            <span class="day-label">Day 5</span>
+            <h3>5. Signs and Indicators of Bullying</h3>
+
+            <h4>5.1 Signs in Victims</h4>
+            <ul>
+                <li><strong>Sudden Fear of School:</strong> Frequent complaints, pretending to be sick, or making excuses to stay at home.</li>
+                <li><strong>Unexplained Injuries:</strong> Bruises, cuts, or damaged belongings without a clear explanation.</li>
+                <li><strong>Withdrawal from Friends:</strong> Isolating from friends and avoiding social activities.</li>
+                <li><strong>Changes in Behavior or Mood:</strong> Becoming unusually quiet, sad, anxious, or irritable; losing interest in activities once enjoyed.</li>
+            </ul>
+
+            <h4>5.2 Signs in Bullies</h4>
+            <ul>
+                <li><strong>Aggressive Behavior:</strong> A pattern of shouting, threatening, or acting violently toward others.</li>
+                <li><strong>Frequent Involvement in Fights:</strong> Constant arguments, pushing, or fighting in and outside school.</li>
+                <li><strong>Lack of Empathy:</strong> Little or no concern for how others feel; laughing at someone's pain.</li>
+                <li><strong>Desire to Dominate Others:</strong> A strong need to control, feel powerful, or be feared by others.</li>
+            </ul>
+        </div>
     </section>
 
+    <!-- ════════════════ WEEK 2 ════════════════ -->
     <section id="week2">
-        <h2>WEEK 2: SEXUAL VICES</h2>
-        <div class="memory-verse">MEMORY VERSE: “What? know ye not that your body is the temple of the Holy Ghost which is in you, which ye have of God, and ye are not your own?” – 1 Corinthians 6:19</div>
-        
-        <h3>Day 1: Introduction and Definition</h3>
-        <p><strong>1. Introduction</strong><br>
-        Sexual vices among students have become a growing concern in many societies today. With increased exposure to social media, peer influence, and changing moral values, many students are vulnerable to unhealthy behaviours that can negatively affect their education, character, and future. This study seeks to examine these behaviours and their impact on students.</p>
-        <p><strong>2. Definition of Sexual Vices</strong><br>
-        Sexual vices refer to unacceptable or harmful sexual-related behaviours that go against moral standards, school rules, and societal values. Among students, these behaviours are considered inappropriate because they interfere with healthy development, discipline, and academic focus.</p>
-        <h4>SOME SEXUAL VICES:</h4>
-        <ul>
-            <li><strong>Homosexuality:</strong> Sexual acts between people of the same gender. (Leviticus 18:22)</li>
-            <li><strong>Incest:</strong> Sexual activities between family members. (Leviticus 18:7-18)</li>
-            <li><strong>Paedophilia:</strong> Sexual attraction towards children.</li>
-            <li><strong>Bestiality:</strong> Sexual affair with an animal. (Leviticus 18:23)</li>
-            <li><strong>Rape:</strong> Forceful sexual intercourse with an unwilling partner. (2 Samuel 13:10-14)</li>
-            <li><strong>Pornography:</strong> Explicit depiction of sexual subject matter with lustful intent. It is addictive and destructive.</li>
-            <li><strong>Masturbation and use of sex toys</strong></li>
-            <li><strong>Cyber-sex/Phone-sex:</strong> Sex-oriented conversations over the internet or phone.</li>
-        </ul>
+        <h2>Week 2: Bullying — Part 2</h2>
+        <div class="section-body">
+            <div class="memory-verse">
+                <strong>Memory Verse</strong>
+                "Be kind and compassionate to one another, forgiving each other, just as in Christ God forgave you." – Ephesians 4:32
+            </div>
 
-        <h3>Day 2: Forms of Sexual Vices Among Students</h3>
-        <p><strong>2.1 Premature Sexual Activities:</strong> This refers to students engaging in sexual behaviours at an early age before they are emotionally, mentally, or physically mature. Such actions can lead to distraction from studies, emotional stress, and poor decision-making.</p>
-        <p><strong>2.2 Exposure to Inappropriate Media:</strong> Many students are exposed to inappropriate content through phones, the internet, movies, or social media. This exposure can influence their thinking, behaviour, and attitude toward relationships, leading to imitation of harmful actions.</p>
-        <p><strong>2.3 Sexual Harassment and Abuse:</strong> Sexual harassment involves unwanted sexual comments, gestures, or actions, while abuse includes forcing or manipulating someone into sexual acts. These behaviours violate personal rights and can cause long-term emotional and psychological harm to victims.</p>
-        <p><strong>2.4 Peer-Influenced Risky Behaviours:</strong> Some students engage in sexual vices due to pressure from friends who encourage them to act in certain ways to “fit in” or appear mature. Peer pressure often leads students to make choices they would not make independently.</p>
+            <span class="day-label">Day 1</span>
+            <h3>6. Prevention of Bullying</h3>
+            <p>Preventing bullying requires a collective effort from individuals, families, schools, and the wider community. Proactive steps must be taken to create a safe, respectful, and supportive environment.</p>
 
-        <h3>Day 3: Causes of Sexual Vices Among Students</h3>
-        <p><strong>3.1 Peer Pressure:</strong> Students often feel the need to belong. When peers promote immoral behaviours, some students follow along to gain acceptance, even when they know such actions are wrong.</p>
-        <p><strong>3.2 Lack of Proper Guidance and Supervision:</strong> When parents, teachers, or guardians fail to provide adequate guidance, students may lack moral direction. Poor supervision gives room for negative behaviours to grow unnoticed.</p>
-        <p><strong>3.3 Influence of Social Media and Technology:</strong> Easy access to smartphones and the internet exposes students to inappropriate ideas and behaviours. Without proper monitoring, technology can negatively shape students’ values and actions.</p>
-        <p><strong>3.4 Poor Moral and Value Education:</strong> A weak foundation in moral, religious, or value-based education can make students vulnerable to sexual vices. When students are not taught self-control and respect, they may engage in irresponsible behaviours.</p>
+            <h4>6.1 Role of Parents</h4>
+            <p>Parents should teach kindness and respect from an early age by modeling good behavior at home. They should monitor their children's behavior both offline and online, encourage open communication, and teach their children how to respond to bullying—whether by speaking up, walking away, or reporting to a trusted adult.</p>
 
-        <h3>Day 4: Effects of Sexual Vices on Students</h3>
-        <p><strong>4.1 Academic Performance:</strong> Sexual vices often distract students from their studies. Loss of concentration, absenteeism, and lack of interest in schoolwork can result in poor academic achievement.</p>
-        <p><strong>4.2 Emotional and Psychological Well-being:</strong> Students involved in sexual vices may experience guilt, fear, anxiety, or emotional confusion. Victims of abuse may suffer low self-esteem and trauma.</p>
-        <p><strong>4.3 Health and Safety Concerns:</strong> Engaging in unsafe behaviours can expose students to serious health risks and emotional harm, which can affect their overall development.</p>
-        <p><strong>4.4 Social and Moral Development:</strong> Sexual vices can damage a student’s reputation and moral standing. It may lead to loss of respect from peers, teachers, and the community.</p>
+            <h4>6.2 Role of Teachers and Schools</h4>
+            <p>Schools should develop and enforce clear anti-bullying policies that define bullying, outline consequences, and provide reporting procedures. Teachers should promote discipline and fairness in the classroom and remain observant and approachable so students feel safe reporting issues. Creating a positive school environment where diversity is accepted is one of the most effective ways to reduce bullying.</p>
 
-        <h3>Day 5: Prevention and Control of Sexual Vices</h3>
-        <p><strong>5.1 Role of Parents and Guardians:</strong> Parents should communicate openly with their children, provide moral guidance, monitor media use, and be positive role models. Strong family values help students make better choices.</p>
-        <p><strong>5.2 Role of Schools and Teachers:</strong> Schools should teach moral and civic education, enforce clear rules and discipline, provide counselling services, and create a safe learning environment.</p>
-        <p><strong>5.3 Student Self-Discipline and Responsibility:</strong> Students must learn to make wise decisions, respect themselves and others, avoid negative peer influence, and focus on personal growth and academics.</p>
-        <p><strong>6. Role of Society and Government:</strong> Organizing community awareness programs and enforcing policies that protect students from abuse.</p>
+            <h4>6.3 Role of Peers</h4>
+            <p>Students should support victims of bullying by showing kindness and including them in activities. They should report bullying incidents to teachers or school authorities instead of staying silent, and refuse to participate in bullying behavior. When bullies do not receive attention or support, they are less likely to continue.</p>
+
+            <h4>6.4 Government and Community Efforts</h4>
+            <p>Authorities should create and enforce laws and policies that protect individuals, especially children, from bullying and abuse. There should also be public awareness campaigns to educate people about the dangers of bullying. Communities can support organizations and initiatives that focus on child protection, counseling, and youth development.</p>
+
+            <span class="day-label">Day 2</span>
+            <h3>7. Strategies for Addressing Bullying</h3>
+
+            <h4>7.1 Reporting Bullying</h4>
+            <p>Victims or witnesses should report bullying to trusted adults such as teachers, parents, or school counselors. Schools and organizations should provide clear and confidential reporting systems. Encouraging bystanders to report incidents is also essential—when more people speak up, bullying is less likely to continue unnoticed.</p>
+
+            <h4>7.2 Intervention Methods</h4>
+            <p>The first step is to separate the individuals involved and ensure the victim is safe. Authorities should then investigate the incident carefully, listening to all parties. Appropriate disciplinary actions should be applied to the bully, focusing not only on punishment but also on helping them understand the consequences of their actions. Schools may also use restorative approaches where the bully takes responsibility and makes amends.</p>
+
+            <h4>7.3 Counseling and Support</h4>
+            <p>Victims may need emotional support and counseling to rebuild confidence and develop coping strategies. Bullies also require attention—counseling can help address underlying issues such as anger, insecurity, or lack of empathy. Parents and teachers should work together with counselors to provide continuous support and monitor progress.</p>
+
+            <span class="day-label">Day 3</span>
+            <h3>8. Legal and Ethical Considerations</h3>
+
+            <h4>8.1 School Policies</h4>
+            <p>Schools are expected to clearly state what constitutes bullying and outline clear consequences for offenders. In addition, schools should provide confidential reporting procedures and emphasize education and prevention programs that teach respect, tolerance, and empathy among students.</p>
+
+            <h4>8.2 Child Protection Laws</h4>
+            <p>Child protection laws ensure that every child has the right to safety, dignity, and protection in schools and communities. When bullying becomes severe—especially in cases involving physical harm, cyber harassment, or threats—legal action can be taken against offenders. Such laws require schools and caregivers to take responsibility for protecting children.</p>
+
+            <h4>8.3 Ethical Responsibility of Individuals</h4>
+            <p>Ethically, every student, teacher, and parent is expected to treat others with respect, kindness, and fairness. Even when no law is broken, bullying is still morally wrong because it causes harm to others. Ethical responsibility promotes a culture of empathy and respect, which helps reduce bullying in everyday interactions.</p>
+
+            <h4>8.4 Digital Safety and Online Responsibility</h4>
+            <p>Individuals are expected to use social media and online platforms responsibly. Posting harmful content, spreading rumors, sharing private images without consent, or sending threats can be considered cyberbullying and may have legal consequences. Schools and governments are increasingly introducing cyber safety rules and awareness programs to educate students on responsible digital behavior.</p>
+
+            <span class="day-label">Day 4</span>
+            <h3>Case Studies and Real-life Examples</h3>
+            <p><em>Interactive session with pupils.</em> These are real situations that show how bullying happens and how it can be handled. They help people understand the seriousness of bullying and learn effective solutions.</p>
+
+            <span class="day-label">Day 5</span>
+            <h3>Conclusion and Recommendations</h3>
+            <p>Bullying is harmful but preventable. Everyone—parents, teachers, students, and the government—must work together to stop it. Promoting kindness, respect, and awareness is key to reducing bullying.</p>
+        </div>
     </section>
 
+    <!-- ════════════════ WEEK 3 ════════════════ -->
     <section id="week3">
-        <h2>WEEK 3: INFATUATION</h2>
-        <div class="memory-verse">Text: 1 CORINTHIANS 13:4-7<br>“Love is patient, love is kind. It does not envy, it does not boast, it is not proud... It always protects, always trusts, always hopes, always perseveres.”</div>
-        
-        <h3>Day 1: Introduction to Infatuation</h3>
-        <p><strong>1. Introduction</strong><br>
-        Infatuation is a strong but usually short-lived emotional attraction to someone. It often begins suddenly and feels very intense at the start. Most times, it is based on physical appearance or imagined qualities, not on truly knowing the person’s character. Because it is not deep, it can fade quickly.</p>
-        <p><strong>2. Characteristics of Infatuation</strong></p>
-        <ul>
-            <li><strong>Develops suddenly:</strong> The feelings appear very fast, sometimes after just a short interaction.</li>
-            <li><strong>Strong emotional excitement:</strong> The person feels overly happy, nervous, or thrilled.</li>
-            <li><strong>Excessive admiration:</strong> The person is seen as “perfect,” even without good reason.</li>
-            <li><strong>Unrealistic expectations:</strong> The individual expects too much without understanding reality.</li>
-            <li><strong>Short duration:</strong> The feelings may not last long.</li>
-            <li><strong>Focuses more on feelings than facts:</strong> Decisions are based on emotions, not careful thinking.</li>
-        </ul>
+        <h2>Week 3: Infatuation</h2>
+        <div class="section-body">
+            <div class="memory-verse">
+                <strong>Text — 1 Corinthians 13:4–7</strong>
+                "Love is patient, love is kind. It does not envy, it does not boast, it is not proud... It always protects, always trusts, always hopes, always perseveres."
+            </div>
 
-        <h3>Day 2: Causes of Infatuation</h3>
-        <ol>
-            <li><strong>Physical Attraction:</strong> Happens when someone is drawn to another person’s looks, voice, dressing style, or mannerisms. This Focusing mainly on appearance can create strong feelings without deep understanding.</li>
-            <li><strong>Loneliness or Emotional Need:</strong> When a person feels emotionally empty, they may strongly desire attention, love, or care. This emotional gap can cause them to quickly attach feelings to anyone who shows interest.</li>
-            <li><strong>Peer Pressure:</strong> Sometimes friends encourage relationships so that one can “fit in” or not feel left out. Seeing others in relationships may create pressure to have one too.</li>
-            <li><strong>Media Influence:</strong> Movies, music, and social media often portray love as perfect, exciting, and effortless. These unrealistic images can shape expectations and make people believe infatuation is true love.</li>
-            <li><strong>Lack of Emotional Maturity:</strong> Emotional maturity helps a person understand and control their feelings. When someone lacks this maturity, they may confuse excitement, attraction, or attention with love.</li>
-            <li><strong>Curiosity or Excitement:</strong> The desire to experience something new or thrilling can also cause infatuation. The mystery of a new connection creates intense feelings that fade once the excitement wears off.</li>
-        </ol>
+            <span class="day-label">Day 1</span>
+            <h3>1. Introduction to Infatuation</h3>
+            <p>Infatuation is a strong emotional state that often occurs when someone develops an intense attraction toward another person. It is usually based on physical appearance, admiration, or fantasy rather than deep emotional connection or understanding. Infatuation can feel very powerful at the beginning, but it is often temporary and may fade quickly when reality sets in.</p>
+            <p>Understanding infatuation is important because it helps individuals distinguish between true love and temporary emotional attraction. Many people, especially young individuals, may confuse infatuation with love, which can lead to unrealistic expectations and emotional disappointment.</p>
 
-        <h3>Day 3: Signs of Infatuation</h3>
-        <ol>
-            <li><strong>Constantly Thinking About the Person:</strong> A major sign of infatuation is when someone thinks about a particular person almost all the time. The person may replay conversations, imagine future moments, or feel distracted.</li>
-            <li><strong>Ignoring the Person’s Faults:</strong> When someone is infatuated, they tend to focus only on positive qualities. Any weaknesses, bad habits, or mistakes are either ignored or justified.</li>
-            <li><strong>Mood Depends on Attention:</strong> emotions rise and fall based on how the other person behaves. A kind message brings happiness; silence or lack of attention causes sadness or worry.</li>
-            <li><strong>Desire for Quick Closeness:</strong> Infatuation often creates a strong desire to become emotionally close very quickly, wanting deep commitment before truly knowing the other person well.</li>
-            <li><strong>Difficulty Concentrating:</strong> Because thoughts are focused on the person, concentration on schoolwork, chores, or responsibilities may reduce.</li>
-        </ol>
+            <h4>1.1 Definition of Infatuation</h4>
+            <p>Infatuation can be defined as an intense but short-lived emotional or romantic attraction toward someone, often based on physical appearance or idealized qualities rather than true knowledge of the person. A key feature of infatuation is that it is emotionally overwhelming but not stable—the person experiencing it may feel deeply "in love," but this feeling is often based on fantasy rather than reality.</p>
 
-        <h3>Day 4: Infatuation vs. Love</h3>
-        <table>
-            <tr>
-                <th>Feature</th>
-                <th>Infatuation</th>
-                <th>Love</th>
-            </tr>
-            <tr>
-                <td><strong>Duration</strong></td>
-                <td>Short-term; fades quickly.</td>
-                <td>Long-term; grows over time.</td>
-            </tr>
-            <tr>
-                <td><strong>Driver</strong></td>
-                <td>Driven by Emotions (excitement).</td>
-                <td>Driven by Commitment (loyalty).</td>
-            </tr>
-            <tr>
-                <td><strong>Focus</strong></td>
-                <td>Self-centered; personal happiness.</td>
-                <td>Selfless; focuses on other's well-being.</td>
-            </tr>
-            <tr>
-                <td><strong>Perception</strong></td>
-                <td>Idealizes the person; ignores faults.</td>
-                <td>Accepts faults; willing to grow together.</td>
-            </tr>
-        </table>
+            <h4>2. Characteristics of Infatuation</h4>
+            <ul>
+                <li><strong>Intense Emotional Attraction:</strong> An overwhelming desire to be close to someone, thinking about them constantly, and experiencing mood swings depending on their presence or attention.</li>
+                <li><strong>Idealization of a Person:</strong> Seeing the person as "perfect" or "flawless," ignoring their weaknesses. The admiration is based more on imagination than reality, which can lead to disappointment.</li>
+                <li><strong>Lack of Deep Understanding:</strong> Attraction is usually based on appearance, first impressions, or limited interactions. Without real understanding, the relationship remains shallow.</li>
+                <li><strong>Short-lived Emotions:</strong> The strong feelings experienced at the beginning often fade over time once the excitement reduces or reality becomes clearer.</li>
+            </ul>
 
-        <h3>Day 5: Effects and Management</h3>
-        <p><strong>1. Effects of Infatuation:</strong> Positive effects include temporary happiness or motivation. Negative effects include poor academic performance, emotional instability, disappointment, and poor decision-making.</p>
-        <p><strong>2. Management:</strong> Practicing self-control, focusing on academics and goals, seeking guidance from trusted adults, and building healthy friendships.</p>
+            <span class="day-label">Day 2</span>
+            <h3>3. Causes of Infatuation</h3>
+
+            <h4>3.1 Physical Attraction</h4>
+            <p>A person is strongly drawn to another based on appearance. At this stage, the individual may feel instant admiration or excitement without truly knowing the personality or character of the person. Because physical attraction is usually immediate and emotional, it can easily develop into infatuation.</p>
+
+            <h4>3.2 Peer Influence</h4>
+            <p>Friends and social groups can shape how individuals think and feel about relationships. Sometimes, a person may develop infatuation because their friends admire or talk about a particular individual. In some cases, individuals may feel pressured to like someone simply to fit in or avoid being left out.</p>
+
+            <h4>3.3 Emotional Needs and Loneliness</h4>
+            <p>When a person feels lonely, neglected, or emotionally unfulfilled, they may become more vulnerable to developing strong attachments quickly. They may mistake temporary attention for deep emotional connection. Infatuation in this case becomes a way of filling an emotional gap rather than forming a genuine relationship.</p>
+
+            <h4>3.4 Media and Social Media Influence</h4>
+            <p>Movies, television shows, music, and online content often portray romantic relationships in an idealized and unrealistic way. On social media, people often present only their best images and lifestyles, leading others to develop admiration based on filtered or incomplete information.</p>
+
+            <span class="day-label">Day 3</span>
+            <h3>4. Differences Between Infatuation and Love</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Infatuation</th>
+                        <th>Love</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Emotional Depth</strong></td>
+                        <td>Strong but shallow; driven by physical attraction and excitement</td>
+                        <td>Deep connection involving care, trust, respect, and acceptance</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Time Factor</strong></td>
+                        <td>Develops very quickly; also fades quickly</td>
+                        <td>Develops gradually over time through shared experiences</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reality vs. Fantasy</strong></td>
+                        <td>Based on fantasy; idealizes the person, ignores flaws</td>
+                        <td>Based on reality; accepts the person's strengths and weaknesses</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Stability</strong></td>
+                        <td>Unstable and temporary; disappears when excitement fades</td>
+                        <td>Stable and long-lasting; withstands challenges and misunderstandings</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <span class="day-label">Day 4</span>
+            <h3>5. Stages of Infatuation</h3>
+
+            <h4>5.1 Initial Attraction</h4>
+            <p>This is the first stage, where a person becomes aware of someone and feels a sudden attraction toward them based on physical appearance, voice, style, or first impression. This stage is often light, exciting, and based on surface-level admiration.</p>
+
+            <h4>5.2 Obsession Stage</h4>
+            <p>The feelings become stronger and more intense. The person begins to think about the individual constantly and may struggle to focus on other activities. Imagination plays a big role and the thoughts about the person become difficult to stop.</p>
+
+            <h4>5.3 Emotional Dependency</h4>
+            <p>The individual begins to rely heavily on the person for emotional satisfaction. Their mood may depend on whether they receive attention or acknowledgment. This stage creates a sense of neediness and attachment, and may also lead to jealousy, insecurity, or fear of rejection.</p>
+
+            <h4>5.4 Decline Phase</h4>
+            <p>The final stage, where the intense feelings begin to fade. This usually happens when reality sets in, expectations are not met, or the emotional excitement reduces over time. In some cases, the feelings disappear completely, showing that infatuation is temporary and not deeply rooted like true love.</p>
+
+            <span class="day-label">Day 5</span>
+            <h3>6. Effects, Signs, and Managing Infatuation</h3>
+
+            <h4>6.1 Emotional, Behavioral and Academic Effects</h4>
+            <p>Infatuation can cause strong emotions such as excitement, anxiety, and mood swings. It may lead to sadness or disappointment when expectations are not met. It can make a person act impulsively, become overly focused on one person, and neglect other responsibilities, reducing concentration in school or daily activities.</p>
+
+            <h4>6.2 Signs of Infatuation</h4>
+            <ul>
+                <li><strong>Constant Thoughts About Someone:</strong> Thinking about someone almost all the time, making it hard to focus on other tasks.</li>
+                <li><strong>Over-idealization:</strong> Seeing the person as perfect and creating unrealistic expectations based on imagination.</li>
+                <li><strong>Jealousy and Possessiveness:</strong> Feeling jealous when the person interacts with others, leading to controlling or insecure behavior.</li>
+                <li><strong>Emotional Instability:</strong> Mood changes quickly based on attention received from the person they like.</li>
+            </ul>
+
+            <h4>6.3 How to Manage or Overcome Infatuation</h4>
+            <ul>
+                <li><strong>Self-awareness and Reflection:</strong> Recognize your feelings and understand whether they are based on reality or fantasy.</li>
+                <li><strong>Building Emotional Control:</strong> Learn to manage your emotions instead of acting on impulse. This helps reduce obsession and keeps your thoughts balanced.</li>
+                <li><strong>Focusing on Personal Growth:</strong> Direct your energy toward education, skills, and self-improvement. This reduces emotional dependency on another person.</li>
+                <li><strong>Seeking Guidance and Support:</strong> Talk to trusted friends, parents, or counselors about your feelings. Advice from others helps you gain clarity and emotional stability.</li>
+            </ul>
+        </div>
     </section>
 
+    <!-- ════════════════ WEEK 4 ════════════════ -->
     <section id="week4">
-        <h2>WEEK 4: STRESS MANAGEMENT</h2>
-        <div class="memory-verse">Memory verse: “Cast all your anxiety on him because he cares for you.” – 1 Peter 5:7</div>
-        
-        <h3>Day 1: Introduction and Definition</h3>
-        <p><strong>1.1 Introduction:</strong> Stress is a common experience among students due to academic demands, family expectations, and social challenges. Balancing schoolwork, relationships, and personal responsibilities can affect health and performance.</p>
-        <p><strong>1.2 Definition:</strong> Stress is the physical, emotional, or mental pressure a person feels when faced with demanding or challenging situations.</p>
-        <p><strong>1.3 Types of Stress Among Students:</strong></p>
-        <ul>
-            <li><strong>1. Academic Stress:</strong> Related to exams, heavy homework, and fear of failing.</li>
-            <li><strong>2. Emotional Stress:</strong> Fear of disappointment, low self-esteem, or feeling unloved.</li>
-            <li><strong>3. Social Stress:</strong> Peer pressure, bullying, difficulty making friends.</li>
-            <li><strong>4. Family-Related Stress:</strong> conflicts or misunderstanding, financial difficulties.</li>
-            <li><strong>5. Physical Stress:</strong> Lack of sleep, poor diet, or illness.</li>
-        </ul>
+        <h2>Week 4: Examination</h2>
+        <div class="section-body">
 
-        <h3>Day 2: Sources of Stress Among Students</h3>
-        <ul>
-            <li><strong>2.1 Academic Pressure:</strong> expected to perform well in tests, fear of failure, tight deadlines.</li>
-            <li><strong>2.2 Family Factors:</strong> Problems at home distracting from studies; financial difficulties.</li>
-            <li><strong>2.3 Peer Pressure:</strong> The desire to fit in or avoid rejection; fear of bullying.</li>
-            <li><strong>2.4 Financial Challenges:</strong> Worry about fees, textbooks, or comparing with classmates.</li>
-            <li><strong>2.5 Time Management Issues:</strong> Procrastination leading to panic and exhaustion.</li>
-            <li><strong>2.6 Personal Expectations:</strong> internal self-pressure to be perfect.</li>
-        </ul>
+            <span class="day-label">Day 1</span>
+            <h3>Meaning and Ethics</h3>
+            <p>Examination is a formal test of a person's knowledge or proficiency. It is an opportunity to know how well you understand. 1 Thessalonians 5:21 says "examine everything carefully." Maintain ethical standards at all times. Academic dishonesty includes cheating, fabrication, assisting others in deception, tampering, and plagiarism.</p>
 
-        <h3>Day 3: Signs and Effects of Stress on Students</h3>
-        <ul>
-            <li><strong>3.1 Physical Signs:</strong> Headaches, tiredness, body pains, poor sleep.</li>
-            <li><strong>3.2 Emotional Effects:</strong> Feeling anxious, sad, angry, or overwhelmed.</li>
-            <li><strong>3.3 Behavioural Effects:</strong> Irritability, withdrawal from friends, poor study habits.</li>
-            <li><strong>3.4 Academic Performance:</strong> Reduced focus, memory, and lower grades.</li>
-        </ul>
+            <span class="day-label">Day 2</span>
+            <h3>In the Exam Room</h3>
+            <ol>
+                <li>Read instructions carefully. Check rubric for compulsory questions.</li>
+                <li>Work out the timing. Divide time by questions. Allow for planning and checking.</li>
+                <li>Read the questions carefully. Read through the paper once before choosing.</li>
+                <li>Choose your best questions first to build confident momentum.</li>
+                <li>Decide on question order wisely.</li>
+            </ol>
 
-        <h3>Day 4: Common Stress Management Techniques</h3>
-        <ul>
-            <li><strong>4.1 Time Management:</strong> Creating a timetable to set priorities.</li>
-            <li><strong>4.2 Healthy Study Habits:</strong> Studying regularly to avoid last-minute cramming.</li>
-            <li><strong>4.3 Relaxation:</strong> Deep breathing, quiet reflection, or calm music.</li>
-            <li><strong>4.4 Physical Exercise:</strong> Sports release tension and improve mood.</li>
-            <li><strong>4.5 Proper Rest:</strong> Adequate sleep (7-9 hours) helps emotional balance.</li>
-        </ul>
+            <span class="day-label">Day 3</span>
+            <h3>How to Answer Multiple Choice Questions</h3>
+            <ol>
+                <li>Read the entire question before glancing at answer options.</li>
+                <li>Answer it in your mind first to prevent being swayed by distractors.</li>
+                <li>Use the process of elimination to cross out known incorrect answers.</li>
+                <li>Select the BEST answer requested, not just one that seems correct.</li>
+                <li>Watch for absolute words like "always," "never," "must."</li>
+                <li>Manage your time and keep an eye on the clock.</li>
+            </ol>
 
-        <h3>Day 5: Role of Students and Stakeholders</h3>
-        <p>Students must learn self-awareness. Parents should provide emotional encouragement and a conducive home environment. Schools provide guidance and counselling services. Stress management is key to health and success.</p>
+            <span class="day-label">Day 4</span>
+            <h3>Attempt Each Question Correctly</h3>
+            <div class="memory-verse">
+                <strong>Colossians 3:23</strong>
+                "Whatever you do, work at it with all your heart..."
+            </div>
+            <ul>
+                <li><strong>Explain:</strong> Give definition, examples, and talk more on what you know.</li>
+                <li><strong>State:</strong> Write in a complete sentence, not just a word.</li>
+                <li><strong>Mention or List:</strong> Just list without need for explanation.</li>
+            </ul>
+            <p>Cross-check every answer before submitting. Ensure you have done your best.</p>
+
+            <span class="day-label">Day 5</span>
+            <h3>Preparing for Examination</h3>
+            <p>Preparation means readiness. Practice makes perfect—use past questions. Get all materials (pens, rulers, math sets, calculators) ready beforehand. Cover all taught topics in personal revision. Do not stay awake all through the night reading; rest prevents blanking out. Prayer can help as the Holy Spirit reminds you of what you have read.</p>
+        </div>
     </section>
 
-    <section id="week5">
-        <h2>WEEK 5: EXAMINATION</h2>
-        <h3>Day 1: Meaning and Ethics</h3>
-        <p>Examination is a formal test of a person’s knowledge or proficiency. It is an opportunity to know how well you understand. 1 Thessalonians 5:21 says "examine everything carefully". Maintain ethical standards. Academic dishonesty includes cheating, fabrication, assisting others in deception, tampering, and plagiarism.</p>
-        
-        <h3>Day 2: In the Exam Room</h3>
-        <ol>
-            <li>Read instructions carefully. Check rubric for compulsory questions.</li>
-            <li>Work out the timing. Divide time by questions. Allow for planning and checking.</li>
-            <li>Read the questions carefully. Read through the paper once before choosing.</li>
-            <li>Choose your best questions first to build confident momentum.</li>
-            <li>Decide on question order wisely.</li>
-        </ol>
+    <!-- ════════════════ WEEK 6 ════════════════ -->
+    <section id="week6">
+        <h2>Week 6: Handling Challenges</h2>
+        <div class="section-body">
+            <div class="memory-verse">
+                <strong>John 16:33</strong>
+                "I have told you these things, so that in me you may have peace. In this world you will have trouble. But take heart! I have overcome the world."
+            </div>
 
-        <h3>Day 3: How to Answer Multiple Choice Questions</h3>
-        <ol>
-            <li>Read the entire question before glancing at answer options.</li>
-            <li>Answer it in your mind first to prevent being swayed by distractors.</li>
-            <li>Use the process of elimination to cross out known incorrect answers.</li>
-            <li>Select the BEST answer requested, not just one that seems correct.</li>
-            <li>Watch for absolute words like "always", "never", "must".</li>
-            <li>Manage your time and keep an eye on the clock.</li>
-        </ol>
+            <span class="day-label">Day 1</span>
+            <h3>1. Introduction to Challenges</h3>
+            <p>Challenges are difficulties or problems that individuals face in different areas of life. They test a person's ability to think, adapt, and find solutions. Challenges are a normal part of life and cannot be avoided completely. Learning to handle them helps individuals grow stronger and more responsible.</p>
 
-        <h3>Day 4: Attempt Each Question Correctly</h3>
-        <p>Colossians 3:23 — “Whatever you do, work at it with all your heart...”</p>
-        <ul>
-            <li><strong>Explain:</strong> Give definition, examples, and talk more on what you know.</li>
-            <li><strong>State:</strong> Write in a complete sentence, not just a word.</li>
-            <li><strong>Mention or List:</strong> Just list without need for explanation.</li>
-        </ul>
-        <p>Cross-check every answer before submitting. Ensure you have done your best.</p>
+            <h4>Types of Challenges</h4>
+            <ul>
+                <li><strong>Personal Challenges:</strong> Difficulties related to an individual's habits, health, or behavior, such as self-discipline or time management.</li>
+                <li><strong>Academic Challenges:</strong> Problems faced in school or learning environments, such as difficulty understanding subjects or poor study habits.</li>
+                <li><strong>Social Challenges:</strong> Difficulties in relationships with others, such as peer pressure, communication issues, or conflicts.</li>
+                <li><strong>Financial Challenges:</strong> When a person lacks enough money or resources, affecting education, lifestyle, and basic needs.</li>
+                <li><strong>Emotional Challenges:</strong> Struggles with feelings such as stress, sadness, or anxiety that can affect mental health and decision-making.</li>
+            </ul>
 
-        <h3>Day 5: Preparing for Examination</h3>
-        <p>Preparation means readiness. Practice makes perfect (past questions). Get all materials (pens, rulers, math sets, calculators) ready beforehand. Cover all taught topics in personal revision. Do not stay awake all through the night reading; rest prevents blanking out. Prayer can help as the Holy Spirit reminds you of what you have read.</p>
+            <span class="day-label">Day 2</span>
+            <h3>3. Causes and Effects of Challenges</h3>
+
+            <h4>Causes</h4>
+            <ul>
+                <li><strong>Lack of Resources:</strong> Not having enough money, materials, or support makes it difficult to achieve goals effectively.</li>
+                <li><strong>Poor Planning:</strong> When proper planning is not done, tasks become disorganized and difficult to manage, leading to confusion and delays.</li>
+                <li><strong>External Pressures:</strong> Expectations from family, school, or society can create stress and make it harder for individuals to focus and perform well.</li>
+                <li><strong>Unexpected Life Events:</strong> Sudden events like illness, accidents, or loss can disrupt normal plans and create challenges that were not anticipated.</li>
+            </ul>
+
+            <h4>Effects</h4>
+            <ul>
+                <li><strong>Positive Effects:</strong> Challenges can help individuals develop strength, experience, and problem-solving skills. They also encourage personal growth and resilience.</li>
+                <li><strong>Negative Effects:</strong> Challenges can lead to stress, frustration, and reduced performance. In severe cases, they may cause emotional or physical strain.</li>
+            </ul>
+
+            <span class="day-label">Day 3</span>
+            <h3>5. Signs of Difficulty in Handling Challenges</h3>
+
+            <h4>5.1 Stress and Anxiety</h4>
+            <p>The individual may feel overwhelmed, worried, or constantly pressured. Physically, stress may show through headaches, fatigue, restlessness, or difficulty sleeping. Anxiety can also cause overthinking and fear of failure, making it harder to focus on solutions.</p>
+
+            <h4>5.2 Loss of Motivation</h4>
+            <p>A person no longer feels interested or encouraged to continue working toward their goals. They may delay tasks, avoid responsibilities, or stop trying altogether. Without motivation, even simple tasks may feel difficult to complete.</p>
+
+            <h4>5.3 Poor Performance</h4>
+            <p>When individuals are overwhelmed, their ability to concentrate and complete tasks effectively decreases. In academic settings, this may result in low grades, incomplete assignments, or careless mistakes.</p>
+
+            <h4>5.4 Withdrawal from Activities</h4>
+            <p>Individuals begin to isolate themselves or avoid participating in normal daily tasks. They may stop attending social events, avoid friends, or lose interest in hobbies they once enjoyed. This behavior often leads to loneliness and can make challenges feel even more difficult to handle.</p>
+
+            <span class="day-label">Day 4</span>
+            <h3>6. Strategies for Handling Challenges</h3>
+
+            <h4>6.1 Problem-Solving Skills</h4>
+            <p>A person first needs to clearly define the problem instead of ignoring or avoiding it. After identifying the issue, they should analyze possible causes and think of different ways to solve it. Good problem-solving includes evaluating each solution and choosing the most effective one, responding in a logical and organized way rather than reacting emotionally.</p>
+
+            <h4>6.2 Time Management</h4>
+            <p>Proper time management helps individuals prioritize important activities and avoid unnecessary delays. It involves creating schedules, setting goals, and sticking to deadlines. Good time management reduces stress because tasks are completed step by step instead of being left until the last minute.</p>
+
+            <h4>6.3 Seeking Help and Support</h4>
+            <p>This means reaching out to parents, teachers, friends, counselors, or mentors who can provide advice, encouragement, or solutions. Asking for help is not a sign of weakness but a smart way of gaining new perspectives and guidance.</p>
+
+            <h4>6.4 Positive Thinking and Resilience</h4>
+            <p>Positive thinking involves maintaining an optimistic attitude even during difficult situations. Resilience is the ability to recover quickly from difficulties and keep moving forward despite setbacks. Together, they help individuals stay strong, motivated, and focused on solutions instead of problems.</p>
+
+            <span class="day-label">Day 5</span>
+            <h3>7 & 8. Role of Individuals, Family, and Society</h3>
+
+            <h4>Role of Individuals</h4>
+            <ul>
+                <li><strong>Self-Discipline:</strong> Helps individuals stay focused and committed to their goals. Enables them to control distractions and complete tasks responsibly.</li>
+                <li><strong>Emotional Control:</strong> Allows a person to manage anger, fear, or stress during challenges, helping them think clearly and respond calmly.</li>
+                <li><strong>Decision-Making Skills:</strong> Help individuals choose the best solution when facing problems. Good decisions reduce mistakes and improve the chances of overcoming challenges successfully.</li>
+            </ul>
+
+            <h4>Role of Family and Society</h4>
+            <ul>
+                <li><strong>Family Support:</strong> Provides love, encouragement, and guidance during difficult times, helping individuals feel secure and motivated.</li>
+                <li><strong>Community Assistance:</strong> Involves help from neighbors, organizations, and social groups, providing resources and moral support.</li>
+                <li><strong>School and Workplace Support:</strong> Offers guidance, counseling, and structured help systems that make it easier for individuals to manage and overcome challenges.</li>
+            </ul>
+        </div>
     </section>
 
+    <!-- ════════════════ WEEK 7 ════════════════ -->
     <section id="week7">
-        <h2>WEEK 7: BULLYING</h2>
-        <div class="memory-verse">Memory verse: "Be kind and compassionate to one another, forgiving each other, just as in Christ God forgave you." – Ephesians 4:32</div>
-        
-        <h3>Day 1: Understanding Bullying</h3>
-        <p>Bullying is unwanted, aggressive behavior that involves a real or perceived power imbalance. The behavior is repeated over time.</p>
-        <h4>The Four Types of Bullying:</h4>
-        <ul>
-            <li><strong>Verbal:</strong> Name-calling, teasing, and threatening.</li>
-            <li><strong>Social (Relational):</strong> Spreading rumors, purposeful exclusion, or public embarrassment.</li>
-            <li><strong>Physical:</strong> Hitting, kicking, tripping, or damaging property.</li>
-            <li><strong>Cyberbullying:</strong> Harassment via the internet, social media, or texts.</li>
-        </ul>
-        <p>Bullying is an intentional choice to hurt someone. It is never the victim's fault.</p>
+        <h2>Week 7: Social Etiquette</h2>
+        <div class="section-body">
+            <div class="memory-verse">
+                <strong>James 1:19</strong>
+                "Everyone should be quick to listen, slow to speak and slow to become angry."
+            </div>
 
-        <h3>Day 2: The Effects of Bullying</h3>
-        <p>Bullying leaves "invisible wounds" that can hurt for years. It affects the target, the bully, and the bystander.</p>
-        <ul>
-            <li><strong>For the Target:</strong> leads to low self-esteem, anxiety, depression, and physical symptoms like headaches.</li>
-            <li><strong>For the Bully:</strong> higher risk for substance abuse and legal trouble as adults.</li>
-            <li><strong>For the Bystander:</strong> often feel guilty or afraid that they might be the next target.</li>
-        </ul>
+            <span class="day-label">Day 1</span>
+            <h3>1. Introduction to Social Etiquette</h3>
+            <p>Social etiquette refers to the acceptable ways of behaving in society. It helps people interact peacefully, respectfully, and responsibly in different environments such as home, school, church, and public places. For students aged 8–16, learning social etiquette is very important because it shapes character and prepares them to become responsible adults.</p>
 
-        <h3>Day 3: Why Do People Bully?</h3>
-        <p>Understanding the bully doesn't excuse them, but helps us see that hurt people often hurt others.</p>
-        <ul>
-            <li><strong>Mask of Power:</strong> Acting out due to feeling powerless at home or having low confidence.</li>
-            <li><strong>Peer Pressure:</strong> Bullying to maintain a high social status or "fit in."</li>
-            <li><strong>Lack of Empathy:</strong> Failing to recognize or care about the feelings of others.</li>
-        </ul>
+            <h4>1.1 Meaning of Social Etiquette</h4>
+            <p>Social etiquette simply means the proper and polite way of behaving toward others in society. It includes how we speak, act, dress, and respond to people in different situations—greeting others politely, respecting elders, teachers, and peers, using kind and appropriate language, and showing good behaviour in public and private places.</p>
 
-        <h3>Day 4: How to Handle Being Bullied</h3>
-        <ul>
-            <li><strong>Don't React:</strong> Bullies want to see you upset. Keep a calm, neutral face.</li>
-            <li><strong>The Power of "Stop":</strong> firm, clear voice, then walk away.</li>
-            <li><strong>Don't Retaliate:</strong> Fighting back often escalates violence.</li>
-            <li><strong>Reporting vs. Snitching:</strong> reporting is done to keep people safe; snitching is done to get people in trouble.</li>
-        </ul>
+            <h4>1.2 Importance of Good Manners</h4>
+            <ul>
+                <li><strong>Promotes respect:</strong> People treat you better when you respect them.</li>
+                <li><strong>Builds good relationships:</strong> Polite behaviour helps you make and keep friends.</li>
+                <li><strong>Creates discipline:</strong> Good manners help students behave properly at school and home.</li>
+                <li><strong>Reduces conflict:</strong> Respectful communication prevents fights and misunderstandings.</li>
+                <li><strong>Improves reputation:</strong> Well-mannered individuals are admired and trusted.</li>
+                <li><strong>Encourages cooperation:</strong> Society becomes more peaceful and united when people behave well.</li>
+            </ul>
 
-        <h3>Day 5: Being an "Upstander"</h3>
-        <p>A bystander watches; an <strong>upstander</strong> takes action to help. Speak up if safe, distract the bully, and support the victim later. A community is only as safe as its members make it. Sign a "Peace Pledge" to look out for one another.</p>
-        <div class="reflection-box"><strong>The Upstander Pledge:</strong> I will choose to stand up for others, report incidents to adults, and treat every classmate with dignity.</div>
+            <h4>1.3 Basic Rules of Respect and Courtesy</h4>
+            <ul>
+                <li>Always greet people politely when you meet or leave them.</li>
+                <li>Say "please," "thank you," and "sorry" when necessary.</li>
+                <li>Listen attentively when others are speaking without interrupting.</li>
+                <li>Respect elders and authority figures such as parents, teachers, and leaders.</li>
+                <li>Do not insult, bully, or mock others.</li>
+                <li>Be honest and trustworthy in your actions.</li>
+                <li>Wait your turn patiently in queues or group activities.</li>
+                <li>Show kindness and empathy to people, especially those in need.</li>
+            </ul>
+
+            <span class="day-label">Day 2</span>
+            <h3>2. Personal Grooming and Hygiene</h3>
+
+            <h4>2.1 Cleanliness and Appearance</h4>
+            <ul>
+                <li>Bathing regularly (at least once daily) to remove dirt and sweat.</li>
+                <li>Brushing teeth twice daily to maintain fresh breath and prevent tooth decay.</li>
+                <li>Washing hands properly before eating and after using the toilet.</li>
+                <li>Keeping nails short and clean to avoid germs.</li>
+                <li>Wearing clean clothes every day and combing hair neatly.</li>
+            </ul>
+
+            <h4>2.2 Dressing Appropriately for School and Events</h4>
+            <p>For school: wear proper school uniforms that are clean, ironed, and complete. Avoid excessive jewelry or flashy accessories. For events: dress modestly and neatly, choosing clothes suitable for the occasion—neither too revealing nor too casual.</p>
+
+            <h4>2.3 Healthy Personal Habits</h4>
+            <ul>
+                <li>Eating balanced meals with fruits, vegetables, proteins, and water.</li>
+                <li>Sleeping well (7–9 hours for children and teens).</li>
+                <li>Exercising regularly to stay fit and active.</li>
+                <li>Avoiding bad habits such as biting nails, picking nose, or littering.</li>
+                <li>Maintaining proper toilet hygiene.</li>
+            </ul>
+
+            <span class="day-label">Day 3</span>
+            <h3>3. Greetings and Communication Skills</h3>
+
+            <h4>3.1 Proper Ways of Greeting Others</h4>
+            <ul>
+                <li>Say "Good morning," "Good afternoon," or "Good evening" depending on the time of day.</li>
+                <li>Greet elders first as a sign of respect.</li>
+                <li>Smile warmly while greeting others.</li>
+                <li>Use polite titles like Sir, Ma, Mr., Mrs., or Miss when appropriate.</li>
+                <li>Respond when someone greets you instead of ignoring them.</li>
+            </ul>
+
+            <h4>3.2 Respectful Speech and Language Use</h4>
+            <ul>
+                <li>Always use polite words such as "please," "thank you," and "excuse me."</li>
+                <li>Avoid insulting, shouting, or using offensive language.</li>
+                <li>Speak calmly and clearly, not aggressively.</li>
+                <li>Think before speaking to avoid hurting others' feelings.</li>
+                <li>Speak truthfully and avoid gossip or spreading rumours.</li>
+            </ul>
+
+            <h4>3.3 Listening Skills and Polite Responses</h4>
+            <ul>
+                <li>Pay full attention when someone is speaking; do not interrupt.</li>
+                <li>Make eye contact to show interest and avoid distractions.</li>
+                <li>Answer questions respectfully and clearly.</li>
+                <li>Ask questions politely when something is not clear.</li>
+                <li>Thank someone after they give instructions or advice.</li>
+            </ul>
+
+            <span class="day-label">Day 4</span>
+            <h3>4 & 5. Behaviour at Home, School, and Public Places</h3>
+
+            <h4>At Home and School</h4>
+            <ul>
+                <li><strong>Respect for Parents and Teachers:</strong> Obeying them, listening to their instructions, and speaking to them politely at all times.</li>
+                <li><strong>Classroom Behaviour and Discipline:</strong> Paying attention in class, following rules, coming to school on time, and completing assignments.</li>
+                <li><strong>Responsibility at Home:</strong> Helping with chores, keeping your environment clean, and obeying family rules.</li>
+            </ul>
+
+            <h4>In Public Places</h4>
+            <ul>
+                <li><strong>Behaviour in Transport Systems:</strong> Boarding and alighting vehicles politely, respecting queues, paying fares properly, and avoiding loud or rude behaviour.</li>
+                <li><strong>Conduct in Markets, Churches, and Events:</strong> Behaving quietly, respecting rules, speaking politely, and being orderly during activities or services.</li>
+                <li><strong>Queueing and Waiting Patiently:</strong> Standing in an orderly line and waiting your turn without pushing or cutting in.</li>
+            </ul>
+
+            <span class="day-label">Day 5</span>
+            <h3>6–9. Friendship, Digital Etiquette, and Respect</h3>
+
+            <h4>Friendship and Peer Relationships</h4>
+            <ul>
+                <li><strong>Choosing Good Friends:</strong> Associating with people who have positive behaviour and good morals.</li>
+                <li><strong>Respecting Differences:</strong> Accepting people even when they think, look, or act differently from you.</li>
+                <li><strong>Resolving Conflicts Peacefully:</strong> Solving disagreements through calm discussion, forgiveness, and listening.</li>
+            </ul>
+
+            <h4>Digital Etiquette</h4>
+            <ul>
+                <li><strong>Safe Use of Social Media:</strong> Protecting personal information and avoiding strangers online; using platforms responsibly.</li>
+                <li><strong>Respectful Online Communication:</strong> Using polite words when chatting or posting online; avoiding insults and gossip.</li>
+                <li><strong>Avoiding Cyberbullying:</strong> Not using the internet to insult, threaten, or embarrass others; reporting harmful behaviour.</li>
+            </ul>
+
+            <h4>Manners in Sharing and Respect for Authority</h4>
+            <ul>
+                <li><strong>Sharing with Others:</strong> Willingly giving part of what you have to those in need; showing kindness and generosity.</li>
+                <li><strong>Helping the Needy and Classmates:</strong> Assisting people who are struggling or need support.</li>
+                <li><strong>Following School Rules:</strong> Guidelines that help maintain order, discipline, and good behaviour in school.</li>
+                <li><strong>Obeying Laws in Society:</strong> Following rules set by the government to ensure peace and safety.</li>
+            </ul>
+        </div>
     </section>
 
+    <!-- ════════════════ WEEK 8 ════════════════ -->
     <section id="week8">
-        <h2>WEEK 8: HANDLING CHALLENGES</h2>
-        <h3>Day 1: Introduction to Challenges</h3>
-        <p>A challenge is a difficulty preventing reaching a goal. Jesus confirms that with Him we overcome (John 16:33). Trials develop patience (James 1:2-4). Fanny J. Crosby became blind at six weeks old but became a renowned poet through faith.</p>
-        <h4>Common Causes of Behavioural Challenges:</h4>
-        <ol>
-            <li>Communication Difficulties</li>
-            <li>Unmet Needs (Hunger, Fatigue)</li>
-            <li>Lack of Social Skills</li>
-            <li>Emotional Regulation (Anxiety, Depression)</li>
-            <li>Environmental Factors (Chaotic, loud settings)</li>
-            <li>Learning Challenges (Brain injury)</li>
-            <li>Health Related Issues</li>
-            <li>Attention Seeking</li>
-            <li>Modelling Behaviour (Imitating others)</li>
-            <li>Reinforcement (Behaviors repeated if rewarded)</li>
-            <li>Lifestyle Factors (Sleep, Diet)</li>
-            <li>Social Environment (Bullying, trouble at school)</li>
-        </ol>
+        <h2>Week 8: Ergonomics</h2>
+        <div class="section-body">
+            <div class="memory-verse">
+                <strong>Philippians 1:27</strong>
+                "...live in a manner worthy of the gospel, standing firm in one spirit, and striving together for the faith."
+            </div>
 
-        <h3>Day 2: Challenges Faced by Teenagers</h3>
-        <ol>
-            <li>Peer Pressure</li>
-            <li>Anxiety and Depression</li>
-            <li>Teen Pregnancy</li>
-            <li>Teen Suicide</li>
-            <li>Bullying (and cyberbullying)</li>
-            <li>Drug and Substance Abuse</li>
-            <li>Identity Crisis</li>
-            <li>Body Image Issues</li>
-            <li>Social Media Addiction</li>
-            <li>No Adult Supervision</li>
-        </ol>
+            <span class="day-label">Day 1</span>
+            <h3>1–4. Introduction and Common Poor Posture Habits</h3>
+            <p>Students spend a large part of their daily lives sitting in classrooms and studying at home. Poor body posture over time can lead to back pain, neck strain, fatigue, and reduced concentration in class. Ergonomics helps students understand how to arrange their bodies, chairs, desks, and environment in a way that supports comfort, safety, and efficiency while learning.</p>
 
-        <h3>Day 3: Balancing Academics and Social Life</h3>
-        <p>Imbalance leads to academic decline, burnout, or social isolation. <strong>Practical Tips:</strong> Create a schedule, prioritize tasks, set clear goals, and learn to say "No" to overcommitment. Use social time as a reward for completing study tasks.</p>
+            <h4>2. Meaning of Ergonomics</h4>
+            <p>Ergonomics is the study of how people interact with their environment—especially tools, furniture, and workspaces—in order to improve comfort, efficiency, and safety. In simple terms, it means arranging your study or work environment so that your body is in a natural and stress-free position.</p>
 
-        <h3>Day 4: Spirituality and Academics</h3>
-        <p>Spirituality provides a grounding force. Aligning ambitions with spiritual values adds a deeper sense of purpose to studies. Surround yourself with a supportive community and use regular reflection to ensure educational efforts align with spiritual aspirations.</p>
+            <h4>3. Importance of Ergonomics for Students</h4>
+            <ul>
+                <li>Prevents body pain and injuries</li>
+                <li>Improves concentration and academic performance</li>
+                <li>Promotes long-term health by preventing spinal problems</li>
+                <li>Reduces fatigue and encourages productivity</li>
+            </ul>
 
-        <h3>Day 5: Biblical View on Overcoming</h3>
-        <ul>
-            <li><strong>Anger:</strong> Control it (Ephesians 4:26-27).</li>
-            <li><strong>Anxiety:</strong> Cast burdens on God (Psalm 55:22). Take time to rest (Mark 6:31).</li>
-            <li><strong>Fear:</strong> God is our refuge (Psalm 46:1-2). Fear presents an opportunity to develop faith.</li>
-            <li><strong>Grief:</strong> Even Jesus wept (John 11:35). find healing through service.</li>
-        </ul>
-        <p><strong>Overcoming challenges:</strong> Look unto Jesus, Focus on goal, Seek help, Endure pain, and Depend on God's grace.</p>
+            <h4>4. Common Poor Posture Habits Among Students</h4>
+            <ul>
+                <li>Slouching while sitting: bending the back and shoulders forward, straining the spine</li>
+                <li>Leaning too close to books or screens, causing neck and eye strain</li>
+                <li>Sitting on the edge of chairs or not using the backrest</li>
+                <li>Crossing legs for long periods while sitting</li>
+                <li>Using phones or reading while lying down improperly</li>
+                <li>Standing with uneven weight distribution</li>
+                <li>Carrying heavy bags on one shoulder</li>
+            </ul>
+
+            <span class="day-label">Day 2</span>
+            <h3>5. Sitting Positions for Students</h3>
+
+            <h4>5.1 Correct Sitting Posture</h4>
+            <ul>
+                <li><strong>Back straight and supported:</strong> spine upright, lower back resting against the chair's backrest.</li>
+                <li><strong>Feet flat on the ground</strong> or on a footstool if the chair is too high.</li>
+                <li><strong>Knees at right angle (90°):</strong> level with or slightly lower than the hips.</li>
+                <li><strong>Shoulders relaxed:</strong> not raised or hunched forward.</li>
+                <li><strong>Head upright:</strong> facing forward, not bent too far down or tilted backward.</li>
+                <li><strong>Eyes level</strong> with reading material or screen to prevent neck strain.</li>
+                <li><strong>Arms properly supported:</strong> elbows resting comfortably at about 90° angle.</li>
+            </ul>
+
+            <h4>5.2 Improper Sitting Posture and Its Effects</h4>
+            <p>Slouching, sitting too low or too high, leaning to one side, bending the neck downward for long periods, sitting without back support, and crossing legs for long hours can all cause back and neck pain, poor concentration, tiredness, poor blood circulation, and long-term spinal deformities.</p>
+
+            <h4>5.3 & 5.4 Ideal Chair and Desk Arrangement / Tips</h4>
+            <ul>
+                <li>Chair height should allow feet to rest flat on the ground with knees bent at 90°.</li>
+                <li>Desk should be at elbow level when sitting, allowing comfortable writing without bending forward.</li>
+                <li>Take short breaks after sitting for 30–45 minutes to stretch and move around.</li>
+                <li>Keep both feet flat on the floor while sitting.</li>
+                <li>Avoid slouching—correct your posture regularly.</li>
+            </ul>
+
+            <span class="day-label">Day 3</span>
+            <h3>6. Standing Positions for Students</h3>
+
+            <h4>6.1 Correct Standing Posture</h4>
+            <ul>
+                <li><strong>Head upright and facing forward:</strong> chin level, not tilted up or down.</li>
+                <li><strong>Shoulders relaxed and straight:</strong> not hunched forward or pulled backward.</li>
+                <li><strong>Back straight:</strong> maintaining the spine's natural curve.</li>
+                <li><strong>Weight evenly distributed:</strong> balanced on both feet equally.</li>
+                <li><strong>Feet slightly apart:</strong> about shoulder-width apart for stability.</li>
+                <li><strong>Knees slightly relaxed:</strong> not locked straight.</li>
+            </ul>
+
+            <h4>6.2 Effects of Poor Standing Posture</h4>
+            <p>Leaning on one leg, slouching, hunching shoulders, locking knees, standing with uneven weight distribution, or tilting the head forward for long periods can all result in back, hip, and leg pain, muscle fatigue, poor balance, poor blood circulation, and long-term spinal problems.</p>
+
+            <h4>6.3 Tips for Proper Standing Habits</h4>
+            <ul>
+                <li>Stand with your head, shoulders, and hips aligned in a straight line.</li>
+                <li>Keep your weight evenly distributed on both feet.</li>
+                <li>Avoid locking your knees; keep them slightly bent for comfort.</li>
+                <li>Wear comfortable shoes that support your feet properly.</li>
+                <li>Take short breaks to sit or stretch if standing for extended periods.</li>
+            </ul>
+
+            <span class="day-label">Day 4</span>
+            <h3>7. Ergonomic Classroom Setup</h3>
+
+            <h4>7.1 Desk Height and Positioning</h4>
+            <p>The desk should be at a level where students can write comfortably, with elbows forming about a 90° angle. Desks should be arranged so students face forward easily without twisting their neck or body, with enough legroom to move their legs freely.</p>
+
+            <h4>7.2 Chair Design and Support</h4>
+            <p>Chairs should support the natural curve of the spine, especially the lower back. The seat should be firm but not too hard, and chairs should allow students' feet to rest flat on the floor with knees bent at 90°. Chairs should be strong and stable to prevent wobbling or imbalance.</p>
+
+            <h4>7.3 Lighting and Visibility</h4>
+            <p>Classrooms should have enough natural sunlight without causing glare on books or boards. In low-light conditions, bright but soft lights should be used to avoid eye strain. All students should be able to see the board clearly without leaning forward or straining their eyes.</p>
+
+            <span class="day-label">Day 5</span>
+            <h3>8 & 9. Benefits and Consequences of Ergonomics</h3>
+
+            <h4>Health Benefits of Good Ergonomics</h4>
+            <ul>
+                <li>Prevents back, neck, and shoulder pain</li>
+                <li>Improves posture and body alignment</li>
+                <li>Enhances concentration and academic performance</li>
+                <li>Reduces fatigue and tiredness during study</li>
+                <li>Improves blood circulation and breathing</li>
+                <li>Protects eyesight by reducing strain</li>
+                <li>Promotes long-term musculoskeletal health</li>
+            </ul>
+
+            <h4>Consequences of Poor Ergonomics</h4>
+            <ul>
+                <li><strong>Back and neck pain</strong> due to poor sitting or standing positions</li>
+                <li><strong>Spinal problems</strong> such as curvature or long-term misalignment</li>
+                <li><strong>Eye strain and headaches</strong> from poor lighting or screen positioning</li>
+                <li><strong>Fatigue and reduced energy</strong> caused by muscle strain and discomfort</li>
+                <li><strong>Poor concentration</strong> as discomfort distracts students from learning</li>
+                <li><strong>Long-term health issues</strong> including joint stiffness and posture deformities</li>
+            </ul>
+        </div>
     </section>
 
+    <!-- ════════════════ WEEK 9 ════════════════ -->
     <section id="week9">
-        <h2>WEEK 9: SOCIAL ETIQUETTE</h2>
-        <h3>Day 1: Introduction to Social Etiquette</h3>
-        <p><strong>Definition:</strong> Social etiquette refers to the rules governing behavior to ensure respect and kindness. Examples: Greetings with a smile (Matthew 22:39), Active Listening (James 1:19), Respectful Communication, and Gratitude (1 Thess 5:18).</p>
+        <h2>Week 9: Examination — Part 2</h2>
+        <div class="section-body">
 
-        <h3>Day 2: Types of Social Etiquette</h3>
-        <ol>
-            <li>Table Manners: utensils correctly (Proverbs 15:17).</li>
-            <li>Communication: active listening and thoughtful responding.</li>
-            <li>Digital Etiquette: being accountable for online words (Matthew 12:36).</li>
-            <li>Workplace: punctuality and professionalism.</li>
-            <li>Social Media: avoiding online drama.</li>
-            <li>Greeting Etiquette: eye contact and using titles.</li>
-            <li>Dress Code: modesty and propriety.</li>
-        </ol>
+            <span class="day-label">Day 1</span>
+            <h3>Examination Culture</h3>
+            <div class="memory-verse">
+                <strong>1 Corinthians 14:40</strong>
+                "Let all things be done decently and in order."
+            </div>
+            <ol>
+                <li>Conduct yourself in an orderly manner.</li>
+                <li>No examination malpractice or attempts.</li>
+                <li>Stick strictly to sitting arrangements.</li>
+                <li>No GSM phones in the hall.</li>
+                <li>No communication between candidates.</li>
+                <li>Raising hands is the only way to attract attention.</li>
+                <li>Scrap paper is not permitted; rough work in booklets.</li>
+                <li>Only approved materials (pens, math sets) inside.</li>
+                <li>No sign language or gestures.</li>
+                <li>No eating in the hall.</li>
+                <li>No sleeping or looking around.</li>
+            </ol>
 
-        <h3>Day 3: Application in School</h3>
-        <p>Greet teachers respectfully. Use "Please" and "Thank you". Listen attentively in class discussions. Behave responsibly. Treat peers with empathy. Respect school property and keep the environment clean. Practice good digital citizenship by reporting cyberbullying.</p>
+            <span class="day-label">Day 2</span>
+            <h3>Don't Relent — Remain Focused</h3>
+            <div class="memory-verse">
+                <strong>1 Corinthians 9:24</strong>
+                "So run, that ye may obtain."
+            </div>
+            <p>Always give each paper your best effort. Press on toward the end of the race like Paul (Philippians 3:14).</p>
 
-        <h3>Day 4: Benefits of Social Etiquette</h3>
-        <ol>
-            <li>Respect and Admiration (1 Peter 2:12).</li>
-            <li>Improved Relationships (Proverbs 17:17).</li>
-            <li>Increased Confidence.</li>
-            <li>Better Communication and avoidance of conflicts.</li>
-            <li>Professional Advancement.</li>
-        </ol>
+            <span class="day-label">Day 3</span>
+            <h3>Critical Thinking — Part 1</h3>
+            <div class="memory-verse">
+                <strong>Proverbs 23:7</strong>
+                "As a man thinketh in his heart, so is he."
+            </div>
+            <p>Your answers reflect your understanding. Critical thinking is the ability to think clearly and rationally. Key skills include: understanding links between ideas, identifying errors, and approaching problems systematically.</p>
 
-        <h3>Day 5: Practical Etiquette</h3>
-        <ul>
-            <li>Returning Borrowed Money promptly (Psalm 37:21).</li>
-            <li>Sitting Well: Ladies sit with dignity and modesty.</li>
-            <li>Not Jumping Queue: respecting the order of others (Proverbs 14:29).</li>
-            <li>Avoid Shouting: speak clearly during phone calls (Proverbs 15:4).</li>
-            <li>Good Table Manners: wait for everyone to receive food before eating.</li>
-        </ul>
+            <span class="day-label">Day 4</span>
+            <h3>Critical Thinking — Part 2</h3>
+            <p>The process requires persistence and practice. Activity: <em>Who said it? What? Where? When? Why? How?</em> Use <strong>Foresight</strong> to consider the impact on others before you act. Gathering information from multiple sources is vital for best outcomes.</p>
+
+            <span class="day-label">Day 5</span>
+            <h3>Excellent Spirit</h3>
+            <div class="memory-verse">
+                <strong>Daniel 6:3</strong>
+                "Daniel was preferred because an 'Excellent Spirit' was in him."
+            </div>
+            <p>Excellence is being exceptionally good—a gift from God (James 1:17). To be excellent is to go the extra mile. An excellent student gives the examiner more than what is required.</p>
+            <div class="reflection-box">
+                <strong>Reflection</strong>
+                As this term begins, commit yourself to excellence in every area—academically, morally, and spiritually. Strive to bring out the very best in yourself each day.
+            </div>
+        </div>
     </section>
 
-    <section id="week10">
-        <h2>WEEK 10: EXAMINATION PART 2</h2>
-        <h3>Day 1: Examination Culture</h3>
-        <p>1 Corinthians 14:40 — “Let all things be done decently and in order.” Listed Conduct:</p>
-        <ol>
-            <li>Conduct yourself in an orderly manner.</li>
-            <li>No examination malpractice or attempts.</li>
-            <li>Stick strictly to sitting arrangements.</li>
-            <li>No GSM phones in the hall.</li>
-            <li>No communication between candidates.</li>
-            <li>Raising hands is the only way to attract attention.</li>
-            <li>Scrap paper is not permitted; rough work in booklets.</li>
-            <li>Only approved materials (pens, math sets) inside.</li>
-            <li>No sign language or gestures.</li>
-            <li>No eating in the hall.</li>
-            <li>No sleeping or looking around.</li>
-        </ol>
-
-        <h3>Day 2: Don’t Relent, Remain Focused</h3>
-        <p>1 Corinthians 9:24 — “So run, that ye may obtain.” Always give each paper your best effort. Press on toward the end of the race like Paul (Philippians 3:14).</p>
-
-        <h3>Day 3: Critical Thinking Part 1</h3>
-        <p>Proverbs 23:7 — “As a man thinketh in his heart, so is he”. Answers reflect your understanding. Critical thinking is the ability to think clearly and rationally. skills: understand links, identify errors, approach problems systematically.</p>
-
-        <h3>Day 4: Critical Thinking Part 2</h3>
-        <p>The process requires persistence and practice. activity: Who said it? What? Where? When? Why? How? Use <strong>Foresight</strong> to consider impact on others before you act. gathering information from multiple sources is vital for best outcomes.</p>
-
-        <h3>Day 5: Excellent Spirit</h3>
-        <p>Excellence is being exceptionally good. A gift from God (James 1:17). Daniel 6:3 — Daniel was preferred because an "Excellent Spirit" was in him. To be excellent is to go the extra mile. An excellent student gives the examiner more than what is required.</p>
-    </section>
-
-    <div class="footer">
-        &copy; 2026 Shepherd International School Quiet Moment Program<br>
-        <em>"All Around Excellence"</em>
-    </div>
 </div>
+
+<footer>
+    &copy; 2026 Shepherd International School &mdash; Quiet Moment Program
+    <em>"All Around Excellence"</em>
+</footer>
 
 </body>
 </html>
