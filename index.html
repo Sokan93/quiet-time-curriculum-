@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shepherd International School - Quiet Moment Full Curriculum</title>
+    <title>Shepherd International School - Quiet Time 2026/2027</title>
     <link rel="icon" type="image/png" href="https://i.ibb.co/2Y0p8Nm5/sis.png">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
@@ -26,7 +26,6 @@
             font-size: 17px;
         }
 
-        /* ── HEADER ── */
         header {
             background: var(--black);
             color: var(--white);
@@ -83,14 +82,12 @@
             z-index: 1;
         }
 
-        /* ── CONTAINER ── */
         .container {
             max-width: 980px;
             margin: 0 auto;
             padding: 0 40px 80px;
         }
 
-        /* ── NAV ── */
         nav {
             border: 2px solid var(--black);
             margin: 50px 0 60px;
@@ -121,16 +118,14 @@
             padding: 16px 10px;
             border-right: 1px solid var(--light-gray);
             border-bottom: 1px solid var(--light-gray);
+            border-top: 4px solid var(--nav-c, var(--black));
             font-family: 'Source Serif 4', serif;
             font-weight: 600;
             letter-spacing: 0.05em;
             transition: background 0.2s, color 0.2s;
         }
-        nav a:last-child { border-right: none; }
-        nav a:nth-last-child(-n+5) { border-bottom: none; }
-        nav a:hover { background: var(--black); color: var(--white); }
+        nav a:hover { background: var(--nav-c, var(--black)); color: var(--white); }
 
-        /* ── SECTIONS ── */
         section {
             margin-bottom: 100px;
             padding-bottom: 80px;
@@ -138,12 +133,11 @@
         }
         section:last-of-type { border-bottom: none; }
 
-        /* ── HEADINGS ── */
         h2 {
             font-family: 'Playfair Display', serif;
             font-size: 2rem;
             font-weight: 900;
-            background: var(--black);
+            background: var(--accent, var(--black));
             color: var(--white);
             padding: 22px 36px;
             text-transform: uppercase;
@@ -166,7 +160,7 @@
             color: var(--black);
             margin: 60px 0 20px;
             padding-bottom: 10px;
-            border-bottom: 3px solid var(--black);
+            border-bottom: 3px solid var(--accent, var(--black));
         }
         h4 {
             font-family: 'Source Serif 4', serif;
@@ -176,18 +170,16 @@
             margin: 36px 0 14px;
             text-transform: uppercase;
             letter-spacing: 0.12em;
-            border-left: 4px solid var(--black);
+            border-left: 4px solid var(--accent, var(--black));
             padding-left: 14px;
         }
 
-        /* ── SECTION HEADER SPACER ── */
         .section-body { padding-top: 10px; }
 
-        /* ── MEMORY VERSE ── */
         .memory-verse {
-            background: var(--off-white);
-            border: 1px solid var(--black);
-            border-left: 6px solid var(--black);
+            background: var(--accent-tint, var(--off-white));
+            border: 1px solid var(--accent, var(--black));
+            border-left: 6px solid var(--accent, var(--black));
             padding: 28px 32px;
             margin: 36px 0;
             font-style: italic;
@@ -205,9 +197,8 @@
             margin-bottom: 8px;
         }
 
-        /* ── REFLECTION BOX ── */
         .reflection-box {
-            background: var(--black);
+            background: var(--accent, var(--black));
             color: var(--white);
             padding: 28px 32px;
             margin: 36px 0;
@@ -223,10 +214,9 @@
             margin-bottom: 8px;
         }
 
-        /* ── DAY LABEL ── */
         .day-label {
             display: inline-block;
-            background: var(--black);
+            background: var(--accent, var(--black));
             color: var(--white);
             font-size: 0.68rem;
             letter-spacing: 0.22em;
@@ -237,16 +227,13 @@
             font-weight: 600;
         }
 
-        /* ── PARAGRAPHS ── */
         p { margin-bottom: 18px; }
         p:last-child { margin-bottom: 0; }
 
-        /* ── LISTS ── */
         ul, ol { padding-left: 28px; margin-bottom: 24px; }
         li { margin-bottom: 12px; }
         li strong { font-weight: 600; }
 
-        /* ── TABLE ── */
         table { width: 100%; border-collapse: collapse; margin: 36px 0; }
         th {
             background: var(--black);
@@ -261,7 +248,6 @@
         td { border: 1px solid var(--light-gray); padding: 14px 18px; vertical-align: top; }
         tr:nth-child(even) td { background: var(--off-white); }
 
-        /* ── DIVIDER ── */
         .week-divider {
             display: flex;
             align-items: center;
@@ -282,7 +268,35 @@
             background: var(--light-gray);
         }
 
-        /* ── FOOTER ── */
+        .midterm-banner {
+            background: #faf3df;
+            border: 2px dashed #b8860b;
+            text-align: center;
+            padding: 60px 40px;
+        }
+        .midterm-banner h2 {
+            background: none;
+            color: #8a6508;
+            display: inline-block;
+            padding: 0;
+        }
+        .midterm-banner h2::after { background: #b8860b; }
+        .midterm-banner h2::after { margin: 14px auto 0; }
+        .midterm-banner p {
+            font-style: italic;
+            color: #333;
+            margin-top: 20px;
+            font-size: 1.1rem;
+        }
+
+        .eval-block {
+            background: var(--accent-tint, var(--off-white));
+            border-left: 4px solid var(--accent, var(--black));
+            padding: 20px 26px;
+            margin: 30px 0;
+        }
+        .eval-block h4 { margin-top: 0; border: none; padding-left: 0; }
+
         footer {
             background: var(--black);
             color: rgba(255,255,255,0.7);
@@ -293,12 +307,8 @@
         }
         footer em { color: rgba(255,255,255,0.4); display: block; margin-top: 6px; }
 
-        /* ── RESPONSIVE ── */
         @media (max-width: 750px) {
             .nav-grid { grid-template-columns: repeat(3, 1fr); }
-            nav a:nth-last-child(-n+5) { border-bottom: 1px solid var(--light-gray); }
-            nav a:nth-last-child(-n+3) { border-bottom: none; }
-            nav a:nth-child(3n) { border-right: none; }
             .container { padding: 0 20px 60px; }
             header h1 { font-size: 1.9rem; }
             h2 { font-size: 1.5rem; padding: 18px 22px; }
@@ -311,7 +321,7 @@
     <img src="https://i.ibb.co/2Y0p8Nm5/sis.png" alt="SIS Logo">
     <h1>Shepherd International School</h1>
     <div class="header-rule"></div>
-    <p>Quiet Moment &mdash; Full Curriculum</p>
+    <p>Quiet Time 2026/2027</p>
 </header>
 
 <div class="container">
@@ -319,743 +329,858 @@
     <nav>
         <span class="nav-title">Quick Jump to Weekly Lessons</span>
         <div class="nav-grid">
-            <a href="#week1">Week 1<br><small>Bullying</small></a>
-            <a href="#week2">Week 2<br><small>Bullying Pt. 2</small></a>
-            <a href="#week3">Week 3<br><small>Infatuation</small></a>
-            <a href="#week4">Week 4<br><small>Examination</small></a>
-            <a href="#week7">Week 7<br><small>Challenges</small></a>
-            <a href="#week8">Week 8<br><small>Social Etiquette</small></a>
-            <a href="#week9">Week 9<br><small>Ergonomics</small></a>
-            <a href="#week10">Week 10<br><small>Examination Pt. 2</small></a>
+            <a href="#week1" style="--nav-c:#3b3a6e">Week 1<br><small>The Call to Be Different</small></a>
+            <a href="#week2" style="--nav-c:#4b6b57">Week 2<br><small>Contentment</small></a>
+            <a href="#week3" style="--nav-c:#6b3f66">Week 3<br><small>Discernment</small></a>
+            <a href="#week4" style="--nav-c:#a6742e">Week 4<br><small>Gratitude</small></a>
+            <a href="#week5" style="--nav-c:#3f5b7a">Week 5<br><small>Examination Culture</small></a>
+            <a href="#week6" style="--nav-c:#b8860b">Week 6<br><small>Midterm Break</small></a>
+            <a href="#week7" style="--nav-c:#a1502f">Week 7<br><small>Pushing the Limit</small></a>
+            <a href="#week8" style="--nav-c:#2f6b6b">Week 8<br><small>Priorities</small></a>
+            <a href="#week9" style="--nav-c:#7a3b3b">Week 9<br><small>Understanding Our Parents</small></a>
+            <a href="#week10" style="--nav-c:#35506e">Week 10<br><small>Examination Culture Pt. 2</small></a>
         </div>
     </nav>
 
     <!-- ════════════════ WEEK 1 ════════════════ -->
-    <section id="week1">
-        <h2>Week 1: Bullying</h2>
+    <section id="week1" style="--accent:#3b3a6e; --accent-tint:#eceafc;">
+        <h2>Week 1: The Call to Be Different</h2>
         <div class="section-body">
+            <p><strong>Key Scriptures:</strong> Romans 12:1–2; Matthew 5:10–16; Romans 8:29; Numbers 14</p>
+
+            <span class="day-label">Day 1 — Monday</span>
+            <h3>Called to Be Different</h3>
             <div class="memory-verse">
-                <strong>Memory Verse</strong>
-                "Be kind and compassionate to one another, forgiving each other, just as in Christ God forgave you." – Ephesians 4:32
+                <strong>Romans 12:1 (KJV)</strong>
+                "I beseech you therefore, brethren, by the mercies of God, that ye present your bodies a living sacrifice, holy, acceptable unto God, which is your reasonable service."
             </div>
+            <h4>1. What Does It Mean to Be Different?</h4>
+            <p>Being different as a Christian means choosing God's ways even when they differ from the ways of the world. It means allowing our beliefs, values, speech, decisions, and lifestyle to reflect Christ. A believer should not simply follow what everyone else is doing.</p>
+            <p><strong>Key lesson:</strong> You do not need to behave like everyone else to be accepted. Your identity in Christ makes you different.</p>
+            <h4>2. The Danger of Conformity</h4>
+            <p>Romans 12:2 warns believers not to be conformed to this world. Conformity occurs when a person allows society, friends, trends, or peer pressure to determine how they live — doing wrong because friends are doing it, cheating because everyone else cheats, or compromising Christian values to gain acceptance.</p>
+            <p><strong>Key lesson:</strong> The fact that something is popular does not mean that it is right.</p>
+            <h4>3. Renewing the Mind</h4>
+            <p>Transformation begins in the mind. What we constantly watch, hear, read, and think about can influence our behaviour. A Christian should fill the mind with God's Word, prayer, positive and godly thoughts, and good Christian fellowship. When the mind changes, attitudes and actions begin to change.</p>
+            <h4>4. Presenting Ourselves as Living Sacrifices</h4>
+            <p>This means surrendering our lives completely to God — our time, talents, bodies, possessions, relationships, plans, and future.</p>
+            <h4>5. Discovering God's Will</h4>
+            <p>A transformed mind helps us understand what God wants for our lives.</p>
+            <p><em>Day 1 conclusion: God has called us to stand apart from the world — not to copy it, but to demonstrate His will through our lives.</em></p>
 
-            <span class="day-label">Day 1</span>
-            <h3>1. Introduction to Bullying</h3>
-            <p>Bullying is a widespread social problem that affects people in schools, workplaces, and communities. It involves harmful behavior that is intentional and repeated over time, creating fear, discomfort, or distress for the person being targeted. Bullying is not just a one-time disagreement or misunderstanding—it is a pattern of behavior meant to dominate, control, or hurt another individual.</p>
-            <p>This issue is especially common among children and adolescents in school settings, where differences in strength, popularity, age, or confidence can make some individuals more vulnerable than others. However, bullying can occur at any stage of life.</p>
-            <p>The importance of studying bullying lies in its serious impact. It can affect a person's emotional well-being, academic performance, social relationships, and even their future development. Victims often suffer in silence, which makes awareness and education very important. By understanding bullying, individuals and communities can recognize it early, prevent it, and respond effectively.</p>
+            <span class="day-label">Day 2 — Tuesday</span>
+            <h3>Different in Character and Conduct</h3>
+            <div class="memory-verse">
+                <strong>Matthew 5:10 (KJV)</strong>
+                "Blessed are they which are persecuted for righteousness' sake: for theirs is the kingdom of heaven."
+            </div>
+            <h4>1. Being the Salt of the Earth</h4>
+            <p>As Christians, our presence should make a positive difference wherever we are — at school, work, home, church, or among friends. <em>Question: If every Christian behaved exactly like you, would society become better or worse?</em></p>
+            <h4>2. Being the Light of the World</h4>
+            <p>Our light can be seen through honesty, kindness, forgiveness, love, purity, respect, integrity, and compassion.</p>
+            <h4>3. Living as an Example</h4>
+            <p>People may not read the Bible, but they may "read" our lives. Our behaviour can either attract people to Christ or drive them away.</p>
+            <h4>4. Standing for Righteousness</h4>
+            <p>Being different sometimes means standing alone. Being different may attract criticism, but pleasing God should matter more than pleasing people.</p>
+            <h4>5. Letting Our Good Works Glorify God</h4>
+            <p>Our purpose is not to show off or seek praise — our good behaviour should point people toward God.</p>
+            <p><em>Day 2 conclusion: A Christian should be a positive influence — bringing flavour as salt and direction as light.</em></p>
 
-            <h4>1.1 Definition of Bullying</h4>
-            <p>Bullying can be defined as the repeated and intentional act of causing harm to another person who is usually less powerful or unable to defend themselves effectively.</p>
-            <p>There are three key elements that clearly distinguish bullying from other forms of conflict:</p>
-            <ol>
-                <li><strong>Intentional Harm:</strong> Bullying is done on purpose. The bully intends to hurt, embarrass, or upset the victim, either physically or emotionally.</li>
-                <li><strong>Repetition:</strong> Bullying behavior occurs repeatedly over time. It is not a single act but a pattern of behavior that continues, making the situation more serious and harmful.</li>
-                <li><strong>Imbalance of Power:</strong> There is an unequal balance of power between the bully and the victim. This power may be physical strength, age, popularity, intelligence, or social status. Because of this imbalance, the victim often feels helpless and unable to defend themselves.</li>
-            </ol>
-            <p>Bullying can take many forms, including physical attacks, verbal abuse, social exclusion, or online harassment. It is important to note that not all conflicts are bullying. Bullying specifically involves repeated actions and a power imbalance. Understanding this definition helps teachers, parents, and students correctly identify bullying and take appropriate action to stop it.</p>
+            <span class="day-label">Day 3 — Wednesday</span>
+            <h3>Different Because We Are Called to Be Like Christ</h3>
+            <div class="memory-verse">
+                <strong>Romans 8:29 (KJV)</strong>
+                "For whom he did foreknow, he also did predestinate to be conformed to the image of his Son, that he might be the firstborn among many brethren."
+            </div>
+            <h4>1. God's Purpose for Every Believer</h4>
+            <p>God does not only want us to receive blessings; He wants us to become more like Christ. The goal of Christianity is not simply wealth, success, popularity, or position — it is also character transformation.</p>
+            <h4>2. What Is Christlikeness?</h4>
+            <p>Love, humility, compassion, patience, forgiveness, obedience, self-control, faithfulness, and sacrifice.</p>
+            <h4>3. Developing the Character of Christ</h4>
+            <p>We grow through studying God's Word, prayer, obedience, fellowship, trials, and learning from our mistakes.</p>
+            <h4>4. Love, Humility, and Obedience</h4>
+            <p>Being different means choosing love when others choose hatred, humility when others seek pride, and obedience when others choose rebellion.</p>
+            <h4>5. Representing Christ in Our Generation</h4>
+            <p>Our generation needs believers who demonstrate Christ through their lives rather than merely speak about Him.</p>
+            <p><em>Day 3 conclusion: The greatest evidence that we are different is the character of Christ displayed in our lives.</em></p>
 
-            <span class="day-label">Day 2</span>
-            <h3>2. Types of Bullying</h3>
-            <p>Bullying can occur in different forms, depending on how the harm is carried out. Understanding these types helps people recognize bullying easily and respond appropriately.</p>
+            <span class="day-label">Day 4 — Thursday</span>
+            <h3>Different in Faith and Courage</h3>
+            <div class="memory-verse">
+                <strong>Numbers 14:1 (KJV)</strong>
+                "And all the congregation lifted up their voice, and cried; and the people wept that night."
+            </div>
+            <h4>1. The Story of the Twelve Spies</h4>
+            <p>Ten spies returned with a negative report, focused on the giants and difficulties. Joshua and Caleb believed God was able to give them the land — they saw the same land but responded differently.</p>
+            <h4>2. Joshua and Caleb Had a Different Spirit</h4>
+            <p>Being different does not necessarily mean seeing something different — sometimes it means responding differently to the same situation.</p>
+            <h4>3. Refusing to Follow the Crowd</h4>
+            <p>Being in the majority does not always mean being right. Sometimes you must stand alone for truth.</p>
+            <h4>4. Faith Instead of Fear</h4>
+            <p>Fear says "I cannot." Faith says "God is able."</p>
+            <h4>5. The Reward of Standing With God</h4>
+            <p>Joshua and Caleb were rewarded for their faithfulness — they entered the Promised Land.</p>
+            <p><em>Day 4 conclusion: Never allow the fear or unbelief of others to destroy your faith.</em></p>
 
-            <h4>2.1 Physical Bullying</h4>
-            <p>Physical bullying involves the use of bodily force or physical actions to hurt someone or damage their belongings. It is the most visible and easily recognized form of bullying. This type includes hitting, kicking, pushing, slapping, tripping, or pulling someone's hair, as well as taking or destroying another person's property.</p>
-            <p>Physical bullying often happens in places like playgrounds or areas where supervision is limited. Because it is obvious, it is usually easier for teachers and adults to notice. However, victims may still remain silent out of fear of retaliation.</p>
+            <span class="day-label">Day 5 — Friday</span>
+            <h3>Dare to Be Different: Living Out Our Calling</h3>
+            <div class="memory-verse">
+                <strong>Matthew 5:13 (KJV)</strong>
+                "Ye are the salt of the earth: but if the salt have lost his savour, wherewith shall it be salted? it is thenceforth good for nothing, but to be cast out, and to be trodden under foot of men."
+            </div>
+            <h4>1. Counting the Cost of Being Different</h4>
+            <p>You may experience rejection, mockery, criticism, peer pressure, loneliness, and opposition. Following Christ requires commitment.</p>
+            <h4>2. Overcoming Peer Pressure</h4>
+            <p>A Christian must learn to say: "No, this is not who I am, and this is not what God wants for me."</p>
+            <h4>3. Standing for Truth</h4>
+            <p>Truth must remain truth even when unpopular — honesty, purity, justice, love, righteousness, respect, God's Word.</p>
+            <h4>4. Influencing Others Positively</h4>
+            <p>Your words can encourage someone, your character can inspire someone, your faith can strengthen someone.</p>
+            <h4>5. Becoming a Different Generation</h4>
+            <p>A generation that honours God, rejects ungodliness, stands against corruption, and walks in holiness.</p>
+            <h4>6. Final Challenge</h4>
+            <p>Will I follow the crowd, or will I follow Christ? Will I hide my light, or will I shine?</p>
 
-            <h4>2.2 Verbal Bullying</h4>
-            <p>Verbal bullying involves the use of words to hurt, insult, or humiliate another person. Although it does not involve physical contact, it can be very damaging emotionally and psychologically. Examples include name-calling, mocking, teasing, making threats, and using abusive or offensive language.</p>
-            <p>Unlike physical bullying, verbal bullying may not leave visible signs, but its effects can last longer. Victims may begin to believe the negative things said about them, which can affect their confidence and mental health.</p>
-
-            <h4>2.3 Social / Relational Bullying</h4>
-            <p>Social or relational bullying focuses on harming a person's relationships, social status, or reputation. It is often more subtle and difficult to detect because it happens behind the scenes. This type includes spreading rumors or lies, excluding someone from group activities, or publicly embarrassing them.</p>
-            <p>Social bullying can be very painful because it affects a person's sense of belonging and acceptance, leading to loneliness, depression, and low self-worth.</p>
-
-            <h4>2.4 Cyberbullying</h4>
-            <p>Cyberbullying is bullying that takes place through digital devices and online platforms such as social media, text messages, emails, and chat applications. It includes sending threatening or insulting messages, posting embarrassing photos or videos, spreading false information online, or impersonating someone.</p>
-            <p>One major danger of cyberbullying is that it can happen anytime and reach a wide audience quickly. It does not stop when the victim leaves school. Cyberbullying can also be anonymous, making victims feel trapped, helpless, and constantly exposed.</p>
-
-            <span class="day-label">Day 3</span>
-            <h3>3. Causes of Bullying</h3>
-            <p>Bullying does not happen without reason. It is often the result of a combination of personal, social, and environmental factors.</p>
-
-            <h4>3.1 Individual Factors</h4>
-            <p>Some individuals bully because they have low self-esteem. Anger and frustration, a desire for power and control, and a lack of empathy are also key individual factors. In some cases, bullies may not even fully understand the impact of their actions, especially if they have not been properly guided.</p>
-
-            <h4>3.2 Family Influence</h4>
-            <p>Children who grow up in violent or abusive homes may see aggression as normal behavior. Neglect or lack of attention can also contribute, as can inconsistent or harsh discipline. On the other hand, children who are overly spoiled and not corrected when they behave badly may feel entitled. Both lack of discipline and excessive harshness can contribute to bullying behavior.</p>
-
-            <h4>3.3 Peer Pressure</h4>
-            <p>Individuals may bully others to fit in or gain acceptance from a group. Sometimes a group may directly encourage bullying by laughing, supporting, or joining in. There are also situations where individuals may not want to bully but feel pressured to do so in order to avoid being rejected or becoming victims themselves.</p>
-
-            <h4>3.4 Media and Environmental Factors</h4>
-            <p>Exposure to violent movies, television shows, video games, or online content can make aggression seem normal or acceptable. Living in communities where violence, crime, or conflict is common can increase the likelihood of bullying behavior. Additionally, lack of proper supervision in schools or communities can allow bullying to grow unchecked.</p>
-
-            <span class="day-label">Day 4</span>
-            <h3>4. Effects of Bullying</h3>
-            <p>Bullying has serious and far-reaching effects on victims that can last for many years.</p>
-
-            <h4>4.1 Emotional and Psychological Effects</h4>
-            <p>Victims often feel unsafe, sad, and lonely. Over time this can develop into anxiety and, in more serious cases, depression. Another major impact is low self-esteem—victims may begin to believe the negative things said about them. If not addressed, these effects can become severe and may lead to harmful thoughts or behaviors.</p>
-
-            <h4>4.2 Physical Effects</h4>
-            <p>Victims may suffer visible injuries in cases of physical bullying. Even when there is no physical attack, stress caused by bullying can lead to headaches, stomach aches, fatigue, or difficulty sleeping. Some victims may also lose their appetite or develop unhealthy eating habits.</p>
-
-            <h4>4.3 Academic Impact</h4>
-            <p>Victims may begin to lose interest in school because they associate it with fear and discomfort. Concentration in class may reduce due to anxiety or constant worry, leading to poor grades and reduced participation. In some cases victims may start avoiding school altogether, leading to absenteeism.</p>
-
-            <h4>4.4 Long-term Consequences</h4>
-            <p>The effects of bullying do not always end when the bullying stops. Victims may develop long-term mental health issues such as chronic anxiety or depression. They may also struggle with forming and maintaining relationships, and may carry emotional scars that affect their decision-making, self-image, and overall happiness.</p>
-
-            <span class="day-label">Day 5</span>
-            <h3>5. Signs and Indicators of Bullying</h3>
-
-            <h4>5.1 Signs in Victims</h4>
-            <ul>
-                <li><strong>Sudden Fear of School:</strong> Frequent complaints, pretending to be sick, or making excuses to stay at home.</li>
-                <li><strong>Unexplained Injuries:</strong> Bruises, cuts, or damaged belongings without a clear explanation.</li>
-                <li><strong>Withdrawal from Friends:</strong> Isolating from friends and avoiding social activities.</li>
-                <li><strong>Changes in Behavior or Mood:</strong> Becoming unusually quiet, sad, anxious, or irritable; losing interest in activities once enjoyed.</li>
-            </ul>
-
-            <h4>5.2 Signs in Bullies</h4>
-            <ul>
-                <li><strong>Aggressive Behavior:</strong> A pattern of shouting, threatening, or acting violently toward others.</li>
-                <li><strong>Frequent Involvement in Fights:</strong> Constant arguments, pushing, or fighting in and outside school.</li>
-                <li><strong>Lack of Empathy:</strong> Little or no concern for how others feel; laughing at someone's pain.</li>
-                <li><strong>Desire to Dominate Others:</strong> A strong need to control, feel powerful, or be feared by others.</li>
-            </ul>
+            <div class="reflection-box">
+                <strong>Final Theme Statement</strong>
+                "We are called not to fit into the world, but to stand out for Christ; not to follow the crowd, but to follow God's Word; not to hide our light, but to shine for His glory."
+            </div>
         </div>
     </section>
 
     <!-- ════════════════ WEEK 2 ════════════════ -->
-    <section id="week2">
-        <h2>Week 2: Bullying — Part 2</h2>
+    <section id="week2" style="--accent:#4b6b57; --accent-tint:#e7efe9;">
+        <h2>Week 2: Contentment</h2>
         <div class="section-body">
+            <span class="day-label">Day 1 — Monday</span>
+            <h3>Understanding True Contentment</h3>
             <div class="memory-verse">
-                <strong>Memory Verse</strong>
-                "Be kind and compassionate to one another, forgiving each other, just as in Christ God forgave you." – Ephesians 4:32
+                <strong>1 Timothy 6:6 (KJV)</strong>
+                "But godliness with contentment is great gain."
             </div>
+            <h4>1. What Is Contentment?</h4>
+            <p>Contentment is a state of being satisfied and peaceful with what God has given us while trusting Him for what we do not yet have. A contented person can say, "I may not have everything I desire, but I am grateful for what God has given me."</p>
+            <h4>2. Contentment vs. Complacency</h4>
+            <p>Complacency means being satisfied to the extent that one no longer makes effort to grow. A contented Christian can still work hard, build a career, or seek spiritual growth without allowing the desire for more to destroy their peace.</p>
+            <h4>3. Why Godliness With Contentment Is Great Gain</h4>
+            <p>Material possessions can disappear, but a godly and contented heart gives lasting peace.</p>
+            <h4>4. Learning to Be Satisfied With What God Has Provided</h4>
+            <p>We should thank God for life, family, health, opportunities, food, shelter, relationships, and talents.</p>
+            <h4>5. The Dangers of a Restless and Dissatisfied Heart</h4>
+            <p>Constant dissatisfaction can lead to envy, jealousy, greed, and bitterness.</p>
+            <p><em>Lesson: A truly rich person is not necessarily the one who has the most, but the one who is grateful for what God has given.</em></p>
 
-            <span class="day-label">Day 1</span>
-            <h3>6. Prevention of Bullying</h3>
-            <p>Preventing bullying requires a collective effort from individuals, families, schools, and the wider community. Proactive steps must be taken to create a safe, respectful, and supportive environment.</p>
+            <span class="day-label">Day 2 — Tuesday</span>
+            <h3>Contentment Through the Fear of the Lord</h3>
+            <div class="memory-verse">
+                <strong>Proverbs 15:16 (KJV)</strong>
+                "Better is little with the fear of the LORD than great treasure and trouble therewith."
+            </div>
+            <h4>1. The Value of Having the Fear of the Lord</h4>
+            <p>A person who fears God understands that material success without God's approval is ultimately empty.</p>
+            <h4>2. Why Little With God Is Better Than Much Without Him</h4>
+            <p>Money can provide comfort, but it cannot guarantee peace, good relationships, good health, or eternal life.</p>
+            <h4>3. Contentment vs. Material Abundance</h4>
+            <p>The problem arises when possessions become more important than God.</p>
+            <h4>4. Developing Gratitude for God's Daily Provisions</h4>
+            <p>Gratitude changes our focus from "What don't I have?" to "What has God already given me?"</p>
+            <h4>5. How the Fear of God Produces Peace and Satisfaction</h4>
+            <p>We do not have to destroy ourselves competing with everyone around us.</p>
+            <p><em>Lesson: Peace with God is more valuable than wealth without God.</em></p>
 
-            <h4>6.1 Role of Parents</h4>
-            <p>Parents should teach kindness and respect from an early age by modeling good behavior at home. They should monitor their children's behavior both offline and online, encourage open communication, and teach their children how to respond to bullying—whether by speaking up, walking away, or reporting to a trusted adult.</p>
+            <span class="day-label">Day 3 — Wednesday</span>
+            <h3>The Danger of Covetousness and Endless Desire</h3>
+            <div class="memory-verse">
+                <strong>Proverbs 27:20 (KJV)</strong>
+                "Hell and destruction are never full; so the eyes of man are never satisfied."
+            </div>
+            <h4>1. Understanding Covetousness</h4>
+            <p>Covetousness makes a person believe, "I cannot be happy until I have what someone else has."</p>
+            <h4>2. Why the Human Heart Is Never Satisfied</h4>
+            <p>Without contentment, every achievement can simply create another desire.</p>
+            <h4>3. The Dangers of Comparison and Unhealthy Competition</h4>
+            <p>Social media can worsen this because people often display successes without showing struggles.</p>
+            <h4>4. How Uncontrolled Desires Destroy Contentment</h4>
+            <p>Desire becomes dangerous when it controls our thoughts and decisions.</p>
+            <h4>5. Learning to Appreciate What We Have While Trusting God for What We Need</h4>
+            <p>We can tell God about our needs without allowing them to become idols in our hearts.</p>
+            <p><em>Lesson: If we do not learn to be satisfied, getting more will never be enough.</em></p>
 
-            <h4>6.2 Role of Teachers and Schools</h4>
-            <p>Schools should develop and enforce clear anti-bullying policies that define bullying, outline consequences, and provide reporting procedures. Teachers should promote discipline and fairness in the classroom and remain observant and approachable so students feel safe reporting issues. Creating a positive school environment where diversity is accepted is one of the most effective ways to reduce bullying.</p>
+            <span class="day-label">Day 4 — Thursday</span>
+            <h3>Contentment in God Alone</h3>
+            <div class="memory-verse">
+                <strong>Psalm 73:25 (KJV)</strong>
+                "Whom have I in heaven but thee? and there is none upon earth that I desire beside thee."
+            </div>
+            <h4>1. Making God Our Greatest Treasure</h4>
+            <p>When God becomes our greatest treasure, material things assume their proper place.</p>
+            <h4>2. Why Earthly Possessions Cannot Truly Satisfy</h4>
+            <p>Wealth cannot replace God's presence, peace, love, or salvation.</p>
+            <h4>3. Finding Satisfaction in God's Presence</h4>
+            <p>His presence gives strength during difficulties, hope during uncertainty, and comfort during disappointment.</p>
+            <h4>4. Trusting God When Circumstances Are Difficult</h4>
+            <p>Contentment is tested most strongly during difficult seasons.</p>
+            <h4>5. Developing a Heart That Says "God Is Enough"</h4>
+            <p>We will not allow possessions, relationships, status, or achievements to determine our worth.</p>
+            <p><em>Lesson: When God becomes our greatest treasure, we become less controlled by what we don't have.</em></p>
 
-            <h4>6.3 Role of Peers</h4>
-            <p>Students should support victims of bullying by showing kindness and including them in activities. They should report bullying incidents to teachers or school authorities instead of staying silent, and refuse to participate in bullying behavior. When bullies do not receive attention or support, they are less likely to continue.</p>
+            <span class="day-label">Day 5 — Friday</span>
+            <h3>The Secret of Living a Contented Life</h3>
+            <div class="memory-verse">
+                <strong>Psalm 73:26 (KJV)</strong>
+                "My flesh and my heart faileth: but God is the strength of my heart, and my portion for ever."
+            </div>
+            <h4>1–6. Depending on God, Accepting Every Season, Practising Gratitude</h4>
+            <p>A contented Christian does not allow circumstances to determine their faith. We should enjoy God's blessings responsibly in abundance and trust Him in need, practising gratitude daily and avoiding comparison with others.</p>
+            <h4>7. Conclusion: God Is the Strength of Our Heart and Our Portion Forever</h4>
+            <p>Everything on earth can change or disappear, but God remains.</p>
 
-            <h4>6.4 Government and Community Efforts</h4>
-            <p>Authorities should create and enforce laws and policies that protect individuals, especially children, from bullying and abuse. There should also be public awareness campaigns to educate people about the dangers of bullying. Communities can support organizations and initiatives that focus on child protection, counseling, and youth development.</p>
-
-            <span class="day-label">Day 2</span>
-            <h3>7. Strategies for Addressing Bullying</h3>
-
-            <h4>7.1 Reporting Bullying</h4>
-            <p>Victims or witnesses should report bullying to trusted adults such as teachers, parents, or school counselors. Schools and organizations should provide clear and confidential reporting systems. Encouraging bystanders to report incidents is also essential—when more people speak up, bullying is less likely to continue unnoticed.</p>
-
-            <h4>7.2 Intervention Methods</h4>
-            <p>The first step is to separate the individuals involved and ensure the victim is safe. Authorities should then investigate the incident carefully, listening to all parties. Appropriate disciplinary actions should be applied to the bully, focusing not only on punishment but also on helping them understand the consequences of their actions. Schools may also use restorative approaches where the bully takes responsibility and makes amends.</p>
-
-            <h4>7.3 Counseling and Support</h4>
-            <p>Victims may need emotional support and counseling to rebuild confidence and develop coping strategies. Bullies also require attention—counseling can help address underlying issues such as anger, insecurity, or lack of empathy. Parents and teachers should work together with counselors to provide continuous support and monitor progress.</p>
-
-            <span class="day-label">Day 3</span>
-            <h3>8. Legal and Ethical Considerations</h3>
-
-            <h4>8.1 School Policies</h4>
-            <p>Schools are expected to clearly state what constitutes bullying and outline clear consequences for offenders. In addition, schools should provide confidential reporting procedures and emphasize education and prevention programs that teach respect, tolerance, and empathy among students.</p>
-
-            <h4>8.2 Child Protection Laws</h4>
-            <p>Child protection laws ensure that every child has the right to safety, dignity, and protection in schools and communities. When bullying becomes severe—especially in cases involving physical harm, cyber harassment, or threats—legal action can be taken against offenders. Such laws require schools and caregivers to take responsibility for protecting children.</p>
-
-            <h4>8.3 Ethical Responsibility of Individuals</h4>
-            <p>Ethically, every student, teacher, and parent is expected to treat others with respect, kindness, and fairness. Even when no law is broken, bullying is still morally wrong because it causes harm to others. Ethical responsibility promotes a culture of empathy and respect, which helps reduce bullying in everyday interactions.</p>
-
-            <h4>8.4 Digital Safety and Online Responsibility</h4>
-            <p>Individuals are expected to use social media and online platforms responsibly. Posting harmful content, spreading rumors, sharing private images without consent, or sending threats can be considered cyberbullying and may have legal consequences. Schools and governments are increasingly introducing cyber safety rules and awareness programs to educate students on responsible digital behavior.</p>
-
-            <span class="day-label">Day 4</span>
-            <h3>Case Studies and Real-life Examples</h3>
-            <p><em>Interactive session with pupils.</em> These are real situations that show how bullying happens and how it can be handled. They help people understand the seriousness of bullying and learn effective solutions.</p>
-
-            <span class="day-label">Day 5</span>
-            <h3>Conclusion and Recommendations</h3>
-            <p>Bullying is harmful but preventable. Everyone—parents, teachers, students, and the government—must work together to stop it. Promoting kindness, respect, and awareness is key to reducing bullying.</p>
+            <div class="reflection-box">
+                <strong>Final Thought</strong>
+                "Contentment is not having everything you want; it is being grateful for everything God has given you while trusting Him for everything you still need."
+            </div>
         </div>
     </section>
 
     <!-- ════════════════ WEEK 3 ════════════════ -->
-    <section id="week3">
-        <h2>Week 3: Infatuation</h2>
+    <section id="week3" style="--accent:#6b3f66; --accent-tint:#f3e9f2;">
+        <h2>Week 3: Discernment</h2>
         <div class="section-body">
+            <span class="day-label">Day 1 — Monday</span>
+            <h3>Understanding Discernment and Recognising Deception</h3>
             <div class="memory-verse">
-                <strong>Text — 1 Corinthians 13:4–7</strong>
-                "Love is patient, love is kind. It does not envy, it does not boast, it is not proud... It always protects, always trusts, always hopes, always perseveres."
+                <strong>2 Corinthians 11:13 (KJV)</strong>
+                "For such are false apostles, deceitful workers, transforming themselves into the apostles of Christ."
             </div>
+            <h4>1. What Is Spiritual Discernment?</h4>
+            <p>The ability to distinguish between what is true and false, what is from God and what is not, looking beyond outward appearances.</p>
+            <h4>2. Why Christians Need Discernment</h4>
+            <p>Not everything presented in the name of God is necessarily from God.</p>
+            <h4>3. Recognising False Apostles and Deceptive Workers</h4>
+            <p>Deception can come from people who use Christian language and appear religious.</p>
+            <h4>4. How Deception Can Appear Genuine</h4>
+            <p>A discerning Christian asks: Does this teaching agree with Scripture? Does it point people toward Christ?</p>
+            <h4>5–7. Distinguishing Truth From Error; Not Believing Everything We Hear; Developing a Discerning Spirit</h4>
+            <p>Truth must be measured against God's Word rather than emotions or personal preferences. Discernment grows through prayer, Scripture, maturity, and obedience.</p>
+            <p><em>Key lesson: Not everything that looks spiritual is from God.</em></p>
 
-            <span class="day-label">Day 1</span>
-            <h3>1. Introduction to Infatuation</h3>
-            <p>Infatuation is a strong emotional state that often occurs when someone develops an intense attraction toward another person. It is usually based on physical appearance, admiration, or fantasy rather than deep emotional connection or understanding. Infatuation can feel very powerful at the beginning, but it is often temporary and may fade quickly when reality sets in.</p>
-            <p>Understanding infatuation is important because it helps individuals distinguish between true love and temporary emotional attraction. Many people, especially young individuals, may confuse infatuation with love, which can lead to unrealistic expectations and emotional disappointment.</p>
+            <span class="day-label">Day 2 — Tuesday</span>
+            <h3>Discernment Through God's Good and Perfect Gifts</h3>
+            <div class="memory-verse">
+                <strong>James 1:17 (KJV)</strong>
+                "Every good gift and every perfect gift is from above, and cometh down from the Father of lights, with whom is no variableness, neither shadow of turning."
+            </div>
+            <p>Not everything attractive is God's will. Discernment helps us ask whether something agrees with God's character before accepting it, avoiding deception through offers that promise money, popularity, or quick success without cost.</p>
+            <p><em>Key lesson: Discernment teaches us to recognise God's blessings without being deceived by what merely appears attractive.</em></p>
 
-            <h4>1.1 Definition of Infatuation</h4>
-            <p>Infatuation can be defined as an intense but short-lived emotional or romantic attraction toward someone, often based on physical appearance or idealized qualities rather than true knowledge of the person. A key feature of infatuation is that it is emotionally overwhelming but not stable—the person experiencing it may feel deeply "in love," but this feeling is often based on fantasy rather than reality.</p>
+            <span class="day-label">Day 3 — Wednesday</span>
+            <h3>Discernment Through the Truth of God's Word</h3>
+            <div class="memory-verse">
+                <strong>John 17:17 (KJV)</strong>
+                "Sanctify them through thy truth: thy word is truth."
+            </div>
+            <p>God's Word is a reliable standard for evaluating teachings, beliefs, and decisions. The important question is not "Who said it?" but "Is it consistent with God's Word?" False doctrine can influence beliefs, choices, and one's relationship with God.</p>
+            <p><em>Key lesson: The better we know God's Word, the better equipped we become to discern truth from error.</em></p>
 
-            <h4>2. Characteristics of Infatuation</h4>
-            <ul>
-                <li><strong>Intense Emotional Attraction:</strong> An overwhelming desire to be close to someone, thinking about them constantly, and experiencing mood swings depending on their presence or attention.</li>
-                <li><strong>Idealization of a Person:</strong> Seeing the person as "perfect" or "flawless," ignoring their weaknesses. The admiration is based more on imagination than reality, which can lead to disappointment.</li>
-                <li><strong>Lack of Deep Understanding:</strong> Attraction is usually based on appearance, first impressions, or limited interactions. Without real understanding, the relationship remains shallow.</li>
-                <li><strong>Short-lived Emotions:</strong> The strong feelings experienced at the beginning often fade over time once the excitement reduces or reality becomes clearer.</li>
-            </ul>
+            <span class="day-label">Day 4 — Thursday</span>
+            <h3>The Power of God's Word in Discerning the Heart</h3>
+            <div class="memory-verse">
+                <strong>Hebrews 4:12 (KJV)</strong>
+                "For the word of God is quick, and powerful, and sharper than any twoedged sword... and is a discerner of the thoughts and intents of the heart."
+            </div>
+            <p>Scripture exposes hidden motives and helps us examine our inner life. True discernment requires humility — receiving correction rather than defensiveness when Scripture exposes something wrong in us.</p>
+            <p><em>Key lesson: God's Word reveals what is happening within us, not only around us.</em></p>
 
-            <span class="day-label">Day 2</span>
-            <h3>3. Causes of Infatuation</h3>
-
-            <h4>3.1 Physical Attraction</h4>
-            <p>A person is strongly drawn to another based on appearance. At this stage, the individual may feel instant admiration or excitement without truly knowing the personality or character of the person. Because physical attraction is usually immediate and emotional, it can easily develop into infatuation.</p>
-
-            <h4>3.2 Peer Influence</h4>
-            <p>Friends and social groups can shape how individuals think and feel about relationships. Sometimes, a person may develop infatuation because their friends admire or talk about a particular individual. In some cases, individuals may feel pressured to like someone simply to fit in or avoid being left out.</p>
-
-            <h4>3.3 Emotional Needs and Loneliness</h4>
-            <p>When a person feels lonely, neglected, or emotionally unfulfilled, they may become more vulnerable to developing strong attachments quickly. They may mistake temporary attention for deep emotional connection. Infatuation in this case becomes a way of filling an emotional gap rather than forming a genuine relationship.</p>
-
-            <h4>3.4 Media and Social Media Influence</h4>
-            <p>Movies, television shows, music, and online content often portray romantic relationships in an idealized and unrealistic way. On social media, people often present only their best images and lifestyles, leading others to develop admiration based on filtered or incomplete information.</p>
-
-            <span class="day-label">Day 3</span>
-            <h3>4. Differences Between Infatuation and Love</h3>
+            <span class="day-label">Day 5 — Friday</span>
+            <h3>Growing in Discernment and Spiritual Maturity</h3>
+            <div class="memory-verse">
+                <strong>Ephesians 4:14 (KJV)</strong>
+                "That we henceforth be no more children, tossed to and fro, and carried about with every wind of doctrine, by the sleight of men, and cunning craftiness, whereby they lie in wait to deceive."
+            </div>
+            <p>Spiritually immature believers are easily deceived. Christians should test spiritual claims by their biblical foundation, fruit, and consistency with Christ's character — remaining stable, speaking truth in love rather than becoming harsh or judgmental.</p>
+            <p><em>Key lesson: Spiritual maturity makes us stable, wise, and less vulnerable to deception.</em></p>
 
             <table>
-                <thead>
-                    <tr>
-                        <th>Feature</th>
-                        <th>Infatuation</th>
-                        <th>Love</th>
-                    </tr>
-                </thead>
+                <thead><tr><th>Day</th><th>Focus</th><th>Main Lesson</th></tr></thead>
                 <tbody>
-                    <tr>
-                        <td><strong>Emotional Depth</strong></td>
-                        <td>Strong but shallow; driven by physical attraction and excitement</td>
-                        <td>Deep connection involving care, trust, respect, and acceptance</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Time Factor</strong></td>
-                        <td>Develops very quickly; also fades quickly</td>
-                        <td>Develops gradually over time through shared experiences</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Reality vs. Fantasy</strong></td>
-                        <td>Based on fantasy; idealizes the person, ignores flaws</td>
-                        <td>Based on reality; accepts the person's strengths and weaknesses</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Stability</strong></td>
-                        <td>Unstable and temporary; disappears when excitement fades</td>
-                        <td>Stable and long-lasting; withstands challenges and misunderstandings</td>
-                    </tr>
+                    <tr><td>Monday</td><td>Recognising deception</td><td>Not everything that appears spiritual is from God.</td></tr>
+                    <tr><td>Tuesday</td><td>Recognising God's gifts</td><td>Distinguish God's provision from attractive distractions.</td></tr>
+                    <tr><td>Wednesday</td><td>God's truth</td><td>Test everything by the Word of God.</td></tr>
+                    <tr><td>Thursday</td><td>God's Word and the heart</td><td>Allow Scripture to examine our motives and intentions.</td></tr>
+                    <tr><td>Friday</td><td>Spiritual maturity</td><td>Grow strong enough in Christ not to be carried away by false teaching.</td></tr>
                 </tbody>
             </table>
 
-            <span class="day-label">Day 4</span>
-            <h3>5. Stages of Infatuation</h3>
-
-            <h4>5.1 Initial Attraction</h4>
-            <p>This is the first stage, where a person becomes aware of someone and feels a sudden attraction toward them based on physical appearance, voice, style, or first impression. This stage is often light, exciting, and based on surface-level admiration.</p>
-
-            <h4>5.2 Obsession Stage</h4>
-            <p>The feelings become stronger and more intense. The person begins to think about the individual constantly and may struggle to focus on other activities. Imagination plays a big role and the thoughts about the person become difficult to stop.</p>
-
-            <h4>5.3 Emotional Dependency</h4>
-            <p>The individual begins to rely heavily on the person for emotional satisfaction. Their mood may depend on whether they receive attention or acknowledgment. This stage creates a sense of neediness and attachment, and may also lead to jealousy, insecurity, or fear of rejection.</p>
-
-            <h4>5.4 Decline Phase</h4>
-            <p>The final stage, where the intense feelings begin to fade. This usually happens when reality sets in, expectations are not met, or the emotional excitement reduces over time. In some cases, the feelings disappear completely, showing that infatuation is temporary and not deeply rooted like true love.</p>
-
-            <span class="day-label">Day 5</span>
-            <h3>6. Effects, Signs, and Managing Infatuation</h3>
-
-            <h4>6.1 Emotional, Behavioral and Academic Effects</h4>
-            <p>Infatuation can cause strong emotions such as excitement, anxiety, and mood swings. It may lead to sadness or disappointment when expectations are not met. It can make a person act impulsively, become overly focused on one person, and neglect other responsibilities, reducing concentration in school or daily activities.</p>
-
-            <h4>6.2 Signs of Infatuation</h4>
-            <ul>
-                <li><strong>Constant Thoughts About Someone:</strong> Thinking about someone almost all the time, making it hard to focus on other tasks.</li>
-                <li><strong>Over-idealization:</strong> Seeing the person as perfect and creating unrealistic expectations based on imagination.</li>
-                <li><strong>Jealousy and Possessiveness:</strong> Feeling jealous when the person interacts with others, leading to controlling or insecure behavior.</li>
-                <li><strong>Emotional Instability:</strong> Mood changes quickly based on attention received from the person they like.</li>
-            </ul>
-
-            <h4>6.3 How to Manage or Overcome Infatuation</h4>
-            <ul>
-                <li><strong>Self-awareness and Reflection:</strong> Recognize your feelings and understand whether they are based on reality or fantasy.</li>
-                <li><strong>Building Emotional Control:</strong> Learn to manage your emotions instead of acting on impulse. This helps reduce obsession and keeps your thoughts balanced.</li>
-                <li><strong>Focusing on Personal Growth:</strong> Direct your energy toward education, skills, and self-improvement. This reduces emotional dependency on another person.</li>
-                <li><strong>Seeking Guidance and Support:</strong> Talk to trusted friends, parents, or counselors about your feelings. Advice from others helps you gain clarity and emotional stability.</li>
-            </ul>
+            <div class="reflection-box">
+                <strong>Final Thought</strong>
+                A discerning Christian tests before accepting, studies before believing, prays before deciding, and follows God's Word above human opinion.
+            </div>
         </div>
     </section>
 
     <!-- ════════════════ WEEK 4 ════════════════ -->
-    <section id="week4">
-        <h2>Week 4: Examination</h2>
+    <section id="week4" style="--accent:#a6742e; --accent-tint:#faf1e2;">
+        <h2>Week 4: Gratitude</h2>
         <div class="section-body">
-
-            <span class="day-label">Day 1</span>
-            <h3>Meaning and Ethics</h3>
-            <p>Examination is a formal test of a person's knowledge or proficiency. It is an opportunity to know how well you understand. 1 Thessalonians 5:21 says "examine everything carefully." Maintain ethical standards at all times. Academic dishonesty includes cheating, fabrication, assisting others in deception, tampering, and plagiarism.</p>
-
-            <span class="day-label">Day 2</span>
-            <h3>In the Exam Room</h3>
-            <ol>
-                <li>Read instructions carefully. Check rubric for compulsory questions.</li>
-                <li>Work out the timing. Divide time by questions. Allow for planning and checking.</li>
-                <li>Read the questions carefully. Read through the paper once before choosing.</li>
-                <li>Choose your best questions first to build confident momentum.</li>
-                <li>Decide on question order wisely.</li>
-            </ol>
-
-            <span class="day-label">Day 3</span>
-            <h3>How to Answer Multiple Choice Questions</h3>
-            <ol>
-                <li>Read the entire question before glancing at answer options.</li>
-                <li>Answer it in your mind first to prevent being swayed by distractors.</li>
-                <li>Use the process of elimination to cross out known incorrect answers.</li>
-                <li>Select the BEST answer requested, not just one that seems correct.</li>
-                <li>Watch for absolute words like "always," "never," "must."</li>
-                <li>Manage your time and keep an eye on the clock.</li>
-            </ol>
-
-            <span class="day-label">Day 4</span>
-            <h3>Attempt Each Question Correctly</h3>
+            <span class="day-label">Day 1 — Monday</span>
+            <h3>The Will of God Concerning Gratitude</h3>
             <div class="memory-verse">
-                <strong>Colossians 3:23</strong>
-                "Whatever you do, work at it with all your heart..."
+                <strong>1 Thessalonians 5:18 (KJV)</strong>
+                "In every thing give thanks: for this is the will of God in Christ Jesus concerning you."
             </div>
-            <ul>
-                <li><strong>Explain:</strong> Give definition, examples, and talk more on what you know.</li>
-                <li><strong>State:</strong> Write in a complete sentence, not just a word.</li>
-                <li><strong>Mention or List:</strong> Just list without need for explanation.</li>
-            </ul>
-            <p>Cross-check every answer before submitting. Ensure you have done your best.</p>
+            <p>Gratitude is more than saying "thank you" — it is an attitude of the heart recognising that every good thing comes from God. Giving thanks "in every thing" does not mean everything that happens is good; it means we can trust God even in difficulty. Constant complaining causes us to forget what God has already done.</p>
+            <p><em>Key lesson: A grateful heart focuses on God's faithfulness rather than life's difficulties.</em></p>
 
-            <span class="day-label">Day 5</span>
-            <h3>Preparing for Examination</h3>
-            <p>Preparation means readiness. Practice makes perfect—use past questions. Get all materials (pens, rulers, math sets, calculators) ready beforehand. Cover all taught topics in personal revision. Do not stay awake all through the night reading; rest prevents blanking out. Prayer can help as the Holy Spirit reminds you of what you have read.</p>
+            <span class="day-label">Day 2 — Tuesday</span>
+            <h3>Recognising God as the Source of Every Good Gift</h3>
+            <div class="memory-verse">
+                <strong>James 1:17 (KJV)</strong>
+                "Every good gift and every perfect gift is from above, and cometh down from the Father of lights, with whom is no variableness, neither shadow of turning."
+            </div>
+            <p>Although our efforts matter, gratitude recognises God's hand behind the opportunities and abilities that make achievements possible. Entitlement says "I deserve this"; gratitude says "I appreciate what I have received." Gratitude protects the heart from pride.</p>
+            <p><em>Key lesson: Never become so focused on God's gifts that you forget the Giver.</em></p>
+
+            <span class="day-label">Day 3 — Wednesday</span>
+            <h3>Entering God's Presence With Thanksgiving</h3>
+            <div class="memory-verse">
+                <strong>Psalm 100:4 (KJV)</strong>
+                "Enter into his gates with thanksgiving, and into his courts with praise: be thankful unto him, and bless his name."
+            </div>
+            <p>We do not have to wait until every prayer is answered before thanking God. Remembering past faithfulness strengthens present faith, and thanksgiving keeps our hearts joyful rather than fixated on what is missing.</p>
+            <p><em>Key lesson: Remembering God's faithfulness gives us reasons to praise Him in every season.</em></p>
+
+            <span class="day-label">Day 4 — Thursday</span>
+            <h3>Giving Thanks in All Things Because God Works for Our Good</h3>
+            <div class="memory-verse">
+                <strong>Romans 8:28 (KJV)</strong>
+                "And we know that all things work together for good to them that love God, to them who are the called according to his purpose."
+            </div>
+            <p>This does not say everything that happens is good — it assures that God can work through all things for our good. Like Joseph, difficult experiences can become testimonies of God's faithfulness.</p>
+            <p><em>Key lesson: When we cannot understand God's plan, we can still trust His heart.</em></p>
+
+            <span class="day-label">Day 5 — Friday</span>
+            <h3>Replacing Anxiety With Prayer and Thanksgiving</h3>
+            <div class="memory-verse">
+                <strong>Philippians 4:6 (KJV)</strong>
+                "Be careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God."
+            </div>
+            <p>Anxiety focuses on what could go wrong; gratitude redirects our attention to God's faithfulness. The pattern: Worry → Prayer → Thanksgiving → Trust → Peace.</p>
+            <p><em>Key lesson: When we replace worry with prayer and thanksgiving, we position our hearts to experience God's peace.</em></p>
+
+            <div class="reflection-box">
+                <strong>Final Charge</strong>
+                "A grateful heart does not deny the existence of problems; it simply refuses to let problems become greater than God's goodness."
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════ WEEK 5 ════════════════ -->
+    <section id="week5" style="--accent:#3f5b7a; --accent-tint:#e8eef4;">
+        <h2>Week 5: Examination Culture</h2>
+        <div class="section-body">
+            <span class="day-label">Day 1 — Monday</span>
+            <h3>Understanding Examination Culture</h3>
+            <p>An examination is a formal assessment used to determine a student's knowledge, understanding, skills, and abilities. Examination culture refers to the attitudes, behaviours, habits, and values students, teachers, and parents develop toward examinations. Types include class tests, continuous assessment, terminal, mock, and external examinations (WAEC, NECO).</p>
+            <h4>Characteristics of a Positive Examination Culture</h4>
+            <ul>
+                <li>Regular reading and revision, punctuality, good time management</li>
+                <li>Honesty, obedience to instructions, confidence, hard work</li>
+                <li>Respect for teachers and officials, proper preparation</li>
+                <li>Avoidance of examination malpractice</li>
+            </ul>
+            <p><em>Conclusion: Students should see examinations as opportunities to demonstrate learning rather than something to fear.</em></p>
+
+            <span class="day-label">Day 2 — Tuesday</span>
+            <h3>Effective Preparation for Examinations</h3>
+            <p>Examination preparation is the process of getting ready mentally, physically, and academically. A good reading timetable allocates sufficient time to each subject, gives more attention to difficult subjects, includes breaks, revision, and adequate sleep. Regular revision and honest practice with past questions build familiarity and confidence.</p>
+            <p><em>Conclusion: Students who prepare early are more likely to approach examinations calmly and confidently.</em></p>
+
+            <span class="day-label">Day 3 — Wednesday</span>
+            <h3>Examination Ethics and Integrity</h3>
+            <p>Examination malpractice is any dishonest or prohibited behaviour intended to gain an unfair advantage — including bringing unauthorised materials, copying, impersonation, or using unauthorised electronic devices. Causes include inadequate preparation, fear of failure, and peer pressure. Consequences can include cancellation of results, suspension, or expulsion.</p>
+            <p><em>Conclusion: It is better to obtain an honest result through hard work than an excellent result through cheating.</em></p>
+
+            <span class="day-label">Day 4 — Thursday</span>
+            <h3>Managing Examination Anxiety and Pressure</h3>
+            <p>Examination anxiety is excessive worry, fear, or tension before or during an examination. Causes include poor preparation, comparison with classmates, and unrealistic expectations. Students can manage stress by preparing early, resting adequately, eating well, and talking to trusted teachers, parents, or counsellors.</p>
+            <p><em>Conclusion: Examinations should be approached with preparation rather than fear.</em></p>
+
+            <span class="day-label">Day 5 — Friday</span>
+            <h3>Building a Positive Examination Culture</h3>
+            <p>A responsible examination candidate is hardworking, honest, disciplined, punctual, and respectful of rules. Responsibilities before an exam include studying consistently and resting; during, reading instructions carefully and managing time; after, learning from mistakes rather than dwelling on them.</p>
+            <div class="reflection-box">
+                <strong>General Conclusion</strong>
+                A positive examination culture is built on preparation, discipline, honesty, confidence, hard work, perseverance, and respect for examination rules.
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════ WEEK 6 — MIDTERM BREAK ════════════════ -->
+    <section id="week6">
+        <div class="midterm-banner">
+            <h2 style="background:none; color:var(--black); display:inline-block;">Week 6: Midterm Break</h2>
+            <p>No Quiet Time session this week — enjoy the break and return refreshed for Week 7.</p>
         </div>
     </section>
 
     <!-- ════════════════ WEEK 7 ════════════════ -->
-    <section id="week7">
-        <h2>Week 7: Handling Challenges</h2>
+    <section id="week7" style="--accent:#a1502f; --accent-tint:#f7e9e3;">
+        <h2>Week 7: Pushing the Limit</h2>
         <div class="section-body">
+            <span class="day-label">Day 1 — Monday</span>
+            <h3>Knowing Your Purpose and Potential</h3>
             <div class="memory-verse">
-                <strong>John 16:33</strong>
-                "I have told you these things, so that in me you may have peace. In this world you will have trouble. But take heart! I have overcome the world."
+                <strong>1 Chronicles 28:9 (KJV)</strong>
+                "And thou, Solomon my son, know thou the God of thy father, and serve him with a perfect heart and with a willing mind: for the LORD searcheth all hearts, and understandeth all the imaginations of the thoughts: if thou seek him, he will be found of thee; but if thou forsake him, he will cast thee off for ever."
             </div>
+            <h4>1. Understanding "Pushing the Limit"</h4>
+            <p>Making a deliberate effort to go beyond your present level of achievement — refusing to remain satisfied with poor habits, laziness, fear, or lack of discipline when you have the ability to improve.</p>
+            <h4>2. Every Student Has Unique Abilities and Potential</h4>
+            <p>Some students are gifted academically, others in music, sports, public speaking, writing, technology, or leadership. A talent that is not developed may remain hidden.</p>
+            <h4>3. Discovering Your Purpose and God-Given Talents</h4>
+            <p>Students should pray, study, seek wise counsel, and pay attention to what they enjoy and do well — not choose a path simply because friends are choosing it.</p>
+            <h4>4. Developing a Positive Mindset</h4>
+            <p>Replace "I cannot do it" with "I can improve," "I will ask for help," "I will keep practising."</p>
+            <h4>5. Refusing to Let Fear or Failure Limit You</h4>
+            <p>Failure can become a learning experience if a student examines what went wrong and tries again.</p>
+            <h4>6. Setting Meaningful Goals</h4>
+            <p>A good goal should be accompanied by a plan and consistent action.</p>
+            <div class="eval-block">
+                <h4>Evaluation</h4>
+                <ol>
+                    <li>What does "pushing the limit" mean?</li>
+                    <li>Why should students discover their talents?</li>
+                    <li>Mention three things that can limit a student's potential.</li>
+                    <li>How can failure become useful?</li>
+                    <li>What does 1 Chronicles 28:9 teach us?</li>
+                </ol>
+            </div>
+            <p><em>Conclusion: The first step in pushing the limit is recognising that you have potential and deciding to develop it.</em></p>
 
-            <span class="day-label">Day 1</span>
-            <h3>1. Introduction to Challenges</h3>
-            <p>Challenges are difficulties or problems that individuals face in different areas of life. They test a person's ability to think, adapt, and find solutions. Challenges are a normal part of life and cannot be avoided completely. Learning to handle them helps individuals grow stronger and more responsible.</p>
+            <span class="day-label">Day 2 — Tuesday</span>
+            <h3>Developing a Focused Mind</h3>
+            <div class="memory-verse">
+                <strong>Psalm 27:4 (KJV)</strong>
+                "One thing have I desired of the LORD, that will I seek after; that I may dwell in the house of the LORD all the days of my life, to behold the beauty of the LORD, and to enquire in his temple."
+            </div>
+            <h4>1. The Importance of Focus and Concentration</h4>
+            <p>A student may have excellent abilities but underperform because of poor concentration.</p>
+            <h4>2. Making God the Centre of Your Ambitions</h4>
+            <p>Before major decisions, ask: Does this honour God? Have I prayed about it? Have I sought wise counsel?</p>
+            <h4>3. Avoiding Distractions</h4>
+            <p>Excessive social media, gaming, procrastination, and negative friendships can hinder growth. A phone should be a tool, not something that controls the schedule.</p>
+            <h4>4–5. Good Study Habits and Time Management</h4>
+            <p>Balance academic work, prayer, household responsibilities, rest, exercise, and family time.</p>
+            <h4>6. Staying Focused When Results Are Not Immediate</h4>
+            <p>Consistency is often more powerful than occasional effort.</p>
+            <div class="eval-block">
+                <h4>Evaluation</h4>
+                <ol>
+                    <li>What is focus?</li>
+                    <li>Mention five distractions that can affect students.</li>
+                    <li>Why is time management important?</li>
+                    <li>What distraction will you work on reducing?</li>
+                </ol>
+            </div>
+            <p><em>Conclusion: A focused student is better prepared to turn dreams into reality.</em></p>
 
-            <h4>Types of Challenges</h4>
-            <ul>
-                <li><strong>Personal Challenges:</strong> Difficulties related to an individual's habits, health, or behavior, such as self-discipline or time management.</li>
-                <li><strong>Academic Challenges:</strong> Problems faced in school or learning environments, such as difficulty understanding subjects or poor study habits.</li>
-                <li><strong>Social Challenges:</strong> Difficulties in relationships with others, such as peer pressure, communication issues, or conflicts.</li>
-                <li><strong>Financial Challenges:</strong> When a person lacks enough money or resources, affecting education, lifestyle, and basic needs.</li>
-                <li><strong>Emotional Challenges:</strong> Struggles with feelings such as stress, sadness, or anxiety that can affect mental health and decision-making.</li>
-            </ul>
+            <span class="day-label">Day 3 — Wednesday</span>
+            <h3>Self-Examination and Personal Growth</h3>
+            <div class="memory-verse">
+                <strong>Psalm 139:23 (KJV)</strong>
+                "Search me, O God, and know my heart: try me, and know my thoughts."
+            </div>
+            <h4>1–2. Examining Yourself and Identifying Strengths and Weaknesses</h4>
+            <p>Knowing your weaknesses is not a sign of failure — it gives you an opportunity to grow.</p>
+            <h4>3. Recognising Limiting Habits</h4>
+            <p>Laziness, procrastination, carelessness, anger, and refusal to accept correction can prevent students from reaching their potential.</p>
+            <h4>4. Accepting Correction</h4>
+            <p>A teachable student listens, considers advice, and makes appropriate changes.</p>
+            <h4>5–6. Learning From Mistakes and Developing Humility</h4>
+            <p>A humble student can say "I don't understand," "I made a mistake," "I need help."</p>
+            <div class="eval-block">
+                <h4>Evaluation</h4>
+                <ol>
+                    <li>What is self-examination?</li>
+                    <li>Mention three of your strengths and three areas needing improvement.</li>
+                    <li>How can failure become a learning opportunity?</li>
+                </ol>
+            </div>
+            <p><em>Conclusion: When you are willing to examine yourself, you create room for personal growth.</em></p>
 
-            <span class="day-label">Day 2</span>
-            <h3>3. Causes and Effects of Challenges</h3>
+            <span class="day-label">Day 4 — Thursday</span>
+            <h3>Checking Your Motives</h3>
+            <div class="memory-verse">
+                <strong>Proverbs 16:2 (KJV)</strong>
+                "All the ways of a man are clean in his own eyes; but the LORD weigheth the spirits."
+            </div>
+            <h4>1–2. Understanding Motives; Good vs. Selfish Motives</h4>
+            <p>Good motives: desire to learn, improve, help others, honour God. Wrong motives: desire for attention, praise, or success through dishonesty.</p>
+            <h4>3. Pursuing Success Without Pride or Envy</h4>
+            <p>Healthy competition encourages hard work; it becomes unhealthy when students sabotage others to win.</p>
+            <h4>4. Doing Right Even When Nobody Is Watching</h4>
+            <p>True character is revealed by what we do when we believe nobody is watching.</p>
+            <h4>5–6. Balancing Ambition With Integrity</h4>
+            <p>A student who gets the highest grade through cheating has not achieved true success.</p>
+            <div class="eval-block">
+                <h4>Evaluation</h4>
+                <ol>
+                    <li>What is a motive?</li>
+                    <li>Mention three good motives and three wrong motives.</li>
+                    <li>Why is character important in addition to academic success?</li>
+                </ol>
+            </div>
+            <p><em>Conclusion: True success is not simply achieving great things; it is achieving them while maintaining good character.</em></p>
 
-            <h4>Causes</h4>
-            <ul>
-                <li><strong>Lack of Resources:</strong> Not having enough money, materials, or support makes it difficult to achieve goals effectively.</li>
-                <li><strong>Poor Planning:</strong> When proper planning is not done, tasks become disorganized and difficult to manage, leading to confusion and delays.</li>
-                <li><strong>External Pressures:</strong> Expectations from family, school, or society can create stress and make it harder for individuals to focus and perform well.</li>
-                <li><strong>Unexpected Life Events:</strong> Sudden events like illness, accidents, or loss can disrupt normal plans and create challenges that were not anticipated.</li>
-            </ul>
+            <span class="day-label">Day 5 — Friday</span>
+            <h3>Overcoming Negative Influences</h3>
+            <div class="memory-verse">
+                <strong>2 Timothy 2:22 (KJV)</strong>
+                "Flee also youthful lusts: but follow righteousness, faith, charity, peace, with them that call on the Lord out of a pure heart."
+            </div>
+            <h4>1–2. The Influence of Friends; Identifying Negative Peer Pressure</h4>
+            <p>Peer pressure can push students to cheat, bully, skip classes, or break school rules. Students do not have to follow the crowd.</p>
+            <h4>3. Fleeing Youthful Temptations</h4>
+            <p>Wisdom sometimes means walking away from a situation rather than staying close to temptation.</p>
+            <h4>4. Choosing Friends Who Encourage Positive Growth</h4>
+            <p>A good friend encourages, corrects, respects, and celebrates your success without jealousy.</p>
+            <h4>5–6. Pursuing Righteousness and Building Courage to Say "No"</h4>
+            <p>Saying no to wrongdoing is not weakness — it is courage.</p>
+            <div class="eval-block">
+                <h4>Evaluation</h4>
+                <ol>
+                    <li>What is peer pressure?</li>
+                    <li>Mention four qualities of a good friend.</li>
+                    <li>Give two examples of how to say no to peer pressure.</li>
+                </ol>
+            </div>
+            <p><em>Conclusion: Real courage is not following the crowd; it is having the strength to stand for what is right.</em></p>
 
-            <h4>Effects</h4>
-            <ul>
-                <li><strong>Positive Effects:</strong> Challenges can help individuals develop strength, experience, and problem-solving skills. They also encourage personal growth and resilience.</li>
-                <li><strong>Negative Effects:</strong> Challenges can lead to stress, frustration, and reduced performance. In severe cases, they may cause emotional or physical strain.</li>
-            </ul>
-
-            <span class="day-label">Day 3</span>
-            <h3>5. Signs of Difficulty in Handling Challenges</h3>
-
-            <h4>5.1 Stress and Anxiety</h4>
-            <p>The individual may feel overwhelmed, worried, or constantly pressured. Physically, stress may show through headaches, fatigue, restlessness, or difficulty sleeping. Anxiety can also cause overthinking and fear of failure, making it harder to focus on solutions.</p>
-
-            <h4>5.2 Loss of Motivation</h4>
-            <p>A person no longer feels interested or encouraged to continue working toward their goals. They may delay tasks, avoid responsibilities, or stop trying altogether. Without motivation, even simple tasks may feel difficult to complete.</p>
-
-            <h4>5.3 Poor Performance</h4>
-            <p>When individuals are overwhelmed, their ability to concentrate and complete tasks effectively decreases. In academic settings, this may result in low grades, incomplete assignments, or careless mistakes.</p>
-
-            <h4>5.4 Withdrawal from Activities</h4>
-            <p>Individuals begin to isolate themselves or avoid participating in normal daily tasks. They may stop attending social events, avoid friends, or lose interest in hobbies they once enjoyed. This behavior often leads to loneliness and can make challenges feel even more difficult to handle.</p>
-
-            <span class="day-label">Day 4</span>
-            <h3>6. Strategies for Handling Challenges</h3>
-
-            <h4>6.1 Problem-Solving Skills</h4>
-            <p>A person first needs to clearly define the problem instead of ignoring or avoiding it. After identifying the issue, they should analyze possible causes and think of different ways to solve it. Good problem-solving includes evaluating each solution and choosing the most effective one, responding in a logical and organized way rather than reacting emotionally.</p>
-
-            <h4>6.2 Time Management</h4>
-            <p>Proper time management helps individuals prioritize important activities and avoid unnecessary delays. It involves creating schedules, setting goals, and sticking to deadlines. Good time management reduces stress because tasks are completed step by step instead of being left until the last minute.</p>
-
-            <h4>6.3 Seeking Help and Support</h4>
-            <p>This means reaching out to parents, teachers, friends, counselors, or mentors who can provide advice, encouragement, or solutions. Asking for help is not a sign of weakness but a smart way of gaining new perspectives and guidance.</p>
-
-            <h4>6.4 Positive Thinking and Resilience</h4>
-            <p>Positive thinking involves maintaining an optimistic attitude even during difficult situations. Resilience is the ability to recover quickly from difficulties and keep moving forward despite setbacks. Together, they help individuals stay strong, motivated, and focused on solutions instead of problems.</p>
-
-            <span class="day-label">Day 5</span>
-            <h3>7 & 8. Role of Individuals, Family, and Society</h3>
-
-            <h4>Role of Individuals</h4>
-            <ul>
-                <li><strong>Self-Discipline:</strong> Helps individuals stay focused and committed to their goals. Enables them to control distractions and complete tasks responsibly.</li>
-                <li><strong>Emotional Control:</strong> Allows a person to manage anger, fear, or stress during challenges, helping them think clearly and respond calmly.</li>
-                <li><strong>Decision-Making Skills:</strong> Help individuals choose the best solution when facing problems. Good decisions reduce mistakes and improve the chances of overcoming challenges successfully.</li>
-            </ul>
-
-            <h4>Role of Family and Society</h4>
-            <ul>
-                <li><strong>Family Support:</strong> Provides love, encouragement, and guidance during difficult times, helping individuals feel secure and motivated.</li>
-                <li><strong>Community Assistance:</strong> Involves help from neighbors, organizations, and social groups, providing resources and moral support.</li>
-                <li><strong>School and Workplace Support:</strong> Offers guidance, counseling, and structured help systems that make it easier for individuals to manage and overcome challenges.</li>
-            </ul>
+            <div class="reflection-box">
+                <strong>Final Weekly Conclusion</strong>
+                The ultimate goal is not merely to become better than another student. It is to become a better version of yourself, develop your God-given abilities, make wise decisions, and live a life that honours God.
+            </div>
         </div>
     </section>
 
     <!-- ════════════════ WEEK 8 ════════════════ -->
-    <section id="week8">
-        <h2>Week 8: Social Etiquette</h2>
+    <section id="week8" style="--accent:#2f6b6b; --accent-tint:#e5f1f0;">
+        <h2>Week 8: Priorities</h2>
         <div class="section-body">
+            <span class="day-label">Day 1 — Monday</span>
+            <h3>Putting God First</h3>
             <div class="memory-verse">
-                <strong>James 1:19</strong>
-                "Everyone should be quick to listen, slow to speak and slow to become angry."
+                <strong>Mark 12:28 (KJV)</strong>
+                "And one of the scribes came, and having heard them reasoning together, and perceiving that he had answered them well, asked him, Which is the first commandment of all?"
+            </div>
+            <h4>1. Understanding the Meaning of Priorities</h4>
+            <p>A priority is something considered more important than other things and deserving attention first. The important question is: Are my priorities in the right order?</p>
+            <h4>2. Making God the First Priority</h4>
+            <p>Putting God first means seeking Him through prayer, reading and obeying His Word, and making decisions according to biblical principles.</p>
+            <h4>3. Balancing Spiritual Life With School Responsibilities</h4>
+            <p>Faith should encourage students to become more responsible, not neglect responsibilities.</p>
+            <h4>4. Avoiding the Wrong Priorities</h4>
+            <p>Entertainment, social media, popularity, and fashion should not control a student's life.</p>
+            <div class="eval-block">
+                <h4>Evaluation</h4>
+                <ol>
+                    <li>What is a priority?</li>
+                    <li>Mention three ways a student can put God first.</li>
+                    <li>What is one priority you need to change?</li>
+                </ol>
+            </div>
+            <p><em>Conclusion: Right priorities begin with putting God first.</em></p>
+
+            <span class="day-label">Day 2 — Tuesday</span>
+            <h3>Prioritising Your Education and Future</h3>
+            <div class="memory-verse">
+                <strong>Matthew 6:19 (KJV)</strong>
+                "Lay not up for yourselves treasures upon earth, where moth and rust doth corrupt, and where thieves break through and steal."
+            </div>
+            <h4>1–2. The Value of Education; Making Academic Work a Priority</h4>
+            <p>Education equips students with knowledge, skills, and discipline for future opportunities. Being a student means education is a major responsibility.</p>
+            <h4>3. Avoiding Procrastination</h4>
+            <p>Delaying study until an examination is near creates pressure and poor results.</p>
+            <h4>4. Investing in Your Future</h4>
+            <p>Knowledge, wisdom, good character, and a strong relationship with God are valuable, lasting investments.</p>
+            <h4>5–6. Setting Academic Goals; Managing Distractions</h4>
+            <p>The goal is not to eliminate recreation but to ensure it doesn't replace responsibility.</p>
+            <div class="eval-block">
+                <h4>Evaluation</h4>
+                <ol>
+                    <li>Why is education important?</li>
+                    <li>What is procrastination and how does it affect performance?</li>
+                    <li>Mention one academic goal you intend to achieve.</li>
+                </ol>
+            </div>
+            <p><em>Conclusion: A student who prioritises learning today is preparing for greater opportunities tomorrow.</em></p>
+
+            <span class="day-label">Day 3 — Wednesday</span>
+            <h3>Controlling Worry and Unnecessary Desires</h3>
+            <div class="memory-verse">
+                <strong>Luke 12:29 (KJV)</strong>
+                "And seek not ye what ye shall eat, or what ye shall drink, neither be ye of doubtful mind."
+            </div>
+            <h4>1–2. Understanding Worry; Learning to Trust God</h4>
+            <p>Trusting God does not mean refusing to work hard — it means doing your responsibility while refusing to let fear control you.</p>
+            <h4>3. Controlling Material Desires</h4>
+            <p>A need is something essential; a want is desirable but not essential. Understanding this builds contentment.</p>
+            <h4>4. Avoiding Comparison With Others</h4>
+            <p>What we see online does not always represent the complete reality of another person's life.</p>
+            <h4>5. Developing Contentment</h4>
+            <p>Being grateful for what you have without becoming lazy or refusing to improve.</p>
+            <div class="eval-block">
+                <h4>Evaluation</h4>
+                <ol>
+                    <li>What is the difference between a need and a want?</li>
+                    <li>Why should students avoid comparing themselves with others?</li>
+                    <li>Mention three things you are grateful for.</li>
+                </ol>
+            </div>
+            <p><em>Conclusion: When your priorities are right, you learn to value what truly matters.</em></p>
+
+            <span class="day-label">Day 4 — Thursday</span>
+            <h3>Making Prayer a Priority</h3>
+            <div class="memory-verse">
+                <strong>Psalm 5:3 (KJV)</strong>
+                "My voice shalt thou hear in the morning, O LORD; in the morning will I direct my prayer unto thee, and will look up."
+            </div>
+            <h4>1–2. The Importance of Prayer; Starting the Day With God</h4>
+            <p>Prayer should not only happen during an examination or problem — it should become part of daily life.</p>
+            <h4>3. Developing a Consistent Prayer Life</h4>
+            <p>Morning: thank God and commit the day. During the day: pray silently over decisions. Evening: reflect and ask for guidance.</p>
+            <h4>4. Combining Prayer With Action</h4>
+            <p>Prayer does not replace responsibility — pray for wisdom, then study; pray for success, then work diligently.</p>
+            <h4>5. Looking to God for Direction</h4>
+            <p>Prayer helps students seek God's guidance rather than deciding purely from peer pressure or emotion.</p>
+            <div class="eval-block">
+                <h4>Evaluation</h4>
+                <ol>
+                    <li>What is prayer, and why should students make it a priority?</li>
+                    <li>Create a simple daily prayer routine.</li>
+                </ol>
+            </div>
+            <p><em>Conclusion: When prayer becomes a priority, students learn to begin and continue their activities with God.</em></p>
+
+            <span class="day-label">Day 5 — Friday</span>
+            <h3>Prioritising Fellowship and Positive Relationships</h3>
+            <div class="memory-verse">
+                <strong>Hebrews 10:25 (KJV)</strong>
+                "Not forsaking the assembling of ourselves together, as the manner of some is; but exhorting one another: and so much the more, as ye see the day approaching."
+            </div>
+            <h4>1–2. The Importance of Fellowship; Attending Church and Christian Fellowship</h4>
+            <p>Christian students do not have to grow spiritually alone.</p>
+            <h4>3. Learning From Positive Relationships</h4>
+            <p>Good relationships encourage students to study, pray, and make wise choices.</p>
+            <h4>4. Encouraging Others</h4>
+            <p>Students should encourage struggling classmates and speak words that build people up.</p>
+            <h4>5–6. Avoiding Isolation; Balancing Fellowship With Other Responsibilities</h4>
+            <p>Students should seek help from trustworthy adults when necessary, while balancing fellowship with schoolwork.</p>
+            <div class="eval-block">
+                <h4>Evaluation</h4>
+                <ol>
+                    <li>What is fellowship, and why is it important?</li>
+                    <li>Mention three ways you can encourage someone this week.</li>
+                </ol>
             </div>
 
-            <span class="day-label">Day 1</span>
-            <h3>1. Introduction to Social Etiquette</h3>
-            <p>Social etiquette refers to the acceptable ways of behaving in society. It helps people interact peacefully, respectfully, and responsibly in different environments such as home, school, church, and public places. For students aged 8–16, learning social etiquette is very important because it shapes character and prepares them to become responsible adults.</p>
-
-            <h4>1.1 Meaning of Social Etiquette</h4>
-            <p>Social etiquette simply means the proper and polite way of behaving toward others in society. It includes how we speak, act, dress, and respond to people in different situations—greeting others politely, respecting elders, teachers, and peers, using kind and appropriate language, and showing good behaviour in public and private places.</p>
-
-            <h4>1.2 Importance of Good Manners</h4>
-            <ul>
-                <li><strong>Promotes respect:</strong> People treat you better when you respect them.</li>
-                <li><strong>Builds good relationships:</strong> Polite behaviour helps you make and keep friends.</li>
-                <li><strong>Creates discipline:</strong> Good manners help students behave properly at school and home.</li>
-                <li><strong>Reduces conflict:</strong> Respectful communication prevents fights and misunderstandings.</li>
-                <li><strong>Improves reputation:</strong> Well-mannered individuals are admired and trusted.</li>
-                <li><strong>Encourages cooperation:</strong> Society becomes more peaceful and united when people behave well.</li>
-            </ul>
-
-            <h4>1.3 Basic Rules of Respect and Courtesy</h4>
-            <ul>
-                <li>Always greet people politely when you meet or leave them.</li>
-                <li>Say "please," "thank you," and "sorry" when necessary.</li>
-                <li>Listen attentively when others are speaking without interrupting.</li>
-                <li>Respect elders and authority figures such as parents, teachers, and leaders.</li>
-                <li>Do not insult, bully, or mock others.</li>
-                <li>Be honest and trustworthy in your actions.</li>
-                <li>Wait your turn patiently in queues or group activities.</li>
-                <li>Show kindness and empathy to people, especially those in need.</li>
-            </ul>
-
-            <span class="day-label">Day 2</span>
-            <h3>2. Personal Grooming and Hygiene</h3>
-
-            <h4>2.1 Cleanliness and Appearance</h4>
-            <ul>
-                <li>Bathing regularly (at least once daily) to remove dirt and sweat.</li>
-                <li>Brushing teeth twice daily to maintain fresh breath and prevent tooth decay.</li>
-                <li>Washing hands properly before eating and after using the toilet.</li>
-                <li>Keeping nails short and clean to avoid germs.</li>
-                <li>Wearing clean clothes every day and combing hair neatly.</li>
-            </ul>
-
-            <h4>2.2 Dressing Appropriately for School and Events</h4>
-            <p>For school: wear proper school uniforms that are clean, ironed, and complete. Avoid excessive jewelry or flashy accessories. For events: dress modestly and neatly, choosing clothes suitable for the occasion—neither too revealing nor too casual.</p>
-
-            <h4>2.3 Healthy Personal Habits</h4>
-            <ul>
-                <li>Eating balanced meals with fruits, vegetables, proteins, and water.</li>
-                <li>Sleeping well (7–9 hours for children and teens).</li>
-                <li>Exercising regularly to stay fit and active.</li>
-                <li>Avoiding bad habits such as biting nails, picking nose, or littering.</li>
-                <li>Maintaining proper toilet hygiene.</li>
-            </ul>
-
-            <span class="day-label">Day 3</span>
-            <h3>3. Greetings and Communication Skills</h3>
-
-            <h4>3.1 Proper Ways of Greeting Others</h4>
-            <ul>
-                <li>Say "Good morning," "Good afternoon," or "Good evening" depending on the time of day.</li>
-                <li>Greet elders first as a sign of respect.</li>
-                <li>Smile warmly while greeting others.</li>
-                <li>Use polite titles like Sir, Ma, Mr., Mrs., or Miss when appropriate.</li>
-                <li>Respond when someone greets you instead of ignoring them.</li>
-            </ul>
-
-            <h4>3.2 Respectful Speech and Language Use</h4>
-            <ul>
-                <li>Always use polite words such as "please," "thank you," and "excuse me."</li>
-                <li>Avoid insulting, shouting, or using offensive language.</li>
-                <li>Speak calmly and clearly, not aggressively.</li>
-                <li>Think before speaking to avoid hurting others' feelings.</li>
-                <li>Speak truthfully and avoid gossip or spreading rumours.</li>
-            </ul>
-
-            <h4>3.3 Listening Skills and Polite Responses</h4>
-            <ul>
-                <li>Pay full attention when someone is speaking; do not interrupt.</li>
-                <li>Make eye contact to show interest and avoid distractions.</li>
-                <li>Answer questions respectfully and clearly.</li>
-                <li>Ask questions politely when something is not clear.</li>
-                <li>Thank someone after they give instructions or advice.</li>
-            </ul>
-
-            <span class="day-label">Day 4</span>
-            <h3>4 & 5. Behaviour at Home, School, and Public Places</h3>
-
-            <h4>At Home and School</h4>
-            <ul>
-                <li><strong>Respect for Parents and Teachers:</strong> Obeying them, listening to their instructions, and speaking to them politely at all times.</li>
-                <li><strong>Classroom Behaviour and Discipline:</strong> Paying attention in class, following rules, coming to school on time, and completing assignments.</li>
-                <li><strong>Responsibility at Home:</strong> Helping with chores, keeping your environment clean, and obeying family rules.</li>
-            </ul>
-
-            <h4>In Public Places</h4>
-            <ul>
-                <li><strong>Behaviour in Transport Systems:</strong> Boarding and alighting vehicles politely, respecting queues, paying fares properly, and avoiding loud or rude behaviour.</li>
-                <li><strong>Conduct in Markets, Churches, and Events:</strong> Behaving quietly, respecting rules, speaking politely, and being orderly during activities or services.</li>
-                <li><strong>Queueing and Waiting Patiently:</strong> Standing in an orderly line and waiting your turn without pushing or cutting in.</li>
-            </ul>
-
-            <span class="day-label">Day 5</span>
-            <h3>6–9. Friendship, Digital Etiquette, and Respect</h3>
-
-            <h4>Friendship and Peer Relationships</h4>
-            <ul>
-                <li><strong>Choosing Good Friends:</strong> Associating with people who have positive behaviour and good morals.</li>
-                <li><strong>Respecting Differences:</strong> Accepting people even when they think, look, or act differently from you.</li>
-                <li><strong>Resolving Conflicts Peacefully:</strong> Solving disagreements through calm discussion, forgiveness, and listening.</li>
-            </ul>
-
-            <h4>Digital Etiquette</h4>
-            <ul>
-                <li><strong>Safe Use of Social Media:</strong> Protecting personal information and avoiding strangers online; using platforms responsibly.</li>
-                <li><strong>Respectful Online Communication:</strong> Using polite words when chatting or posting online; avoiding insults and gossip.</li>
-                <li><strong>Avoiding Cyberbullying:</strong> Not using the internet to insult, threaten, or embarrass others; reporting harmful behaviour.</li>
-            </ul>
-
-            <h4>Manners in Sharing and Respect for Authority</h4>
-            <ul>
-                <li><strong>Sharing with Others:</strong> Willingly giving part of what you have to those in need; showing kindness and generosity.</li>
-                <li><strong>Helping the Needy and Classmates:</strong> Assisting people who are struggling or need support.</li>
-                <li><strong>Following School Rules:</strong> Guidelines that help maintain order, discipline, and good behaviour in school.</li>
-                <li><strong>Obeying Laws in Society:</strong> Following rules set by the government to ensure peace and safety.</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- ════════════════ WEEK 9════════════════ -->
-    <section id="week9">
-        <h2>Week 9: Ergonomics</h2>
-        <div class="section-body">
-            <div class="memory-verse">
-                <strong>Philippians 1:27</strong>
-                "...live in a manner worthy of the gospel, standing firm in one spirit, and striving together for the faith."
-            </div>
-
-            <span class="day-label">Day 1</span>
-            <h3>1–4. Introduction and Common Poor Posture Habits</h3>
-            <p>Students spend a large part of their daily lives sitting in classrooms and studying at home. Poor body posture over time can lead to back pain, neck strain, fatigue, and reduced concentration in class. Ergonomics helps students understand how to arrange their bodies, chairs, desks, and environment in a way that supports comfort, safety, and efficiency while learning.</p>
-
-            <h4>2. Meaning of Ergonomics</h4>
-            <p>Ergonomics is the study of how people interact with their environment—especially tools, furniture, and workspaces—in order to improve comfort, efficiency, and safety. In simple terms, it means arranging your study or work environment so that your body is in a natural and stress-free position.</p>
-
-            <h4>3. Importance of Ergonomics for Students</h4>
-            <ul>
-                <li>Prevents body pain and injuries</li>
-                <li>Improves concentration and academic performance</li>
-                <li>Promotes long-term health by preventing spinal problems</li>
-                <li>Reduces fatigue and encourages productivity</li>
-            </ul>
-
-            <h4>4. Common Poor Posture Habits Among Students</h4>
-            <ul>
-                <li>Slouching while sitting: bending the back and shoulders forward, straining the spine</li>
-                <li>Leaning too close to books or screens, causing neck and eye strain</li>
-                <li>Sitting on the edge of chairs or not using the backrest</li>
-                <li>Crossing legs for long periods while sitting</li>
-                <li>Using phones or reading while lying down improperly</li>
-                <li>Standing with uneven weight distribution</li>
-                <li>Carrying heavy bags on one shoulder</li>
-            </ul>
-
-            <span class="day-label">Day 2</span>
-            <h3>5. Sitting Positions for Students</h3>
-
-            <h4>5.1 Correct Sitting Posture</h4>
-            <ul>
-                <li><strong>Back straight and supported:</strong> spine upright, lower back resting against the chair's backrest.</li>
-                <li><strong>Feet flat on the ground</strong> or on a footstool if the chair is too high.</li>
-                <li><strong>Knees at right angle (90°):</strong> level with or slightly lower than the hips.</li>
-                <li><strong>Shoulders relaxed:</strong> not raised or hunched forward.</li>
-                <li><strong>Head upright:</strong> facing forward, not bent too far down or tilted backward.</li>
-                <li><strong>Eyes level</strong> with reading material or screen to prevent neck strain.</li>
-                <li><strong>Arms properly supported:</strong> elbows resting comfortably at about 90° angle.</li>
-            </ul>
-
-            <h4>5.2 Improper Sitting Posture and Its Effects</h4>
-            <p>Slouching, sitting too low or too high, leaning to one side, bending the neck downward for long periods, sitting without back support, and crossing legs for long hours can all cause back and neck pain, poor concentration, tiredness, poor blood circulation, and long-term spinal deformities.</p>
-
-            <h4>5.3 & 5.4 Ideal Chair and Desk Arrangement / Tips</h4>
-            <ul>
-                <li>Chair height should allow feet to rest flat on the ground with knees bent at 90°.</li>
-                <li>Desk should be at elbow level when sitting, allowing comfortable writing without bending forward.</li>
-                <li>Take short breaks after sitting for 30–45 minutes to stretch and move around.</li>
-                <li>Keep both feet flat on the floor while sitting.</li>
-                <li>Avoid slouching—correct your posture regularly.</li>
-            </ul>
-
-            <span class="day-label">Day 3</span>
-            <h3>6. Standing Positions for Students</h3>
-
-            <h4>6.1 Correct Standing Posture</h4>
-            <ul>
-                <li><strong>Head upright and facing forward:</strong> chin level, not tilted up or down.</li>
-                <li><strong>Shoulders relaxed and straight:</strong> not hunched forward or pulled backward.</li>
-                <li><strong>Back straight:</strong> maintaining the spine's natural curve.</li>
-                <li><strong>Weight evenly distributed:</strong> balanced on both feet equally.</li>
-                <li><strong>Feet slightly apart:</strong> about shoulder-width apart for stability.</li>
-                <li><strong>Knees slightly relaxed:</strong> not locked straight.</li>
-            </ul>
-
-            <h4>6.2 Effects of Poor Standing Posture</h4>
-            <p>Leaning on one leg, slouching, hunching shoulders, locking knees, standing with uneven weight distribution, or tilting the head forward for long periods can all result in back, hip, and leg pain, muscle fatigue, poor balance, poor blood circulation, and long-term spinal problems.</p>
-
-            <h4>6.3 Tips for Proper Standing Habits</h4>
-            <ul>
-                <li>Stand with your head, shoulders, and hips aligned in a straight line.</li>
-                <li>Keep your weight evenly distributed on both feet.</li>
-                <li>Avoid locking your knees; keep them slightly bent for comfort.</li>
-                <li>Wear comfortable shoes that support your feet properly.</li>
-                <li>Take short breaks to sit or stretch if standing for extended periods.</li>
-            </ul>
-
-            <span class="day-label">Day 4</span>
-            <h3>7. Ergonomic Classroom Setup</h3>
-
-            <h4>7.1 Desk Height and Positioning</h4>
-            <p>The desk should be at a level where students can write comfortably, with elbows forming about a 90° angle. Desks should be arranged so students face forward easily without twisting their neck or body, with enough legroom to move their legs freely.</p>
-
-            <h4>7.2 Chair Design and Support</h4>
-            <p>Chairs should support the natural curve of the spine, especially the lower back. The seat should be firm but not too hard, and chairs should allow students' feet to rest flat on the floor with knees bent at 90°. Chairs should be strong and stable to prevent wobbling or imbalance.</p>
-
-            <h4>7.3 Lighting and Visibility</h4>
-            <p>Classrooms should have enough natural sunlight without causing glare on books or boards. In low-light conditions, bright but soft lights should be used to avoid eye strain. All students should be able to see the board clearly without leaning forward or straining their eyes.</p>
-
-            <span class="day-label">Day 5</span>
-            <h3>8 & 9. Benefits and Consequences of Ergonomics</h3>
-
-            <h4>Health Benefits of Good Ergonomics</h4>
-            <ul>
-                <li>Prevents back, neck, and shoulder pain</li>
-                <li>Improves posture and body alignment</li>
-                <li>Enhances concentration and academic performance</li>
-                <li>Reduces fatigue and tiredness during study</li>
-                <li>Improves blood circulation and breathing</li>
-                <li>Protects eyesight by reducing strain</li>
-                <li>Promotes long-term musculoskeletal health</li>
-            </ul>
-
-            <h4>Consequences of Poor Ergonomics</h4>
-            <ul>
-                <li><strong>Back and neck pain</strong> due to poor sitting or standing positions</li>
-                <li><strong>Spinal problems</strong> such as curvature or long-term misalignment</li>
-                <li><strong>Eye strain and headaches</strong> from poor lighting or screen positioning</li>
-                <li><strong>Fatigue and reduced energy</strong> caused by muscle strain and discomfort</li>
-                <li><strong>Poor concentration</strong> as discomfort distracts students from learning</li>
-                <li><strong>Long-term health issues</strong> including joint stiffness and posture deformities</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- ════════════════ WEEK 10════════════════ -->
-    <section id="week10">
-        <h2>Week 10: Examination — Part 2</h2>
-        <div class="section-body">
-
-            <span class="day-label">Day 1</span>
-            <h3>Examination Culture</h3>
-            <div class="memory-verse">
-                <strong>1 Corinthians 14:40</strong>
-                "Let all things be done decently and in order."
-            </div>
-            <ol>
-                <li>Conduct yourself in an orderly manner.</li>
-                <li>No examination malpractice or attempts.</li>
-                <li>Stick strictly to sitting arrangements.</li>
-                <li>No GSM phones in the hall.</li>
-                <li>No communication between candidates.</li>
-                <li>Raising hands is the only way to attract attention.</li>
-                <li>Scrap paper is not permitted; rough work in booklets.</li>
-                <li>Only approved materials (pens, math sets) inside.</li>
-                <li>No sign language or gestures.</li>
-                <li>No eating in the hall.</li>
-                <li>No sleeping or looking around.</li>
-            </ol>
-
-            <span class="day-label">Day 2</span>
-            <h3>Don't Relent — Remain Focused</h3>
-            <div class="memory-verse">
-                <strong>1 Corinthians 9:24</strong>
-                "So run, that ye may obtain."
-            </div>
-            <p>Always give each paper your best effort. Press on toward the end of the race like Paul (Philippians 3:14).</p>
-
-            <span class="day-label">Day 3</span>
-            <h3>Critical Thinking — Part 1</h3>
-            <div class="memory-verse">
-                <strong>Proverbs 23:7</strong>
-                "As a man thinketh in his heart, so is he."
-            </div>
-            <p>Your answers reflect your understanding. Critical thinking is the ability to think clearly and rationally. Key skills include: understanding links between ideas, identifying errors, and approaching problems systematically.</p>
-
-            <span class="day-label">Day 4</span>
-            <h3>Critical Thinking — Part 2</h3>
-            <p>The process requires persistence and practice. Activity: <em>Who said it? What? Where? When? Why? How?</em> Use <strong>Foresight</strong> to consider the impact on others before you act. Gathering information from multiple sources is vital for best outcomes.</p>
-
-            <span class="day-label">Day 5</span>
-            <h3>Excellent Spirit</h3>
-            <div class="memory-verse">
-                <strong>Daniel 6:3</strong>
-                "Daniel was preferred because an 'Excellent Spirit' was in him."
-            </div>
-            <p>Excellence is being exceptionally good—a gift from God (James 1:17). To be excellent is to go the extra mile. An excellent student gives the examiner more than what is required.</p>
             <div class="reflection-box">
-                <strong>Reflection</strong>
-                As this term begins, commit yourself to excellence in every area—academically, morally, and spiritually. Strive to bring out the very best in yourself each day.
+                <strong>Overall Conclusion</strong>
+                "What is most important, and am I giving it the attention it deserves?" When students establish godly priorities, manage time, and build positive relationships, they become better prepared for present responsibilities and future success.
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════ WEEK 9 ════════════════ -->
+    <section id="week9" style="--accent:#7a3b3b; --accent-tint:#f5e8e8;">
+        <h2>Week 9: Understanding Our Parents</h2>
+        <div class="section-body">
+            <span class="day-label">Day 1 — Monday</span>
+            <h3>Who Are Our Parents and What Is Their Role?</h3>
+            <div class="memory-verse">
+                <strong>Proverbs 22:6 (KJV)</strong>
+                "Train up a child in the way he should go: and when he is old, he will not depart from it."
+            </div>
+            <h4>1. Understanding Who Our Parents Are</h4>
+            <p>Parents care for, protect, guide, teach, and support their children, helping them develop values, character, and responsible behaviour.</p>
+            <h4>2. The Roles of Parents</h4>
+            <p>Providers, protectors, teachers, guides, disciplinarians, and encouragers.</p>
+            <h4>3. Why Parents Set Rules and Boundaries</h4>
+            <p>Rules provide structure and safety around school attendance, bedtime, phone usage, friends, and chores.</p>
+            <h4>4–5. Parents' Sacrifices and Their Own Challenges</h4>
+            <p>Parents can become tired, worried, or stressed — understanding this helps students become more patient and compassionate.</p>
+            <h4>6. Appreciating Parental Sacrifices</h4>
+            <p>Saying thank you, helping with chores, studying seriously, and speaking respectfully.</p>
+            <div class="eval-block">
+                <h4>Evaluation</h4>
+                <ol>
+                    <li>Mention five responsibilities of parents.</li>
+                    <li>Mention three ways you can show appreciation to your parents.</li>
+                </ol>
+            </div>
+            <p><em>Conclusion: Understanding the role of parents helps children appreciate the love, responsibility, and sacrifice involved in raising them.</em></p>
+
+            <span class="day-label">Day 2 — Tuesday</span>
+            <h3>Understanding Parental Guidance and Values</h3>
+            <div class="memory-verse">
+                <strong>Deuteronomy 6:6 (KJV)</strong>
+                "And these words, which I command thee this day, shall be in thine heart."
+            </div>
+            <h4>1. Parents as Teachers of Values</h4>
+            <p>Honesty, respect, responsibility, kindness, hard work, faith, self-control, good manners.</p>
+            <h4>2–3. Why Parents Give Instructions; Learning to Listen</h4>
+            <p>Listening does not mean a student can never express an opinion — it means paying attention before responding respectfully.</p>
+            <h4>4. Values Are Often Taught Through Example</h4>
+            <p>Children learn from what parents do, not only what they say.</p>
+            <h4>5–6. Discussing Important Issues; Respecting Different Perspectives</h4>
+            <p>Disagreement does not have to become disrespect.</p>
+            <div class="eval-block">
+                <h4>Evaluation</h4>
+                <ol>
+                    <li>Mention five values children can learn from their parents.</li>
+                    <li>Mention one good value you have learned from your parents.</li>
+                </ol>
+            </div>
+            <p><em>Conclusion: Lessons learned at home can become valuable foundations for a student's future.</em></p>
+
+            <span class="day-label">Day 3 — Wednesday</span>
+            <h3>Understanding Correction and Discipline</h3>
+            <div class="memory-verse">
+                <strong>Proverbs 13:24 (KJV)</strong>
+                "He that spareth his rod hateth his son: but he that loveth him chasteneth him betimes."
+            </div>
+            <h4>1. The Purpose of Correction</h4>
+            <p>Correction helps a person recognise wrong behaviour and make better choices.</p>
+            <h4>2. Correction vs. Abuse</h4>
+            <p>Healthy discipline teaches and corrects. Violence causing serious harm is not acceptable — a student experiencing serious abuse should seek help from a trusted adult, teacher, or appropriate service.</p>
+            <h4>3–4. Consequences and Learning From Correction</h4>
+            <p>When corrected, ask: What did I do wrong? What should I do differently?</p>
+            <h4>5–6. Avoiding Rebellion; Responding Properly</h4>
+            <p>A mature response: "I understand. I am sorry for what I did. I will try not to repeat it."</p>
+            <div class="eval-block">
+                <h4>Evaluation</h4>
+                <ol>
+                    <li>What is the difference between discipline and abuse?</li>
+                    <li>What should a student do if they feel unsafe because of serious abuse?</li>
+                </ol>
+            </div>
+            <p><em>Conclusion: A wise student does not merely receive correction; they learn from it and become better.</em></p>
+
+            <span class="day-label">Day 4 — Thursday</span>
+            <h3>Communication, Love, and Avoiding Conflict</h3>
+            <div class="memory-verse">
+                <strong>Ephesians 6:4 (KJV)</strong>
+                "And, ye fathers, provoke not your children to wrath: but bring them up in the nurture and admonition of the Lord."
+            </div>
+            <h4>1–3. Communication, Listening, and Expressing Feelings Respectfully</h4>
+            <p>Instead of "You don't care about me!", a student could say, "I feel hurt because I think my side wasn't understood."</p>
+            <h4>4. Handling Disagreements</h4>
+            <p>Avoid shouting, insults, slamming doors, or the silent treatment — remain calm and seek a peaceful solution.</p>
+            <h4>5–7. Parents' Responsibility to Communicate; Knowing When to Seek Help; Building Trust</h4>
+            <p>Serious situations may require assistance from a trusted adult, teacher, counsellor, or pastor.</p>
+            <div class="eval-block">
+                <h4>Evaluation</h4>
+                <ol>
+                    <li>Why is communication important in a family?</li>
+                    <li>Give two examples of respectful statements to use during disagreement.</li>
+                </ol>
+            </div>
+            <p><em>Conclusion: When parents and children learn to listen and speak with love and respect, many unnecessary conflicts can be prevented.</em></p>
+
+            <span class="day-label">Day 5 — Friday</span>
+            <h3>Honouring and Obeying Our Parents</h3>
+            <div class="memory-verse">
+                <strong>Colossians 3:20 (KJV)</strong>
+                "Children, obey your parents in all things: for this is well pleasing unto the Lord."
+            </div>
+            <h4>1–2. What It Means to Honour Parents; Understanding Obedience</h4>
+            <p>Honour is shown through speaking respectfully, listening to instructions, helping at home, and showing gratitude.</p>
+            <h4>3–4. Helping at Home; Appreciating Sacrifices</h4>
+            <p>Instead of "What can my parents give me?", sometimes ask, "What can I do to make things easier for my parents?"</p>
+            <h4>5–6. Building a Healthy Relationship; Becoming Trustworthy</h4>
+            <p>Trust develops through telling the truth, keeping promises, and following agreed rules.</p>
+            <h4>7. Understanding the Limits of Obedience</h4>
+            <p>If instructed to do something clearly harmful, abusive, illegal, or seriously wrong, a student should seek help from a trusted responsible adult rather than blindly obeying.</p>
+            <div class="eval-block">
+                <h4>Evaluation</h4>
+                <ol>
+                    <li>Mention five ways a student can honour parents.</li>
+                    <li>What should a student do when faced with an instruction that is dangerous or seriously wrong?</li>
+                </ol>
+            </div>
+
+            <div class="reflection-box">
+                <strong>Overall Conclusion</strong>
+                Understanding our parents helps us appreciate where their instructions come from, recognise their responsibilities, and build stronger, healthier relationships at home.
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════ WEEK 10 ════════════════ -->
+    <section id="week10" style="--accent:#35506e; --accent-tint:#e6ecf2;">
+        <h2>Week 10: Examination Culture — Part II</h2>
+        <div class="section-body">
+            <span class="day-label">Day 1 — Monday</span>
+            <h3>Developing the Right Examination Mindset</h3>
+            <p>An examination mindset is the way a student thinks, feels, and behaves toward examinations. Confidence means believing that with proper preparation and God's help, one can perform well — not assuming success will come without studying. Students should set specific, measurable, realistic academic goals and avoid negative thoughts, remembering that one poor result does not define them.</p>
+            <div class="eval-block">
+                <h4>Evaluation</h4>
+                <ol>
+                    <li>What is an examination mindset?</li>
+                    <li>State two ways students can overcome examination anxiety.</li>
+                </ol>
+            </div>
+            <p><em>Conclusion: Success begins with the right attitude before the examination.</em></p>
+
+            <span class="day-label">Day 2 — Tuesday</span>
+            <h3>Effective Study and Revision Techniques</h3>
+            <p>Effective study means learning to understand, remember, and apply — not just spending hours with books. Students should read actively, take notes, use past questions to identify weak areas (not just memorise them), study in groups, ask teachers for help, and revise at intervals rather than cramming.</p>
+            <div class="eval-block">
+                <h4>Evaluation</h4>
+                <ol>
+                    <li>Mention three effective revision techniques.</li>
+                    <li>Why are past questions useful?</li>
+                </ol>
+            </div>
+            <p><em>Conclusion: Good preparation gives students greater confidence when they enter the examination hall.</em></p>
+
+            <span class="day-label">Day 3 — Wednesday</span>
+            <h3>Time Management During Examinations</h3>
+            <p>Students should carefully read instructions, plan time according to the number of questions, and reserve time to review answers. Starting with questions they understand builds confidence; if stuck on a difficult question, they should move on and return later where the rules allow.</p>
+            <div class="eval-block">
+                <h4>Evaluation</h4>
+                <ol>
+                    <li>Why should students read examination instructions carefully?</li>
+                    <li>What should a student do when faced with a difficult question?</li>
+                </ol>
+            </div>
+            <p><em>Conclusion: A calm and organized student is more likely to use examination time effectively.</em></p>
+
+            <span class="day-label">Day 4 — Thursday</span>
+            <h3>Examination Ethics and Avoiding Malpractice</h3>
+            <p>Examination malpractice includes copying, unauthorised devices, impersonation, and receiving outside assistance. Causes include fear of failure and peer pressure; consequences include cancellation of results, suspension, or expulsion. The best alternative to cheating is preparation — attending classes, revising, and seeking help when needed.</p>
+            <div class="eval-block">
+                <h4>Evaluation</h4>
+                <ol>
+                    <li>Mention four forms of examination malpractice.</li>
+                    <li>How can students resist peer pressure to cheat?</li>
+                </ol>
+            </div>
+            <p><em>Conclusion: True success is achieved when good results are obtained through genuine effort.</em></p>
+
+            <span class="day-label">Day 5 — Friday</span>
+            <h3>Preparing for Success Before, During and After Examinations</h3>
+            <p>Students need adequate sleep, balanced meals, and personal discipline. They should bring only permitted materials, stay calm and focused on their own paper, and present answers clearly with correct numbering and workings shown where needed. After results, they should examine performance honestly and turn mistakes into lessons for the future.</p>
+            <div class="eval-block">
+                <h4>Evaluation</h4>
+                <ol>
+                    <li>Why is adequate sleep important before an examination?</li>
+                    <li>Why should students learn from their examination results?</li>
+                </ol>
+            </div>
+            <div class="reflection-box">
+                <strong>Conclusion</strong>
+                Success in examinations comes from preparation, discipline, effective study, proper time management, honesty, confidence, and perseverance. With consistent effort and the right attitude, students can achieve their academic goals.
             </div>
         </div>
     </section>
@@ -1063,7 +1188,7 @@
 </div>
 
 <footer>
-    &copy; 2026 Shepherd International School &mdash; Quiet Moment Program
+    &copy; 2026/2027 Shepherd International School &mdash; Quiet Time Program
     <em>"All Around Excellence"</em>
 </footer>
 
